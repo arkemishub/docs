@@ -1,0 +1,152 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+
+@font-face {
+  font-family: 'ClashGrotesk-Variable';
+  src: url('../fonts/ClashGrotesk-Variable.woff2') format('woff2'),
+  url('../fonts/ClashGrotesk-Variable.woff') format('woff'),
+  url('../fonts/ClashGrotesk-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashGrotesk-Extralight';
+  src: url('../fonts/ClashGrotesk-Extralight.woff2') format('woff2'),
+  url('../fonts/ClashGrotesk-Extralight.woff') format('woff'),
+  url('../fonts/ClashGrotesk-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashGrotesk-Light';
+  src: url('../fonts/ClashGrotesk-Light.woff2') format('woff2'),
+  url('../fonts/ClashGrotesk-Light.woff') format('woff'),
+  url('../fonts/ClashGrotesk-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashGrotesk-Regular';
+  src: url('../fonts/ClashGrotesk-Regular.woff2') format('woff2'),
+  url('../fonts/ClashGrotesk-Regular.woff') format('woff'),
+  url('../fonts/ClashGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashGrotesk-Medium';
+  src: url('../fonts/ClashGrotesk-Medium.woff2') format('woff2'),
+  url('../fonts/ClashGrotesk-Medium.woff') format('woff'),
+  url('../fonts/ClashGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashGrotesk-Semibold';
+  src: url('../fonts/ClashGrotesk-Semibold.woff2') format('woff2'),
+  url('../fonts/ClashGrotesk-Semibold.woff') format('woff'),
+  url('../fonts/ClashGrotesk-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ClashGrotesk-Bold';
+  src: url('../fonts/ClashGrotesk-Bold.woff2') format('woff2'),
+  url('../fonts/ClashGrotesk-Bold.woff') format('woff'),
+  url('../fonts/ClashGrotesk-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #a8fbd7;
+  --ifm-color-primary-dark: #9cecc9;
+  --ifm-color-primary-darker: #91debc;
+  --ifm-color-primary-darkest: #7bc9a7;
+  --ifm-color-primary-light: #9cecc9;
+  --ifm-color-primary-lighter: #aff5d7;
+  --ifm-color-primary-lightest: #b6fcdd;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #000;
+  --ifm-navbar-background-color: #000;
+  font-family: ClashGrotesk-Variable, serif;
+}
+
+hr { opacity: 0.2 }
+
+.ts-text {
+  color: #a8fbd7;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+button {
+  background: #0000;
+  border:2px solid #fff;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 4px;
+  padding:8px 20px;
+  margin: 8px;
+  min-width: 200px;
+  font-weight: 500;
+  cursor:pointer;
+}
+
+.button-blue {
+  background: #a8fbd7;
+  border:2px solid #a8fbd7;
+  color: #000
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #070B10;
+}
+
+.header-github-link:hover, .header-gitlab-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E");
+}
+
+.header-gitlab-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background-image: url("data:image/svg+xml,%3Csvg fill='white' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' focusable='false' width='24' height='24' style='-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3E%3Cpath d='M4.845.904c-.435 0-.82.28-.955.692C2.639 5.449 1.246 9.728.07 13.335a1.437 1.437 0 0 0 .522 1.607l11.071 8.045c.2.145.472.144.67-.004l11.073-8.04a1.436 1.436 0 0 0 .522-1.61c-1.285-3.942-2.683-8.256-3.817-11.746a1.004 1.004 0 0 0-.957-.684a.987.987 0 0 0-.949.69L15.8 9.001H8.203l-2.41-7.408a.987.987 0 0 0-.942-.69h-.006zm-.006 1.42l2.173 6.678H2.675zm14.326 0l2.168 6.678h-4.341zm-10.593 7.81h6.862c-1.142 3.52-2.288 7.04-3.434 10.559L8.572 10.135zm-5.514.005h4.321l3.086 9.5zm13.567 0h4.325c-2.467 3.17-4.95 6.328-7.411 9.502c1.028-3.167 2.059-6.334 3.086-9.502zM2.1 10.762l6.977 8.947l-7.817-5.682a.305.305 0 0 1-.112-.341zm19.798 0l.952 2.922a.305.305 0 0 1-.11.341v.002l-7.82 5.68l.026-.035z'/%3E%3C/svg%3E");
+}
