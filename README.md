@@ -1,6 +1,6 @@
-# Website
+# Arke Official Documentation
 
-Arke Official Documentation
+<img width="1440" alt="arke_docs" src="https://user-images.githubusercontent.com/81776297/154977053-e701f5b8-4b0c-4921-9a52-f07bfc6e8378.png">
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
