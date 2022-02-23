@@ -33,6 +33,17 @@ module.exports = {
             "api/arke-js/arke/prepare-arke-edit",
             "api/arke-js/arke/prepare-group",
             "api/arke-js/arke/prepare-unit",
+            {
+              type: "category",
+              label: "unit()",
+              items: [
+                "api/arke-js/arke/unit/add-child",
+                "api/arke-js/arke/unit/unit",
+                "api/arke-js/arke/unit/get-unit",
+                "api/arke-js/arke/unit/get-child",
+                "api/arke-js/arke/unit/remove-child",
+              ],
+            },
           ],
         },
         "api/arke-js/create-arke",
