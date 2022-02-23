@@ -3,7 +3,7 @@ id: edit-arke
 title: edit()
 ---
 
-`edit()` performs an edit of the desired `Arke`.
+`edit()` performs an edit of instanced `Arke`.
 
 
 ## Parameters

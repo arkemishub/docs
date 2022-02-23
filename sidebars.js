@@ -30,6 +30,16 @@ module.exports = {
             "api/arke-js/arke/get-groups",
             "api/arke-js/arke/get-parameters",
             "api/arke-js/arke/get-units",
+            {
+              type: "category",
+              label: "parameter()",
+              items: [
+                "api/arke-js/arke/parameter/parameter",
+                "api/arke-js/arke/parameter/delete-parameter",
+                "api/arke-js/arke/parameter/edit-parameter",
+                "api/arke-js/arke/parameter/get-parameter",
+              ],
+            },
             "api/arke-js/arke/prepare-arke-edit",
             "api/arke-js/arke/prepare-group",
             "api/arke-js/arke/prepare-unit",

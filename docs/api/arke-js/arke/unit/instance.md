@@ -12,7 +12,7 @@ The `unit()` method returns an instance of `ArkeUnit`.
 
 **unit** *required* `string`
 
-id of the ArkeUnit that you want to instance
+id of the `ArkeUnit` that you want to instance
 
 ---
 
