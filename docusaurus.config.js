@@ -27,7 +27,7 @@ module.exports = {
           position: 'left',
         },
         {
-          to: '/api/cli',
+          to: '/api/arke-js/intro',
           activeBasePath: 'api',
           label: 'API Reference',
           position: 'left',
