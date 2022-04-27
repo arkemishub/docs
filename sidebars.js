@@ -52,6 +52,8 @@ module.exports = {
                 "api/arke-js/arke/unit/get-unit",
                 "api/arke-js/arke/unit/get-child",
                 "api/arke-js/arke/unit/remove-child",
+                "api/arke-js/arke/unit/get-unit-configuration",
+                "api/arke-js/arke/unit/edit-unit-configuration",
               ],
             },
           ],
