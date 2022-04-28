@@ -1,8 +1,8 @@
 module.exports = {
   title: "Arke",
   tagline: "Cloud is where we give our best",
-  url: "https://arkemishub.github.io/arke-docs/",
-  baseUrl: "/",
+  url: "https://arkemishub.github.io",
+  baseUrl: "/arke-docs/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logos/logo.ico",
