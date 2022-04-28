@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { Input, Grid, Button, Alert } from "@arke/react-ui";
 import { Key } from "react-feather";
 
@@ -11,9 +11,9 @@ interface Props {
 export default function Auth(props: Props) {
   const [paToken, setPaToken] = useState<string>(getPaToken());
   const [isAuth, setIsAuth] = useState(!!paToken);
-  const { children } = props;
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState(props.error);
+  const { children } = props;
 
   function getPaToken() {
     try {
@@ -63,68 +63,72 @@ export default function Auth(props: Props) {
       .finally(() => setLoading(false));
   }
 
-  return !isAuth ? (
-    <div
-      style={{
-        margin: "auto",
-        height: "100vh",
-        maxWidth: 420,
-        flexDirection: "column",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Grid container style={{ minWidth: 340 }}>
-        <Grid
-          item
-          xs={12}
-          sm={12}
+  return (
+    <>
+      {!isAuth ? (
+        <div
           style={{
+            margin: "auto",
+            height: "100vh",
+            maxWidth: 420,
             flexDirection: "column",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <Input
-            id="pa-token"
-            value={paToken}
-            onChange={(e) => setPaToken(e.target.value)}
-            placeholder="Personal Access Token"
-            style={{
-              marginTop: 20,
-              width: "100%",
-            }}
-            fullWidth
-            startIcon={<Key size={16} style={{ color: "#fff" }} />}
-            inputProps={{
-              style: { textAlign: "center", fontSize: 16, marginLeft: -24 },
-            }}
-          />
-          <br />
-          {err && (
-            <>
-              <Alert severity="warning" style={{ width: "100%" }}>
-                {err}
-              </Alert>
+          <Grid container style={{ minWidth: 340 }}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              style={{
+                flexDirection: "column",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Input
+                id="pa-token"
+                value={paToken}
+                onChange={(e) => setPaToken(e.target.value)}
+                placeholder="Personal Access Token"
+                style={{
+                  marginTop: 20,
+                  width: "100%",
+                }}
+                fullWidth
+                startIcon={<Key size={16} style={{ color: "#fff" }} />}
+                inputProps={{
+                  style: { textAlign: "center", fontSize: 16, marginLeft: -24 },
+                }}
+              />
               <br />
-            </>
-          )}
-          <Button
-            onClick={handleOnLogin}
-            variant="contained"
-            color="secondary"
-            loading={loading}
-            style={{ width: "100%", fontSize: 16 }}
-            data-testid="submit"
-          >
-            Sign In
-          </Button>
-        </Grid>
-      </Grid>
-    </div>
-  ) : (
-    children
+              {err && (
+                <>
+                  <Alert severity="warning" style={{ width: "100%" }}>
+                    {err}
+                  </Alert>
+                  <br />
+                </>
+              )}
+              <Button
+                onClick={handleOnLogin}
+                variant="contained"
+                color="secondary"
+                loading={loading}
+                style={{ width: "100%", fontSize: 16 }}
+                data-testid="submit"
+              >
+                Sign In
+              </Button>
+            </Grid>
+          </Grid>
+        </div>
+      ) : (
+        children
+      )}
+    </>
   );
 }

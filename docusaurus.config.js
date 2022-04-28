@@ -9,7 +9,7 @@ module.exports = {
   organizationName: "arkemishub", // Usually your GitHub org/user name.
   projectName: "arke-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
-  trailingSlash: false,
+  trailingSlash: true,
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
