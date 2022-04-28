@@ -1,42 +1,44 @@
 module.exports = {
   title: "Arke",
   tagline: "Cloud is where we give our best",
-  url: "https://github.com/arkemishub/arke-docs",
+  url: "https://arkemishub.github.io/arke-docs/",
   baseUrl: "/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logos/logo.ico",
-  organizationName: "Arkemis", // Usually your GitHub org/user name.
+  organizationName: "arkemishub", // Usually your GitHub org/user name.
   projectName: "arke-docs", // Usually your repo name.
+  deploymentBranch: "gh-pages",
+  trailingSlash: false,
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
       disableSwitch: true,
     },
     navbar: {
-      title: 'Arke',
+      title: "Arke",
       logo: {
         alt: "Arke logo",
         src: "img/logos/logo.svg",
       },
       items: [
         {
-          to: '/docs/introduction',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+          to: "/docs/introduction",
+          activeBasePath: "docs",
+          label: "Docs",
+          position: "left",
         },
         {
-          to: '/api/cli',
-          activeBasePath: 'api',
-          label: 'API Reference',
-          position: 'left',
+          to: "/api/arke-js/intro",
+          activeBasePath: "api",
+          label: "API Reference",
+          position: "left",
         },
         {
-          to: '/showcase',
-          activeBasePath: 'showcase',
-          label: 'Showcase',
-          position: 'left',
+          to: "/showcase",
+          activeBasePath: "showcase",
+          label: "Showcase",
+          position: "left",
         },
         /*{
           to: '/blog',
@@ -92,5 +94,5 @@ module.exports = {
       },
     ],
   ],
-  themes: ['@docusaurus/theme-live-codeblock'],
+  themes: ["@docusaurus/theme-live-codeblock"],
 };

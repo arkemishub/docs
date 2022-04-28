@@ -11,7 +11,7 @@ module.exports = {
     },
   ],
   api: [
-    "api/cli",
+    /*"api/cli",*/
     {
       type: "category",
       label: "@arke/js",
@@ -68,5 +68,12 @@ module.exports = {
         "api/arke-js/prepare-groups",
       ],
     },
+    {
+      type: "category",
+      label: "@arke/react-ui",
+      items: [
+        "api/react-ui/intro",
+      ]
+    }
   ],
 };
