@@ -5,6 +5,9 @@
  * work well for content-centric websites.
  */
 
+body {
+  background-color: #000000;
+}
 
 @font-face {
   font-family: 'ClashGrotesk-Variable';
@@ -106,25 +109,6 @@ hr { opacity: 0.2 }
   color: #a8fbd7;
   opacity: 0.8;
   font-size: 14px;
-}
-
-button {
-  background: #0000;
-  border:2px solid #fff;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 4px;
-  padding:8px 20px;
-  margin: 8px;
-  min-width: 200px;
-  font-weight: 500;
-  cursor:pointer;
-}
-
-.button-blue {
-  background: #a8fbd7;
-  border:2px solid #a8fbd7;
-  color: #000
 }
 
 .footer--dark {

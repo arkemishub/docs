@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 
 export default function Index() {
     return (
-        <Layout>
+          <Layout>
             <div style={{
                 backgroundImage:'url(img/arke_background.png)',
                 backgroundSize: 'cover'
