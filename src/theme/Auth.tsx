@@ -17,7 +17,7 @@ export default function Auth(props: Props) {
 
   function getPaToken() {
     try {
-      return JSON.parse(localStorage.getItem("githubPagesAuth") || "");
+      return JSON.parse(window.localStorage.getItem("githubPagesAuth") || "");
     } catch (e) {
       console.error(e);
       return "";
@@ -53,7 +53,10 @@ export default function Auth(props: Props) {
         if (response.status !== 200) {
           setErr(`Unauthorized (${response.status})`);
         } else {
-          localStorage.setItem("githubPagesAuth", JSON.stringify(paToken));
+          window.localStorage.setItem(
+            "githubPagesAuth",
+            JSON.stringify(paToken)
+          );
           setIsAuth(true);
         }
       })

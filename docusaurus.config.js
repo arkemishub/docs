@@ -1,8 +1,8 @@
 module.exports = {
-  title: "Arke",
-  tagline: "Cloud is where we give our best",
-  url: "https://arkemishub.github.io",
-  baseUrl: "/arke-docs/",
+  title: "Arke Docs",
+  tagline: "Arke documentation",
+  url: "https://arkemishub.github.io/arke-docs/",
+  baseUrl: "/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logos/logo.ico",
@@ -89,7 +89,7 @@ module.exports = {
           editUrl: "https://github.com/arkemishub/arke-docs",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [require.resolve("./src/css/custom.css")],
         },
       },
     ],
