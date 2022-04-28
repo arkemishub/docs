@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="240" viewBox="0 0 240 240">
+  <defs>
+    <clipPath id="clip-Logo_Arke">
+      <rect width="240" height="240"/>
+    </clipPath>
+  </defs>
+  <g id="Logo_Arke" data-name="Logo – Arke" clip-path="url(#clip-Logo_Arke)">
+    <g id="Raggruppa_14" data-name="Raggruppa 14" transform="translate(16 4)">
+      <rect id="Rettangolo_1" data-name="Rettangolo 1" width="126" height="10" transform="translate(41 30)" fill="#fff"/>
+      <rect id="Rettangolo_2" data-name="Rettangolo 2" width="126" height="10" transform="translate(42 192)" fill="#fff"/>
+      <circle id="Ellisse_1" data-name="Ellisse 1" cx="25.5" cy="25.5" r="25.5" transform="translate(77 90)" fill="#a8fbd7"/>
+    </g>
+  </g>
+</svg>
