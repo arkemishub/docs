@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Auth from "./Auth";
+import GithubAuth from "./GithubAuth";
 import { createTheme, ThemeProvider } from "@arke/react-ui";
 import DarkTheme from "./DarkTheme";
 
@@ -13,7 +13,7 @@ export default function Root(props: Props) {
   return (
     <ThemeProvider theme={createTheme(DarkTheme)}>
       {/* @ts-ignore */}
-      <Auth>{children}</Auth>
+      <GithubAuth>{children}</GithubAuth>
     </ThemeProvider>
   );
 }
