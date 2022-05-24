@@ -1,7 +1,7 @@
 module.exports = {
   title: "Arke Docs",
   tagline: "Arke documentation",
-  url: "https://arkemishub.github.io/arke-docs/",
+  url: "https://arkemishub.github.io",
   baseUrl: "/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
@@ -9,7 +9,6 @@ module.exports = {
   organizationName: "arkemishub", // Usually your GitHub org/user name.
   projectName: "arke-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
-  trailingSlash: true,
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
