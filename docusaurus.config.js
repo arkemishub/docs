@@ -2,7 +2,7 @@ module.exports = {
   title: "Arke Docs",
   tagline: "Arke documentation",
   url: "https://arkemishub.github.io",
-  baseUrl: "/",
+  baseUrl: "/arke-docs/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logos/logo.ico",
