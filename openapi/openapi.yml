@@ -1,0 +1,454 @@
+openapi: 3.0.1
+info:
+  title: Arke Phoenix Starter
+  description: API Documentation for Arke Phoenix Starter [v1]
+  version: '1.0'
+servers:
+  - url: http://localhost:4000/lib
+  - url: https://localhost:4000/lib
+tags:
+  - name: Main
+    description: General Endpoints
+  - name: Unit
+    description: Unit CRUD
+  - name: Link
+    description: Link operations
+  - name: Struct
+    description: Unit struct
+  - name: Parameter
+    description: Parameter management
+  - name: Auth
+    description: Auth endpoints
+paths:
+  /{arke_id}/unit:
+    get:
+      tags:
+        - Main
+      summary: Get children
+      description: Query for Arke/Parameter. This operation returns all the children for the given element
+      operationId: get_element
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /{arke_id}/unit/{unit_id}:
+    get:
+      tags:
+        - Unit
+      summary: Read
+      description: Query for a specif unit. This operation returns a detailed view of the given element
+      operationId: get_unit
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+    put:
+      tags:
+        - Unit
+      summary: Update
+      description: Update Unit with the given data
+      operationId: update_unit
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+    post:
+      tags:
+        - Unit
+      summary: Create
+      description: Create a new element for a specific Arke
+      operationId: create_unit
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+    delete:
+      tags:
+        - Unit
+      summary: Delete
+      description: Delete a unit by id
+      operationId: delete_unit
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /{arke_id}/unit/{unit_id}/link/{direction}:
+    get:
+      tags:
+        - Link
+      summary: Connection Child
+      description: Get all elements (limited by depth parameter) linked to the given unit
+      operationId: get_connection
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
+          required: true
+          schema:
+            type: string
+        - name: direction
+          in: path
+          description: Direction
+          required: true
+          schema:
+            type: string
+        - name: depth
+          in: query
+          description: Depth
+          schema:
+            type: number
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /{arke_id}/unit/{unit_id}/link/{link_id}/{arke_id_child}/unit/{unit_id_child}:
+    post:
+      tags:
+        - Link
+      summary: Connection
+      description: Create a link between two units
+      operationId: post_connection
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
+          required: true
+          schema:
+            type: string
+        - name: link_id
+          in: path
+          description: Link ID
+          required: true
+          schema:
+            type: string
+        - name: arke_id_child
+          in: path
+          description: Arke ID Child
+          required: true
+          schema:
+            type: string
+        - name: unit_id_child
+          in: path
+          description: Unit ID Child
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+    delete:
+      tags:
+        - Link
+      summary: Connection
+      description: Delete a link between two units
+      operationId: delete_connection
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
+          required: true
+          schema:
+            type: string
+        - name: link_id
+          in: path
+          description: Link ID
+          required: true
+          schema:
+            type: string
+        - name: arke_id_child
+          in: path
+          description: Arke ID Child
+          required: true
+          schema:
+            type: string
+        - name: unit_id_child
+          in: path
+          description: Unit ID Child
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: OK
+          content: {}
+      security:
+        - ApiKey: []
+  /{arke_id}/unit/{unit_id}/struct:
+    get:
+      tags:
+        - Struct
+      summary: Struct
+      description: Get all the parameter and their types associated to the given element. Useful to create/update
+      operationId: get_struct
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /{arke_id}/parameter/{parameter_id}:
+    post:
+      tags:
+        - Parameter
+      summary: Associate to Arke
+      description: Associate the given parameter to the given Arke
+      operationId: create_parameter
+      parameters:
+        - name: arke_id
+          in: path
+          description: Arke ID
+          required: true
+          schema:
+            type: string
+        - name: parameter_id
+          in: path
+          description: Parameter ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /auth/verify:
+    post:
+      tags:
+        - Auth
+      summary: Verify token
+      description: Verify user token
+      operationId: verify_token
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /auth/signin:
+    post:
+      tags:
+        - Auth
+      summary: Signin
+      description: Signin to the service
+      operationId: signin
+      requestBody:
+        description: Username
+        content:
+          application/json:
+            schema:
+              required:
+                - password
+                - username
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+        required: false
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      x-codegen-request-body-name: credentials
+  /auth/signup:
+    post:
+      tags:
+        - Auth
+      summary: Signup
+      description: Create a new user
+      operationId: signup
+      requestBody:
+        description: Username
+        content:
+          application/json:
+            schema:
+              required:
+                - password
+                - username
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+        required: false
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      x-codegen-request-body-name: credentials
+  /auth/refresh:
+    post:
+      tags:
+        - Auth
+      summary: Refresh token
+      description: Refresh the JWT tokens
+      operationId: refresh_tokens
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      description: 'API Token must be provided via `Authorization: Bearer ` header'
+      name: Authorization
+      in: header
+  responses:
+    Error:
+      description: Client Error
+      content: {}
+    OK:
+      description: OK
+      content: {}
+    Unauthorized:
+      description: Unauthorized

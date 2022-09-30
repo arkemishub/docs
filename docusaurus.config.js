@@ -30,20 +30,20 @@ module.exports = {
         {
           to: "/api/arke-js/intro",
           activeBasePath: "api",
-          label: "API Reference",
+          label: "Frontend API",
           position: "left",
         },
         {
+          to: "/backend/api",
+          activeBasePath: "api",
+          label: "Backend API",
+          position: "left",
+        },
+        /*{
           to: "/showcase",
           activeBasePath: "showcase",
           label: "Showcase",
           position: "left",
-        },
-        /*{
-          to: '/blog',
-          activeBasePath: 'blog',
-          label: 'Blog',
-          position: 'left',
         },*/
         /*{
           to: '/community',
@@ -86,6 +86,8 @@ module.exports = {
           include: ["**/*.md", "**/*.mdx"],
           // Please change this to your repo.
           editUrl: "https://github.com/arkemishub/arke-docs",
+          docLayoutComponent: "@theme/DocPage",
+          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         theme: {
           customCss: [require.resolve("./src/css/custom.css")],
@@ -93,5 +95,24 @@ module.exports = {
       },
     ],
   ],
-  themes: ["@docusaurus/theme-live-codeblock"],
+  themes: ["@docusaurus/theme-live-codeblock", "docusaurus-theme-openapi-docs"],
+  plugins: [
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "classic",
+        config: {
+          backend: {
+            specPath: "openapi/openapi.yaml",
+            outputDir: "docs/backend",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          },
+        },
+      },
+    ],
+  ],
 };

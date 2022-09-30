@@ -5,8 +5,8 @@ module.exports = {
       type: "category",
       label: "Getting started",
       items: [
-        'docs/getting-started/core-concepts',
-        'docs/getting-started/installation',
+        "docs/getting-started/core-concepts",
+        "docs/getting-started/installation",
       ],
     },
   ],
@@ -71,9 +71,20 @@ module.exports = {
     {
       type: "category",
       label: "@arke/react-ui",
-      items: [
-        "api/react-ui/intro",
-      ]
-    }
+      items: ["api/react-ui/intro"],
+    },
+  ],
+  openApiSidebar: [
+    {
+      type: "category",
+      label: "Arke",
+      link: {
+        type: "generated-index",
+        title: "Arke API",
+        description: "This is a sample server Arke Phoenix server",
+        slug: "/backend/api",
+      },
+      items: require("./docs/backend/sidebar.js"),
+    },
   ],
 };
