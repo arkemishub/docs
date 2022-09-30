@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkarke=self.webpackChunkarke||[]).push([[3425],{42237:e=>{e.exports=JSON.parse('{"title":"Arke API","description":"This is a sample server Arke Phoenix server","slug":"/backend/api","permalink":"/arke-docs/backend/api","navigation":{"next":{"title":"Introduction","permalink":"/arke-docs/backend/arke-phoenix-starter"}}}')}}]);
