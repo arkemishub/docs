@@ -15,8 +15,8 @@ tags:
     description: Link operations
   - name: Struct
     description: Unit struct
-  - name: Parameter
-    description: Parameter management
+  - name: Group
+    description: Group management
   - name: Auth
     description: Auth endpoints
 paths:
@@ -315,23 +315,92 @@ paths:
           content: {}
       security:
         - ApiKey: []
-  /{arke_id}/parameter/{parameter_id}:
-    post:
+  /group/{group_id}/struct:
+    get:
       tags:
-        - Parameter
-      summary: Associate to Arke
-      description: Associate the given parameter to the given Arke
-      operationId: create_parameter
+        - Group
+      summary: Group struct
+      description: Get the struct for the given group
+      operationId: get_group_struct
       parameters:
-        - name: arke_id
+        - name: group_id
           in: path
-          description: Arke ID
+          description: Group ID
           required: true
           schema:
             type: string
-        - name: parameter_id
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /group/{group_id}/unit:
+    get:
+      tags:
+        - Group
+      summary: Unit list
+      description: Get all the units of all the Arke in the given group
+      operationId: get_unit_group
+      parameters:
+        - name: group_id
           in: path
-          description: Parameter ID
+          description: Group ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /group/{group_id}/arke:
+    get:
+      tags:
+        - Group
+      summary: Arke list
+      description: Get all theArke in the given group
+      operationId: get_arke_group
+      parameters:
+        - name: group_id
+          in: path
+          description: Group ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content: {}
+        '400':
+          description: Client Error
+          content: {}
+      security:
+        - ApiKey: []
+  /group/{group_id}/unit/{unit_id}:
+    get:
+      tags:
+        - Group
+      summary: Unit detail
+      description: Get the detail of the given unit in a given group
+      operationId: get_unit_detail_group
+      parameters:
+        - name: group_id
+          in: path
+          description: Group ID
+          required: true
+          schema:
+            type: string
+        - name: unit_id
+          in: path
+          description: Unit ID
           required: true
           schema:
             type: string
