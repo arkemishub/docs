@@ -12,6 +12,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
+    "generate": "docusaurus gen-api-docs all",
     "deploy": "docusaurus deploy",
     "swizzle": "docusaurus swizzle",
     "serve": "docusaurus serve",

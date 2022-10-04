@@ -1,5 +1,0 @@
----
-id: cli
-title: CLI
----
-

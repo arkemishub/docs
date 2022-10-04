@@ -28,15 +28,9 @@ module.exports = {
           position: "left",
         },
         {
-          to: "/api/arke-js/intro",
+          to: "/api/cli/intro",
           activeBasePath: "api",
-          label: "Frontend API",
-          position: "left",
-        },
-        {
-          to: "/backend/api",
-          activeBasePath: "api",
-          label: "Backend API",
+          label: "API",
           position: "left",
         },
         /*{
@@ -103,9 +97,9 @@ module.exports = {
         id: "openapi",
         docsPluginId: "classic",
         config: {
-          backend: {
+          endpoints: {
             specPath: "openapi/openapi.yaml",
-            outputDir: "docs/backend",
+            outputDir: "docs/api/backend/endpoints",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",

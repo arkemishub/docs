@@ -1,0 +1,37 @@
+---
+id: get-unit-group
+title: "Unit list"
+description: "Get all the units of all the Arke in the given group"
+sidebar_label: Unit list
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Group"],"description":"Get all the units of all the Arke in the given group","operationId":"get_unit_group","parameters":[{"name":"group_id","in":"path","description":"Group ID","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK","content":{}},"400":{"description":"Client Error","content":{}}},"security":[{"ApiKey":[]}],"method":"get","path":"/group/{group_id}/unit","servers":[{"url":"http://localhost:4000/lib"},{"url":"https://localhost:4000/lib"}],"securitySchemes":{"ApiKey":{"type":"apiKey","description":"API Token must be provided via `Authorization: Bearer ` header","name":"Authorization","in":"header"}},"info":{"title":"Arke Phoenix Starter","description":"API Documentation for Arke Phoenix Starter [v1]","version":"1.0"},"postman":{"name":"Unit list","description":{"content":"Get all the units of all the Arke in the given group","type":"text/plain"},"url":{"path":["group",":group_id","unit"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) Group ID","type":"text/plain"},"type":"any","value":"","key":"group_id"}]},"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/backend/endpoints/arke-phoenix-starter
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Unit list
+
+
+
+Get all the units of all the Arke in the given group
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"group_id","in":"path","description":"Group ID","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Client Error
+
+</div><div></div></TabItem></ApiTabs></div>
+      

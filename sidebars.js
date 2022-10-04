@@ -11,80 +11,58 @@ module.exports = {
     },
   ],
   api: [
-    /*"api/cli",*/
+    "api/cli/intro",
     {
       type: "category",
-      label: "@arke/js",
+      label: "Frontend",
       items: [
-        "api/arke-js/intro",
         {
           type: "category",
-          label: "arke",
+          label: "Client JS",
           items: [
-            "api/arke-js/arke/add-group",
-            "api/arke-js/arke/add-parameter",
-            "api/arke-js/arke/arke",
-            "api/arke-js/arke/delete-group",
-            "api/arke-js/arke/edit-arke",
-            "api/arke-js/arke/get-arke",
-            "api/arke-js/arke/get-groups",
-            "api/arke-js/arke/get-parameters",
-            "api/arke-js/arke/get-units",
+            "api/frontend/client-js/intro",
             {
-              type: "category",
-              label: "parameter()",
-              items: [
-                "api/arke-js/arke/parameter/parameter",
-                "api/arke-js/arke/parameter/delete-parameter",
-                "api/arke-js/arke/parameter/edit-parameter",
-                "api/arke-js/arke/parameter/get-parameter",
-              ],
-            },
-            "api/arke-js/arke/prepare-arke-edit",
-            "api/arke-js/arke/prepare-group",
-            "api/arke-js/arke/prepare-unit",
-            {
-              type: "category",
-              label: "unit()",
-              items: [
-                "api/arke-js/arke/unit/add-child",
-                "api/arke-js/arke/unit/unit",
-                "api/arke-js/arke/unit/get-unit",
-                "api/arke-js/arke/unit/get-child",
-                "api/arke-js/arke/unit/remove-child",
-                "api/arke-js/arke/unit/get-unit-configuration",
-                "api/arke-js/arke/unit/edit-unit-configuration",
-              ],
+              type: "link",
+              label: "Api reference",
+              href: "https://arkemishub.github.io/arke-monorepo/docs/",
             },
           ],
         },
-        "api/arke-js/create-arke",
-        "api/arke-js/get-all-arke",
-        "api/arke-js/get-all-groups",
-        "api/arke-js/get-all-parameters",
-        "api/arke-js/get-connection-types",
-        "api/arke-js/get-group",
-        "api/arke-js/prepare-arke",
-        "api/arke-js/prepare-groups",
+        {
+          type: "category",
+          label: "React UI",
+          items: [
+            "api/frontend/react-ui/intro",
+            {
+              type: "link",
+              label: "Storybook",
+              href: "https://arkemishub.github.io/arke-monorepo/storybook/",
+            },
+          ],
+        },
       ],
     },
     {
       type: "category",
-      label: "@arke/react-ui",
-      items: ["api/react-ui/intro"],
-    },
-  ],
-  openApiSidebar: [
-    {
-      type: "category",
-      label: "Arke",
-      link: {
-        type: "generated-index",
-        title: "Arke API",
-        description: "This is a sample server Arke Phoenix server",
-        slug: "/backend/api",
-      },
-      items: require("./docs/backend/sidebar.js"),
+      label: "Backend",
+      items: [
+        {
+          type: "link",
+          label: "Hex packages",
+          href: "https://hex.pm/users/arkemis",
+        },
+        {
+          type: "category",
+          label: "Endpoints API",
+          link: {
+            type: "generated-index",
+            title: "Endpoints API",
+            description: "This is a sample server Arke Phoenix server",
+            slug: "/backend/endpoints/api",
+          },
+          items: require("./docs/api/backend/endpoints/sidebar.js"),
+        },
+      ],
     },
   ],
 };
