@@ -1,0 +1,37 @@
+---
+id: get-arke-struct
+title: "Struct"
+description: "Get all the parameter and their types associated to the given element. Useful to create/update"
+sidebar_label: Struct
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Struct"],"description":"Get all the parameter and their types associated to the given element. Useful to create/update","operationId":"get_arke_struct","parameters":[{"name":"arke_id","in":"path","description":"Arke ID","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"label":{"type":"string","example":"Test"},"parameters":{"type":"array","items":{"oneOf":[{"type":"object","properties":{"default":{"type":"string","example":null,"nullable":true,"description":"Default value of the parameter"},"helper_text":{"type":"string","nullable":true,"example":null},"id":{"type":"string","example":"label"},"label":{"type":"string","example":"Label"},"max_length":{"type":"integer","example":100},"min_length":{"type":"integer","example":0},"required":{"type":"boolean","example":true},"type":{"type":"string","example":"string","description":"Type of the parameter"}}},{"type":"object","properties":{"default":{"type":"integer","example":null,"nullable":true,"description":"Default value of the parameter"},"helper_text":{"type":"string","nullable":true,"example":null},"id":{"type":"string","example":"int_parameter"},"label":{"type":"string","example":"Integer Parameter"},"max":{"type":"integer","example":null,"nullable":true},"min":{"type":"integer","example":5,"nullable":true},"required":{"type":"boolean","example":true},"type":{"type":"string","example":"integer","description":"Type of the parameter"}}}]}}}}}}},"404":{"description":"Arke/Unit not found","content":{"application/json":{"schema":{"type":"object","properties":{"content":{"type":"array","items":{},"nullable":true,"example":null},"message":{"type":"array","items":{},"example":[]}}}}}}},"security":[{"ApiKey":[]},{"ProjectKey":[]}],"method":"get","path":"/{arke_id}/struct","servers":[{"url":"http://localhost:4000/lib"},{"url":"https://localhost:4000/lib"}],"securitySchemes":{"ApiKey":{"type":"apiKey","description":"API Token must follow: `Bearer {access_token}` Use the signin endpoint to get the token value","name":"Authorization","in":"header"},"ProjectKey":{"type":"apiKey","in":"header","name":"arke-project-key","description":"The name of the project where to make the API call"}},"info":{"title":"Arke Phoenix Starter","description":"API Documentation for Arke Phoenix Starter [v1]","version":"1.0"},"postman":{"name":"Struct","description":{"content":"Get all the parameter and their types associated to the given element. Useful to create/update","type":"text/plain"},"url":{"path":[":arke_id","struct"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) Arke ID","type":"text/plain"},"type":"any","value":"","key":"arke_id"}]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/backend/endpoints/arke-phoenix-starter
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Struct
+
+
+
+Get all the parameter and their types associated to the given element. Useful to create/update
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"arke_id","in":"path","description":"Arke ID","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"label"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"parameters"} required={false} schemaDescription={undefined} schemaName={"object[]"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"label\": \"string\",\n  \"parameters\": [\n    {\n      \"default\": \"string\",\n      \"helper_text\": \"string\",\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"max_length\": 0,\n      \"min_length\": 0,\n      \"required\": true,\n      \"type\": \"string\"\n    },\n    {\n      \"default\": 0,\n      \"helper_text\": \"string\",\n      \"id\": \"string\",\n      \"label\": \"string\",\n      \"max\": 0,\n      \"min\": 0,\n      \"required\": true,\n      \"type\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Arke/Unit not found
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"content"} required={false} schemaDescription={undefined} schemaName={"undefined[]"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={undefined} schemaName={"undefined[]"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"content\": [\n    null\n  ],\n  \"message\": [\n    null\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      
