@@ -1,43 +1,120 @@
 ---
 id: installation
-title: Installation
+title: Local Installation
 ---
 
-## Creare un Arke App
+## Creare un Arke App da ambiente locale
 
-### Docker
-L'immagine del backend e del DB Postgress é disponibile nel [Docker Hub](https://hub.docker.com/r/arke/postgres) 
-con il nome arke/postgres. Scaricarla e lanciarla da Docker per avere il backend e il DB pronto.
-Di default questo lavora su `localhost:5000`.
+### Workspace
 
-### Arke Console
-Puoi accedere all'Arke Console da [arkehub.com/console](https://arkehub.com/console) o scaricare 
-l'[applicazione client](https://arkehub.com/download/client).
+Di seguito viene descritto tutto l'occorrente per lavorare con Arke sulla propria macchina.
 
-Per iniziare a lavorare l'Arke Console deve puntare all'indirizzo del progetto backend locale. Lanciamo la console e
-creiamo un nuovo progetto puntando `localhost:5000`.
+Nella cartella `Workspace` creare una cartella `Arke`, al suo interno inizializzeremo il progetto del backend
+Arke della console.
 
-![Arke Console](./assets/console.png)
-
-
-### Arke JS
-Arke é un backend che lavora con lo standard REST API, questo lo rende compatibile con differenti tools e frameworks.
-
-L'Arke JS é il client Javascript che consente di dialogare facilmente con Arke.
-
-#### NPM
-
-L'Arke JS package é disponibile in npm. Per installare l'ultima versione stabile, lanciare il comando:
-
-```bash
-npm install @arke/js
+```shell
+cd ~/Workspace/
+mkdir Arke
 ```
 
-#### CDN
+Definiamo nel file `~/.zshenv` il path della directory Arke con la chiave `AR
 
-Arke JS offre la build UMD che può essere accessibile direttamente usando il tag `<script>`. Raccomandiamo di utilizzare 
-una versione specifica per evitare eccezzioni inaspettate nelle nuove versioni.
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/arkejs@1.0.0/umd/arke.production.js"/>
+```shell
+# Arkemis
+export ARKE_WORKSPACE=/Users/manolobattista/Workspace/Arke
 ```
+
+## Arke Backend
+
+### Init
+
+Cloniamo il progetto `Phoenix Starter` e le librerie backend.
+
+```shell
+git@github.com:arkemishub/phoenix_starter.git
+git@github.com:arkemishub/arke-monorepo-elixir.git
+```
+
+### Environment
+
+Nella cartella `phoenix_starter` creare un file `.env` e aggiungere le seguenti variabili d'ambiente:
+
+```shell
+export DB_NAME=<ARKE_DB_NAME>
+export DB_HOSTNAME=<ARKE_DB_HOSTNAME>
+export DB_USER=<ARKE_DB_USER>
+export DB_PASSWORD=<ARKE_DB_PASSWORD>
+```
+
+### Start
+
+Per avviare il backend Arke lanciare dalla root del progetto `phoenix_starter`: 
+
+```shell
+git fetch --all -p
+git pull origin main
+mix deps.clean --all
+mix deps.get
+source .env
+iex -S mix phx.server
+```
+
+## Arke Console
+
+### Init 
+
+Cloniamo il progetto `Arke Console` e le librerie frontend.
+
+```shell
+git@github.com:arkemishub/arke-console.git
+git@github.com:arkemishub/arke-monorepo.git
+```
+
+### Host
+Definiamo nel file `hosts` un host dedicato alla console `local.arkehub.com`:
+
+```shell
+cd /etc/hosts
+sudo vim hosts
+```
+
+Aggiungere l'host
+
+```shell
+# Arke Hosts
+127.0.0.1 local.arkehub.com
+```
+
+### Environment
+
+Creaiamo un nuovo secret Auth per il progetto next con il comando:
+
+```shell
+openssl rand -base64 32
+```
+
+Nella cartella `arke_console` creare un file `.env.local` e aggiungere le seguenti variabili d'ambiente:
+
+```shell
+NEXTAUTH_URL=http://local.arkehub.com:3100
+NEXTAUTH_SECRET="miuYg1kdT5pKlPW6KIjtdOtTGf4aV449CNN9V2wV9nc="
+GH_PA_TOKEN=<GH_PA_TOKEN>
+# Client Side require NEXT_PUBLIC_
+NEXT_PUBLIC_ARKE_SERVER_URL=http://localhost:4000
+```
+
+### Start
+
+Per avviare la console dalla root del progetto `arke_console`:
+
+```shell
+pnpm install 
+pnpm start
+```
+
+Accedere quindi alla console da browser raggiungendo l'indirizzo: `https://local.arkehub.com:3100`
+
+### Development App 
+
+Una volta che backend e console sono pronti é possibile utilizzare la console per generare Arke/Parametri/Unit 
+e consumare le relative api, anche attraverso le librerie frontend `@arke/js` e `@arke/react-ui`.
