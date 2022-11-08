@@ -21,7 +21,7 @@ Definiamo nel file `~/.zshenv` il path della directory Arke con la chiave `AR
 
 ```shell
 # Arkemis
-export ARKE_WORKSPACE=/Users/manolobattista/Workspace/Arke
+export ARKE_WORKSPACE=/Users/<YOUR_USERNAME>/Workspace/Arke
 ```
 
 ## Arke Backend
@@ -87,7 +87,7 @@ Aggiungere l'host
 
 ### Environment
 
-Creaiamo un nuovo secret Auth per il progetto next con il comando:
+Creaiamo un nuovo `SECRETH_AUTH` per il progetto next con il comando:
 
 ```shell
 openssl rand -base64 32
@@ -97,7 +97,7 @@ Nella cartella `arke_console` creare un file `.env.local` e aggiungere le seguen
 
 ```shell
 NEXTAUTH_URL=http://local.arkehub.com:3100
-NEXTAUTH_SECRET="miuYg1kdT5pKlPW6KIjtdOtTGf4aV449CNN9V2wV9nc="
+NEXTAUTH_SECRET=<SECRETH_AUTH>
 GH_PA_TOKEN=<GH_PA_TOKEN>
 # Client Side require NEXT_PUBLIC_
 NEXT_PUBLIC_ARKE_SERVER_URL=http://localhost:4000
