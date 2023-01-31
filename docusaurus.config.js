@@ -95,7 +95,7 @@ module.exports = {
         config: {
           endpoints: {
             specPath: 'openapi/openapi.yaml',
-            outputDir: 'docs/api/backend/endpoints',
+            outputDir: 'docs/docs/server/rest',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
