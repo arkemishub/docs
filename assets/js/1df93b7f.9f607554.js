@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkarke=self.webpackChunkarke||[]).push([[3237],{69754:(e,r,t)=>{t.r(r),t.d(r,{default:()=>n});var a=t(67294),c=t(16550);function n(){return a.createElement(c.l_,{to:"/arke-docs/docs/introduction"})}}}]);
