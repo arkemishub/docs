@@ -63,9 +63,9 @@ jobs:
         env:
           SLACK_CHANNEL: arke
           SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
-          SLACK_MESSAGE: 'Arke documentation updated'
           SLACK_ICON: https://arkehub.com/wp-content/uploads/2022/10/arke.png
           SLACK_TITLE: Arke Docs 📘
-          SLACK_USERNAME: arkeBot
+          SLACK_MESSAGE: 'Arke documentation updated at https://arkemishub.github.io/arke-docs'
+          SLACK_USERNAME: ArkeBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_FOOTER: Powered by Arke
