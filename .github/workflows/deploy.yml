@@ -64,6 +64,7 @@ jobs:
           SLACK_CHANNEL: arke
           SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
           SLACK_MESSAGE: 'Arke documentation updated'
+          SLACK_ICON: https://arkehub.com/wp-content/uploads/2022/10/arke_app.png
           SLACK_TITLE: Arke Docs 📘
           SLACK_USERNAME: arkeBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

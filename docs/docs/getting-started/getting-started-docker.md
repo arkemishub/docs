@@ -3,9 +3,9 @@ id: getting-started-docker
 title: Quickstart with Docker
 ---
 
-import Label from '@site/src/components/Label';
-
-<Label variant="error">Work in progress</Label>
+:::caution
+Work in progress
+:::
 
 ## Introduction
 
