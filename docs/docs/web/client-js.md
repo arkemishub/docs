@@ -177,3 +177,7 @@ client.arke
         // get Arke sorted by label with ascended order
     })
 ```
+
+:::info
+ For more information look the [complete API Reference of Client JS methods](https://arkemishub.github.io/arke-monorepo/docs/)
+:::

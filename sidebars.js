@@ -38,7 +38,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Web',
-      items: ['docs/web/client-js', 'docs/web/ui-kit'],
+      items: ['docs/web/client-js', 'docs/web/ui-kit', 'docs/web/form'],
     },
     {
       type: 'category',
