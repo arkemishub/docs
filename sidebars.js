@@ -1,68 +1,71 @@
 module.exports = {
   docs: [
-    "docs/introduction",
+    'docs/introduction',
     {
-      type: "category",
-      label: "Getting started",
+      type: 'category',
+      label: 'Getting started',
       items: [
-        "docs/getting-started/core-concepts",
-        "docs/getting-started/installation",
-      ],
-    },
-  ],
-  api: [
-    "api/cli/intro",
-    {
-      type: "category",
-      label: "Frontend",
-      items: [
-        {
-          type: "category",
-          label: "Client JS",
-          items: [
-            "api/frontend/client-js/intro",
-            {
-              type: "link",
-              label: "Api reference",
-              href: "https://arkemishub.github.io/arke-monorepo/docs/",
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "React UI",
-          items: [
-            "api/frontend/react-ui/intro",
-            {
-              type: "link",
-              label: "Storybook",
-              href: "https://arkemishub.github.io/arke-monorepo/storybook/",
-            },
-          ],
-        },
+        'docs/getting-started/getting-started-cloud',
+        'docs/getting-started/getting-started-docker',
+        'docs/getting-started/getting-started-local-installation',
+        'docs/getting-started/how-it-works',
       ],
     },
     {
-      type: "category",
-      label: "Backend",
+      type: 'category',
+      label: 'Server',
       items: [
+        'docs/server/elixir',
+        'docs/server/authentication',
+        'docs/server/database',
+        'docs/server/multi-tenant',
+        'docs/server/permissions-and-roles',
+        'docs/server/security',
+        'docs/server/storage',
         {
-          type: "link",
-          label: "Hex packages",
-          href: "https://hex.pm/users/arkemis",
-        },
-        {
-          type: "category",
-          label: "Endpoints API",
+          type: 'category',
+          label: 'Rest API',
           link: {
-            type: "generated-index",
-            title: "Endpoints API",
-            description: "This is a sample server Arke Phoenix server",
-            slug: "/backend/endpoints/api",
+            type: 'generated-index',
+            title: 'Rest API',
+            description: 'This is a sample server Arke Phoenix server',
+            slug: '/backend/endpoints/api',
           },
-          items: require("./docs/api/backend/endpoints/sidebar.js"),
+          items: require('./docs/api/backend/endpoints/sidebar.js'),
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Web',
+      items: ['docs/web/client-js', 'docs/web/ui-kit'],
+    },
+    {
+      type: 'category',
+      label: 'Arke CLI',
+      items: ['docs/cli/intro'],
+    },
+    {
+      type: 'category',
+      label: 'Deployment',
+      items: [
+        'docs/deployment/using-docker',
+        'docs/deployment/using-kubernetes',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Resources',
+      items: [
+        {
+          type: 'link',
+          label: 'Tutorial',
+          href: 'https://docs.arkehub.com/tutorial',
+        },
+      ],
+    },
+    'docs/troubleshooting',
+    'docs/faqs',
+    'docs/glossary',
   ],
 };

@@ -1,0 +1,4 @@
+---
+id: storage
+title: Storage
+---

@@ -1,37 +1,42 @@
 module.exports = {
-  title: "Arke Docs",
-  tagline: "Arke documentation",
-  url: "https://arkemishub.github.io",
-  baseUrl: "/arke-docs/",
-  onBrokenLinks: "ignore",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/logos/logo.ico",
-  organizationName: "arkemishub", // Usually your GitHub org/user name.
-  projectName: "arke-docs", // Usually your repo name.
-  deploymentBranch: "gh-pages",
+  title: 'Arke Docs',
+  tagline: 'Arke documentation',
+  url: 'https://arkemishub.github.io',
+  baseUrl: '/arke-docs/',
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/logos/logo.ico',
+  organizationName: 'arkemishub', // Usually your GitHub org/user name.
+  projectName: 'arke-docs', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
   themeConfig: {
     colorMode: {
-      defaultMode: "dark",
+      defaultMode: 'dark',
       disableSwitch: true,
     },
     navbar: {
-      title: "Arke",
+      title: '',
       logo: {
-        alt: "Arke logo",
-        src: "img/logos/logo.svg",
+        alt: '',
+        src: 'img/logos/logo.png',
       },
       items: [
         {
-          to: "/docs/introduction",
-          activeBasePath: "docs",
-          label: "Docs",
-          position: "left",
+          to: '/docs/introduction',
+          activeBasePath: 'docs',
+          label: 'Docs',
+          position: 'left',
         },
         {
-          to: "/api/cli/intro",
-          activeBasePath: "api",
-          label: "API",
-          position: "left",
+          href: 'https://github.com/arkemishub',
+          label: 'Blog',
+          position: 'left',
+        },
+        {
+          to: '/tutorial',
+          activeBasePath: 'tutorial',
+          label: 'Tutorial',
+          position: 'left',
         },
         /*{
           to: "/showcase",
@@ -46,63 +51,54 @@ module.exports = {
           position: 'left',
         },*/
         {
-          href: "https://github.com/arkemishub",
-          position: "right",
-          className: "header-github-link",
-          "aria-label": "GitHub repository",
+          href: 'https://arkehub.com',
+          position: 'right',
+          label: 'Get started',
+          className: 'button button--primary button--md header-cta-link',
+        },
+        {
+          href: 'https://github.com/arkemishub',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
-    },
-    footer: {
-      style: "dark",
-      links: [
-        /*{
-          title: "Other Docs",
-          items: [
-            {
-              label: "Link to other docs",
-              to: "#",
-            },
-          ],
-        },*/
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Arkemis`,
     },
   },
   presets: [
     [
-      "@docusaurus/preset-classic",
+      '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          path: "docs",
-          routeBasePath: "/",
-          include: ["**/*.md", "**/*.mdx"],
+          sidebarPath: require.resolve('./sidebars.js'),
+          path: 'docs',
+          routeBasePath: '/',
+          include: ['**/*.md', '**/*.mdx'],
           // Please change this to your repo.
-          editUrl: "https://github.com/arkemishub/arke-docs",
-          docLayoutComponent: "@theme/DocPage",
-          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
+          editUrl: 'https://github.com/arkemishub/arke-docs',
+          docLayoutComponent: '@theme/DocPage',
+          docItemComponent: '@theme/ApiItem', // Derived from docusaurus-theme-openapi
         },
         theme: {
-          customCss: [require.resolve("./src/css/custom.css")],
+          customCss: [require.resolve('./src/css/custom.css')],
         },
       },
     ],
   ],
-  themes: ["@docusaurus/theme-live-codeblock", "docusaurus-theme-openapi-docs"],
+  themes: ['@docusaurus/theme-live-codeblock', 'docusaurus-theme-openapi-docs'],
   plugins: [
     [
-      "docusaurus-plugin-openapi-docs",
+      'docusaurus-plugin-openapi-docs',
       {
-        id: "openapi",
-        docsPluginId: "classic",
+        id: 'openapi',
+        docsPluginId: 'classic',
         config: {
           endpoints: {
-            specPath: "openapi/openapi.yaml",
-            outputDir: "docs/api/backend/endpoints",
+            specPath: 'openapi/openapi.yaml',
+            outputDir: 'docs/api/backend/endpoints',
             sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
             },
           },
         },
