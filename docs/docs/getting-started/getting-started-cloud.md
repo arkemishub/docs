@@ -13,7 +13,7 @@ This guide talks about setting up Arkehub Cloud with a new or existing database.
 
 ### Step 1: Create an account
 
-Navigate to [arkehub.com](https://arkehub.com) and create a new Arke Cloud account.
+Navigate to [demo.arkehub.com](https://demo.arkehub.com) and create a new Arke Cloud account.
 
 ### Step 2: Create project
 

@@ -102,7 +102,7 @@ web.arke.[method]
 | addParameter(arkeId, parameterType, parameterId, config)    | Add parameter to an Arke             |
 | removeParameter(arkeId, parameterType, parameterId, config) | Remove parameter to an Arke          |
 
-:::warning
+:::info
 For config param see [Axios documentation](https://axios-http.com/docs/req_config)
 :::
 
@@ -111,7 +111,7 @@ For config param see [Axios documentation](https://axios-http.com/docs/req_confi
 The arke class provides useful methods to manage Arke and its associated parameters.
 
 ```shell
-web.unit.[method]
+client.unit.[method]
 ```
 
 | **Method**                         | **Description**                      |
