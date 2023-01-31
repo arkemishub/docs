@@ -15,7 +15,7 @@ to get more information.
 Install the library running:
 
 ```sh
-npm install @arkejs/client
+npm install @arkejs/form
 ```
 
 ## Step 1: Create a FormProvider
