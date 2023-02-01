@@ -87,7 +87,7 @@ Looks our guides to use Arke authentication through [NextAuth.js](https://next-a
 The arke class provides useful methods to manage Arke and its associated parameters.
 
 ```shell
-web.arke.[method]
+client.arke.[method]
 ```
 
 | **Method**                                                  | **Description**                      |

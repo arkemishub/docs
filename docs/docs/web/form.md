@@ -8,7 +8,7 @@ through [@arkejs/client](client-js.md)
 
 ## Install
 
-`@arkejs/form` is available on npm registry, visit 
+Is available on npm registry, visit 
 [https://www.npmjs.com/package/@arkejs/form](https://www.npmjs.com/package/@arkejs/form)
 to get more information.
 
@@ -40,7 +40,7 @@ function Application() {
 }
 ```
 
-## Step 2: Create a FormProvider
+## Step 2: Create a Form
 
 Use Form and the FormField components to create your Form:
 
@@ -63,19 +63,8 @@ function Application() {
                     loading ? (
                         <Loader size={20} />
                     ) : (
-                        <div
-                            style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'auto auto auto auto',
-                                gridGap: '8px 20px',
-                            }}
-                        >
-                            <FormField
-                                parameter={'profile_image'}
-                                component={(props) => (
-                                    <AvatarCustomComponent {...props} />
-                                )}
-                            />
+                        <div>
+                            <FormField parameter={'profile_image'}/>
                         </div>
                     )}
             </Form>
@@ -83,3 +72,14 @@ function Application() {
     )
 }
 ```
+
+:::tip
+You can create customized single FormField components through the `component` prop:
+
+```js
+<FormField 
+    parameter={'profile_image'} 
+    component={(props) => <ProfileImage {...props}/>} 
+/>
+```
+:::
