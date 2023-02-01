@@ -1,13 +1,13 @@
 ---
 id: crud
-title: Crud
+title: CRUD
 ---
 
 This guide talks about setting a Crud page through Arke.
 
-## Crud
+## Init CRUD
 
-### Step 1: Create a state
+### Step 1: Create a CRUD state
 
 Create a dedicated state to manage your CRUD:
 
