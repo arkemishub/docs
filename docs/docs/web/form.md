@@ -3,8 +3,7 @@ id: form
 title: Form
 ---
 
-`@arkejs/form` Arke form is a component to automate form generation process 
-through [@arkejs/client](client-js.md)
+`@arkejs/form` Arke form is a component to automate form generation process
 
 ## Install
 
@@ -42,31 +41,53 @@ function Application() {
 
 ## Step 2: Create a Form
 
-Use Form and the FormField components to create your Form:
+Use Form and the FormField components to create your Form :
 
 ```js
 import { Form, FormField } from '@arkejs/form'
 
 function Application() {
+    const fields = [
+        {
+            id: "name",
+            label: "Name",
+            required: true,
+            type: "string",
+        },
+        {
+            id: "surname",
+            label: "Surname",
+            required: true,
+            type: "string",
+        },
+        {
+            id: "email",
+            label: "Email",
+            required: true,
+            type: "string",
+        },
+        {
+            id: "active",
+            label: "Active",
+            required: false,
+            type: "boolean",
+        },
+    ]
+    
     return (
         <FormProvider>
             <Form
-                // Arke client from @arkejs/client 
-                client={client}
-                arke="<ARKE_NAME>"
+                fields={fields}
                 onSubmit={(values) => setData(values)}
-                // Exclude parameters from the form
-                exclude={['id', 'arke_id']}
                 onChange={(values) => console.log(values)}
             >
-                {({ parameters, loading }) =>
-                    loading ? (
-                        <Loader size={20} />
-                    ) : (
-                        <div>
-                            <FormField parameter={'profile_image'}/>
-                        </div>
-                    )}
+                {({ fields }) =>
+                    <div>
+                        {/* Automatically get all params using id */} 
+                        <FormField id={'name'}/>
+                        <FormField id={'surname'}/>
+                    </div>
+                }
             </Form>
         </FormProvider>
     )
@@ -74,12 +95,13 @@ function Application() {
 ```
 
 :::tip
-You can create customized single FormField components through the `component` prop:
+You can create customized single FormField components through the `render` prop:
 
 ```js
 <FormField 
-    parameter={'profile_image'} 
-    component={(props) => <ProfileImage {...props}/>} 
+    id={'profile_image'} 
+    // Customize the field without using type and FormProvider
+    render={(props) => <ProfileImage {...props}/>} 
 />
 ```
 :::
