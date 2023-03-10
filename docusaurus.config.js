@@ -1,3 +1,6 @@
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+
 module.exports = {
   title: 'Arke Docs',
   tagline: 'Arke documentation',
@@ -12,7 +15,10 @@ module.exports = {
   themeConfig: {
     colorMode: {
       defaultMode: 'dark',
-      disableSwitch: true,
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
     },
     navbar: {
       title: '',
@@ -70,7 +76,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.js'),
           path: 'reference',
           routeBasePath: '/',
           include: ['**/*.md', '**/*.mdx'],

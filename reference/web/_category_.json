@@ -3,5 +3,6 @@
   "label": "Web",
   "collapsible": true,
   "collapsed": true,
-  "link": null
+  "link": null,
+  "className": "hidden"
 }
