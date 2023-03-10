@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkarke=self.webpackChunkarke||[]).push([[3237],{69754:(e,t,r)=>{r.r(t),r.d(t,{default:()=>a});var n=r(67294),u=r(16550);function a(){return n.createElement(u.l_,{to:"/docs/introduction"})}}}]);
