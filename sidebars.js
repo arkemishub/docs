@@ -39,9 +39,26 @@ module.exports = {
       type: 'category',
       label: 'Web',
       items: [
-        'docs/web/client-js',
-        'docs/web/ui-kit',
-        'docs/web/form',
+        {
+          type: 'link',
+          label: 'Client JS',
+          href: 'clientjs',
+        },
+        {
+          type: 'link',
+          label: 'UI Components',
+          href: 'ui',
+        },
+        {
+          type: 'link',
+          label: 'Form',
+          href: 'form',
+        },
+        {
+          type: 'link',
+          label: 'Table',
+          href: 'table',
+        },
         'docs/web/crud',
       ],
     },
