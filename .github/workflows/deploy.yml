@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
@@ -65,7 +65,7 @@ jobs:
           SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
           SLACK_ICON: https://arkehub.com/wp-content/uploads/2022/10/arke.png
           SLACK_TITLE: Arke Docs 📘
-          SLACK_MESSAGE: 'Arke documentation updated at https://arkemishub.github.io/arke-docs'
+          SLACK_MESSAGE: 'Arke documentation updated at https://arkemishub.github.io/docs'
           SLACK_USERNAME: ArkeBot
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_FOOTER: Powered by Arke

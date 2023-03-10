@@ -1,4 +1,0 @@
----
-id: homepage
-title: Homepage
----

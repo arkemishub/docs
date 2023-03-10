@@ -2,12 +2,12 @@ module.exports = {
   title: 'Arke Docs',
   tagline: 'Arke documentation',
   url: 'https://arkemishub.github.io',
-  baseUrl: '/arke-docs/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logos/logo.ico',
   organizationName: 'arkemishub', // Usually your GitHub org/user name.
-  projectName: 'arke-docs', // Usually your repo name.
+  projectName: 'docs', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   themeConfig: {
     colorMode: {
@@ -22,7 +22,7 @@ module.exports = {
       },
       items: [
         {
-          to: '/docs/introduction',
+          to: '/reference/introduction',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -70,8 +70,8 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          path: 'docs',
+          // sidebarPath: require.resolve('./sidebars.js'),
+          path: 'reference',
           routeBasePath: '/',
           include: ['**/*.md', '**/*.mdx'],
           // Please change this to your repo.
@@ -95,7 +95,7 @@ module.exports = {
         config: {
           endpoints: {
             specPath: 'openapi/openapi.yaml',
-            outputDir: 'docs/docs/server/rest',
+            outputDir: 'reference/docs/server/rest',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',

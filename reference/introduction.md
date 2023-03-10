@@ -1,6 +1,7 @@
 ---
 id: introduction
 title: Arke Engine Documentation
+sidebar_position: 1
 ---
 
 Arke is a collection of tools that helps developers create projects faster by automatically hiding and 
