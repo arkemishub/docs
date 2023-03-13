@@ -16,17 +16,17 @@ module.exports = {
         {
           type: 'link',
           label: 'UI Components',
-          href: 'ui',
+          href: 'https://arkemishub.github.io/ui',
         },
         {
           type: 'link',
           label: 'Form',
-          href: 'form',
+          href: 'https://arkemishub.github.io/form',
         },
         {
           type: 'link',
           label: 'Table',
-          href: 'table',
+          href: 'https://arkemishub.github.io/table',
         },
       ],
     },
