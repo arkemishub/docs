@@ -33,17 +33,17 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {
+        /*{
           href: 'https://github.com/arkemishub',
           label: 'Blog',
           position: 'left',
-        },
-        {
+        },*/
+        /*{
           to: '/tutorial',
           activeBasePath: 'tutorial',
           label: 'Tutorial',
           position: 'left',
-        },
+        },*/
         /*{
           to: "/showcase",
           activeBasePath: "showcase",
@@ -56,12 +56,12 @@ module.exports = {
           label: 'Community',
           position: 'left',
         },*/
-        {
+        /*{
           href: 'https://arkehub.com',
           position: 'right',
           label: 'Get started',
           className: 'button button--primary button--md header-cta-link',
-        },
+        },*/
         {
           href: 'https://github.com/arkemishub',
           position: 'right',
@@ -101,7 +101,7 @@ module.exports = {
         config: {
           endpoints: {
             specPath: 'openapi/openapi.yaml',
-            outputDir: 'reference/docs/server/rest',
+            outputDir: 'reference/docs/backend/rest',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',

@@ -22,6 +22,10 @@ body {
   background-color: #000000;
 }
 
+.theme-doc-footer-edit-meta-row {
+  display: none;
+}
+
 @font-face {
   font-family: 'ClashGrotesk-Variable';
   src: url('../fonts/ClashGrotesk-Variable.woff2') format('woff2'),
