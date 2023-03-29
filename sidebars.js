@@ -9,7 +9,18 @@ module.exports = {
       items: [
           'backend/elixir',
           'backend/database',
-          'backend/authentication'
+          'backend/authentication',
+        {
+          type: 'category',
+          label: 'Rest API',
+          link: {
+            type: 'generated-index',
+            title: 'Rest API',
+            description: 'This is a sample server Arke Phoenix server',
+            slug: 'backend/rest/api',
+          },
+          items: require('./reference/backend/rest/sidebar.js'),
+        },
       ],
     },
     {

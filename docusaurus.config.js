@@ -28,7 +28,7 @@ module.exports = {
       },
       items: [
         {
-          to: '/reference/introduction',
+          to: '/docs/introduction',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -101,7 +101,7 @@ module.exports = {
         config: {
           endpoints: {
             specPath: 'openapi/openapi.yaml',
-            outputDir: 'reference/docs/backend/rest',
+            outputDir: 'reference/backend/rest',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',

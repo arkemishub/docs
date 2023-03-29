@@ -7,7 +7,7 @@ hide_title: true
 hide_table_of_contents: true
 api: {"tags":["Auth"],"description":"Verify user token","operationId":"verify_token","responses":{"200":{"description":"OK","content":{}},"400":{"description":"Client Error","content":{}},"404":{"description":"Arke/Unit not found","content":{"application/json":{"schema":{"type":"object","properties":{"content":{"type":"array","items":{},"nullable":true,"example":null},"message":{"type":"array","items":{},"example":[]}}}}}}},"security":[{"ApiKey":[]}],"method":"post","path":"/auth/verify","servers":[{"url":"http://localhost:4000/lib"},{"url":"https://localhost:4000/lib"}],"securitySchemes":{"ApiKey":{"type":"apiKey","description":"API Token must follow: `Bearer {access_token}` Use the signin endpoint to get the token value","name":"Authorization","in":"header"},"ProjectKey":{"type":"apiKey","in":"header","name":"arke-project-key","description":"The name of the project where to make the API call"}},"info":{"title":"Arke Phoenix Starter","description":"API Documentation for Arke Phoenix Starter [v1]","version":"1.0"},"postman":{"name":"Verify token","description":{"content":"Verify user token","type":"text/plain"},"url":{"path":["auth","verify"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
 sidebar_class_name: "post api-method"
-info_path: docs/docs/server/rest/arke-phoenix-starter
+info_path: reference/backend/rest/arke-phoenix-starter
 ---
 
 import ApiTabs from "@theme/ApiTabs";
