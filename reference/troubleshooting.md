@@ -6,3 +6,6 @@ title: Troubleshooting
 ## Introduction
 This section provides references that can help in troubleshooting errors when developing with Arke.
 
+:::caution
+Work in progress
+:::

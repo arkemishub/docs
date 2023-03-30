@@ -58,5 +58,7 @@ module.exports = {
         'deployment/using-kubernetes',
       ],
     },
+    "faqs",
+    "troubleshooting",
   ],
 };
