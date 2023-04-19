@@ -15,6 +15,7 @@ module.exports = {
   themeConfig: {
     colorMode: {
       defaultMode: 'dark',
+      disableSwitch: true
     },
     prism: {
       theme: lightCodeTheme,
@@ -23,8 +24,8 @@ module.exports = {
     navbar: {
       title: '',
       logo: {
-        alt: '',
-        src: 'img/logos/logo.png',
+        alt: 'arke_logo',
+        src: 'img/logos/arke_logo.svg',
       },
       items: [
         {

@@ -19,7 +19,7 @@
  */
 
 body {
-  background-color: #000000;
+  font-family: GeneralSans-Variable, sans-serif;
 }
 
 .theme-doc-footer-edit-meta-row {
@@ -27,84 +27,21 @@ body {
 }
 
 @font-face {
-  font-family: 'ClashGrotesk-Variable';
-  src: url('../fonts/ClashGrotesk-Variable.woff2') format('woff2'),
-  url('../fonts/ClashGrotesk-Variable.woff') format('woff'),
-  url('../fonts/ClashGrotesk-Variable.ttf') format('truetype');
+  font-family: 'GeneralSans-Variable';
+  src: url('../fonts/GeneralSans-Variable.ttf') format('truetype');
   font-weight: 200 700;
   font-display: swap;
   font-style: normal;
 }
 
-
-@font-face {
-  font-family: 'ClashGrotesk-Extralight';
-  src: url('../fonts/ClashGrotesk-Extralight.woff2') format('woff2'),
-  url('../fonts/ClashGrotesk-Extralight.woff') format('woff'),
-  url('../fonts/ClashGrotesk-Extralight.ttf') format('truetype');
-  font-weight: 200;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'ClashGrotesk-Light';
-  src: url('../fonts/ClashGrotesk-Light.woff2') format('woff2'),
-  url('../fonts/ClashGrotesk-Light.woff') format('woff'),
-  url('../fonts/ClashGrotesk-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'ClashGrotesk-Regular';
-  src: url('../fonts/ClashGrotesk-Regular.woff2') format('woff2'),
-  url('../fonts/ClashGrotesk-Regular.woff') format('woff'),
-  url('../fonts/ClashGrotesk-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'ClashGrotesk-Medium';
-  src: url('../fonts/ClashGrotesk-Medium.woff2') format('woff2'),
-  url('../fonts/ClashGrotesk-Medium.woff') format('woff'),
-  url('../fonts/ClashGrotesk-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'ClashGrotesk-Semibold';
-  src: url('../fonts/ClashGrotesk-Semibold.woff2') format('woff2'),
-  url('../fonts/ClashGrotesk-Semibold.woff') format('woff'),
-  url('../fonts/ClashGrotesk-Semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'ClashGrotesk-Bold';
-  src: url('../fonts/ClashGrotesk-Bold.woff2') format('woff2'),
-  url('../fonts/ClashGrotesk-Bold.woff') format('woff'),
-  url('../fonts/ClashGrotesk-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-/* You can override the default Infima variables here. */
-:root {
+html[data-theme='dark'] {
+  --ifm-background-color: linear-gradient(#0a0b13, #152022, #131726, #131726);
+  --ifm-navbar-background-color: linear-gradient(
+          #0a0b13,
+          #152022,
+          #131726,
+          #131726
+  );
   --ifm-color-primary: #a8fbd7;
   --ifm-color-primary-dark: #9cecc9;
   --ifm-color-primary-darker: #91debc;
@@ -112,12 +49,48 @@ body {
   --ifm-color-primary-light: #9cecc9;
   --ifm-color-primary-lighter: #aff5d7;
   --ifm-color-primary-lightest: #b6fcdd;
+  background: linear-gradient(
+          90deg,
+          #0a0b13 -2.46%,
+          #152022 31.17%,
+          #131726 68.69%,
+          #131726 104.15%
+  );
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: transparent;
 }
 
-html[data-theme='dark'] {
-  --ifm-background-color: #000;
-  --ifm-navbar-background-color: #000;
-  font-family: ClashGrotesk-Variable, serif;
+.navbar {
+  background-color: #1e24307d;
+  backdrop-filter: blur(33px);
+  padding: 8px;
+  margin: 24px 24px 24px 8px;
+  border-radius: 10px;
+}
+
+.navbar__logo img {
+  height: 24px;
+  margin: 4px 16px;
+}
+
+.navbar__inner {
+  align-self: center;
+}
+
+.header-github-link {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  box-shadow: 1px 1px #3f3d46;
+  border-radius: 10px;
+  padding: 8px 20px 8px 20px;
+}
+
+.theme-doc-sidebar-container {
+  border-right: none !important;
+}
+.navbar__link--active {
+  border-left: 1px solid #293139;
 }
 
 hr { opacity: 0.2 }
@@ -190,7 +163,9 @@ hr { opacity: 0.2 }
 /* ======================================== */
 
 .card {
-  background: #000;
+  background-color: #1e24307d;
+  backdrop-filter: blur(33px);
+  border: 1px solid rgba(255, 255, 255, 0.1)
 }
 
 .api-method>.menu__link {

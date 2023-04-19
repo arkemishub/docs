@@ -12,7 +12,7 @@ There are three main actors on Arke application:
 - Backend: the starter backend application, the core of Arke, also in this case you can make any type of customization
 - Console: An easily no-code interface to manage your backend 
 
-![Workspace Architecture](../src/img/architecture/workspace_architecture.png)
+![Workspace Architecture](../static/img/architecture/workspace_architecture.png)
 
 #### Frontend Starter
 
@@ -62,6 +62,6 @@ the application runs, and the outside, i.e., the clients accessing the applicati
 
 Arke Console is a simple and intuitive interface to manage arke, parameters and units of your application.
 
-![Workspace Architecture](../src/img/console/console.png)
+![Workspace Architecture](../static/img/console/console.png)
 
 In the next guides we learn how to init this workspace on your local machine
