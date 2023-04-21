@@ -1,6 +1,6 @@
 ---
-id: getting-started-local-installation
-title: Quickstart on Local Machine
+id: console
+title: Console
 ---
 
 This guide will help you get up and running quickly with the Arke Engine on local machine.
