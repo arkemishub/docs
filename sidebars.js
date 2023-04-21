@@ -6,8 +6,8 @@ module.exports = {
       type: 'category',
       label: 'Think Arke',
       items: [
-        'think-arke/glossary',
         'think-arke/core-concepts',
+        'think-arke/data-modeling-flow',
       ],
     },{
       type: 'category',
