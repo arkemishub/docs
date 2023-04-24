@@ -1,130 +1,67 @@
 ---
 id: console
-title: Console
+title: Structure your data
 ---
 
-This guide will help you get up and running quickly with the Arke Engine on local machine.
+In order to structure your data, you will use the Arke console.
 
-### Step 1: Define the Workspace
+## Create your first project
 
-In the `Workspace` folder create an `Arke` folder, inside it we will initialize the backend project and the Arke Console.
+Once the console is started, you need to log in. By default, you can use:
 
-```shell
-cd ~/Workspace/
-mkdir Arke
+```bash
+username: admin
+password: admin
 ```
 
-Define in the file `~/.zshenv` the path to the Arke directory with the key `ARKE_WORKSPACE`
+We will now define the project by filling the form, let's use `todo-app` as name.
+Once you submitted the form, make sure to copy and paste the values into `.env.local` file of the console.
 
-```shell
-# Arke workspace
-export ARKE_WORKSPACE=/Users/<YOUR_USERNAME>/Workspace/Arke
-```
+:::warning
+todo: screen/video
+:::
+
+## Create your first Arke
+
+Since our goal is to create a todo app we need to create an **Arke** named `Todo`.
+
+* Navigate to [http://localhost:3010/arke](http://localhost:3010/arke)
+* Click `Add Arke`
+* Fill the form as following
+  :::warning
+  todo: screen/video
+  ::: 
+
+## Create parameters
+
+For our todo list, we will create following parameters: `title`, `status` and `priority`.
+It's important to understand which type you need for each parameter, in our case title will be a `string`, status will be a `bool` and priority an `enum`.
+
+* Navigate to [http://localhost:3010/parameters](http://localhost:3010/parameters)
+* Click `Add Parameter` 
+* Create the parameters as shown below.
+  :::warning
+    todo: screen/video
+  :::
+
+## Link parameters
+Now that we have the parameters all we have to do is link them to our Todo `Arke`.
+
+* Navigate to [http://localhost:3010/arke/todo](http://localhost:3010/arke/todo#parameters)
+* Click on `Parameters` tab
+* Click `Link Parameters`
+* Link the parameters as shown below
+  :::warning
+   todo: screen/video
+  :::
 
 
-### Step 2: Init the Starter frontend project
+## Create a todo
 
-Clone the `Starter Frontend` project.
-
-```shell
-git clone git@github.com:arkemishub/arke-starter-frontend.git
-```
-
-#### Environment
-
-Create a new `SECRETH_AUTH` for the next project with the command:
-
-```shell
-openssl rand -base64 32
-```
-
-In the `Frontend Starter` folder create a `.env.local` file and add the following environment variables:
-
-```shell
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=<SECRETH_AUTH>
-# Client Side require NEXT_PUBLIC_
-NEXT_PUBLIC_ARKE_SERVER_URL=http://localhost:4000
-```
-
-To start the starter frontend from the root of the `arke-starter-frontend` project run:
-
-```shell
-pnpm install 
-pnpm dev
-```
-
-### Step 3: Init the Starter Backend project
-
-Clone the `Backend Starter` project and backend libraries.
-
-```shell
-git clone git@github.com:arkemishub/arke-starter-backend.git
-git clone git@github.com:arkemishub/arke-monorepo-elixir.git
-```
-
-In the `arke-starter-backend` folder, create a `.env` file and add the following environment variables:
-
-```shell
-export DB_NAME=<ARKE_DB_NAME>
-export DB_HOSTNAME=<ARKE_DB_HOSTNAME>
-export DB_USER=<ARKE_DB_USER>
-export DB_PASSWORD=<ARKE_DB_PASSWORD>
-```
-
-To start the Arke backend launch from the project root `arke-starter-backend`: 
-
-```shell
-git fetch --all -p
-git pull origin main
-mix deps.clean --all
-mix deps.get
-source .env
-iex -S mix phx.backend
-```
-
-### Step 4: Init the Arke Console project
-
-Clone the `Arke Console` project.
-
-```shell
-git clone git@github.com:arkemishub/arke-console.git
-```
-
-Define in the `hosts` file a dedicated console host `local.arkehub.com`:
-
-```shell
-cd /etc/hosts
-sudo vim hosts
-```
-
-```shell
-# Arke Hosts
-127.0.0.1 local.arkehub.com
-```
-
-#### Environment
-
-Create a new `SECRETH_AUTH` for the next project with the command:
-
-```shell
-openssl rand -base64 32
-```
-
-In the `arke_console` folder create a `.env.local` file and add the following environment variables:
-
-```shell
-NEXTAUTH_URL=http://local.arkehub.com:3100
-NEXTAUTH_SECRET=<SECRETH_AUTH>
-# Client Side require NEXT_PUBLIC_
-NEXT_PUBLIC_ARKE_SERVER_URL=http://localhost:4000
-```
-
-To start the console from the root of the `arke_console` project run:
-
-```shell
-pnpm install 
-pnpm dev
-```
-
-Then access the console from the browser by reaching the address [https://local.arkehub.com:3100](https://local.arkehub.com:3100)
+Let's create our first task:
+* Navigate to [http://localhost:3010/arke/todo](http://localhost:3010/arke/todo#units)
+* Click `Add Todo`
+* Fill the form with some data
+  
+## Recap
+Congrats, you created your first `Arke`! 

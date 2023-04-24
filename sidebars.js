@@ -11,13 +11,30 @@ module.exports = {
       ],
     },{
       type: 'category',
-      label: 'Tutorial',
+      label: 'Your first App',
       items: [
-        'tutorial/installation',
+        'tutorial/intro',
         'tutorial/console',
-        'tutorial/backend-starter',
-        'tutorial/create-first-arke',
-        'tutorial/customize-backend',
+        'tutorial/frontend'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Guides',
+      items: [
+        'guides/cli',
+        'guides/create-arke',
+        'guides/create-parameter',
+        'guides/link-parameter',
+        'guides/create-unit',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced',
+      items: [
+        'advanced/create-enum',
+        'advanced/query',
       ],
     },
     {
