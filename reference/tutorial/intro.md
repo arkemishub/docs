@@ -6,24 +6,15 @@ title: Intro
 This chapter will guide you step by step into the development of an app with Arke.
 Our final goal is to create a simple app todo app.
 
-Before getting started, make sure to follow the steps described in [Gettign Started](guide) chapter.
+## Prerequisites
 
-## Create a new app
+- [arkectl](/guides/cli)
 
-:::warning
-todo: add create app section with cli
-:::
+## Run locally and create a new project
 
-## Run locally
+1. Start the console and the API service and create a new project called `nextjs-todo`.
 
-:::warning
-todo: add steps for running the backend
-:::
-
-
-### Console
-```bash
-cd todo-app/arke-console
-pnpm i
-pnpm dev
-```
+   ```bash
+    arkectl init nextjs-todo
+   ```
+2. Create a new nextjs app by using arke templates
