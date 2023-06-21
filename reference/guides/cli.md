@@ -12,15 +12,7 @@ It allows you to create new projects, start the console and the API service.
 
 ## Installation
 
-1. Install `arkectl` using Homebrew or GO.
-
-    ### Homebrew
-    ```bash
-    brew tap arkemishub/homebrew-arkectl
-    brew install arkectl
-    ```
-    
-    ### GO
+1. Install `arkectl` using GO.
     ```bash
     go install github.com/arkemishub/arkectl@latest
     ```
@@ -42,7 +34,7 @@ Downloads required files to run Arke locally.
 arkectl install
 ```
 ---
-### init
+### create-app
 
 Bootstrap Arke environment by starting the console and the API service.
 
@@ -50,7 +42,7 @@ Args:
  - `project-name` - Name of the project to create (optional)
 
 ```bash
-arkectl init <project-name>
+arkectl create-app <project-name>
 ```
 
 ---
@@ -60,6 +52,15 @@ Starts the console and the API service.
 
 ```bash
 arkectl start
+```
+---
+
+### update
+
+Updated console and API service docker images to the latest version.
+
+```bash
+arkectl update
 ```
 ---
 

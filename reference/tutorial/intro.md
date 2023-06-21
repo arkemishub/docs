@@ -15,6 +15,15 @@ Our final goal is to create a simple app todo app.
 1. Start the console and the API service and create a new project called `nextjs-todo`.
 
    ```bash
-    arkectl init nextjs-todo
+    arkectl create-app nextjs-todo
    ```
+   
+   This command will start the console and the API service and create a new project called `nextjs-todo`.
+   - Console is exposed at [http://localhost:3100](http://localhost:3100)
+   - API service is exposed at [http://localhost:4000](http://localhost:4000)
+
 2. Create a new nextjs app by using arke templates
+
+   :::warning
+   todo: add example
+   :::
