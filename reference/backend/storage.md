@@ -1,4 +1,0 @@
----
-id: storage
-title: Storage
----
