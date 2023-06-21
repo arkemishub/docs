@@ -62,10 +62,11 @@ html[data-theme='dark'] {
 
 .navbar {
   background-color: #1e24307d;
+}
+
+.navbar-sidebar {
+  background-color: #1e24307d;
   backdrop-filter: blur(33px);
-  padding: 8px;
-  margin: 24px 24px 24px 8px;
-  border-radius: 10px;
 }
 
 .navbar__logo img {
