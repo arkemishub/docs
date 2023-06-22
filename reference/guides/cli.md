@@ -67,4 +67,4 @@ arkectl update
 ## Notes
 
 By using the CLI you will be able to create a new project, start the console and the API service.
-By default the console will be available at [http://localhost:3010](http://localhost:3010) and the API service at [http://localhost:4000](http://localhost:4000).
+By default the console will be available at [http://localhost:3100](http://localhost:3100) and the API service at [http://localhost:4000](http://localhost:4000).

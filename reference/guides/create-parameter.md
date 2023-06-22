@@ -3,6 +3,17 @@ id: create-parameter
 title: Create Parameter
 ---
 
-:::warning
-todo: add explanation
+## Console
+
+<video controls width="100%" playsinline>
+<source src="/docs/videos/guides/create-parameter.mp4" type="video/mp4"/>
+</video>
+
+---
+
+## CLI
+
+:::caution
+Work in progress
 :::
+
