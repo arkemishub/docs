@@ -29,14 +29,14 @@ module.exports = {
         'guides/create-unit',
       ],
     },
-    {
-      type: 'category',
-      label: 'Advanced',
-      items: [
-        'advanced/create-enum',
-        'advanced/query',
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Advanced',
+    //   items: [
+    //     'advanced/create-enum',
+    //     'advanced/query',
+    //   ],
+    // },
     {
       type: 'category',
       label: 'Backend',
