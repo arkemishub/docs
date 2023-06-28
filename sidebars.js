@@ -29,14 +29,14 @@ module.exports = {
         'guides/create-unit',
       ],
     },
-    {
-      type: 'category',
-      label: 'Advanced',
-      items: [
-        'advanced/create-enum',
-        'advanced/query',
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Advanced',
+    //   items: [
+    //     'advanced/create-enum',
+    //     'advanced/query',
+    //   ],
+    // },
     {
       type: 'category',
       label: 'Backend',
@@ -58,17 +58,7 @@ module.exports = {
           label: 'Arke Server',
           href: 'https://hexdocs.pm/arke_server/',
         },
-        {
-          type: 'category',
-          label: 'Rest API',
-          link: {
-            type: 'generated-index',
-            title: 'Rest API',
-            description: 'This is a sample server Arke Phoenix server',
-            slug: 'backend/rest/api',
-          },
-          items: require('./reference/backend/rest/sidebar.js'),
-        },
+        'backend/rest'
       ],
     },
     {
