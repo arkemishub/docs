@@ -1,0 +1,34 @@
+body {}
+
+:is(html[class~=dark] .dark\:nx-text-primary-600) {
+    background-color: transparent!important;
+    color: #78e7c5!important;
+    font-weight: normal!important;
+}
+:is(html[class~=dark] .dark\:hover\:nx-bg-primary-100\/5:hover){
+    background-color: rgba(23,25,30,1)!important;
+}
+:is(html[class~=dark] .dark\:nx-text-gray-400){
+    padding: 12px!important;
+}
+
+/* Table */
+table {
+    font-size: 15px;
+}
+th, tr, td {
+    text-align: left;
+    font-size: 14px;
+}
+
+:is(html[class~=dark] .dark\:nx-border-gray-600){
+    border-left: 0!important;
+    border-right: 0!important;
+}
+:is(html[class~=dark] .even\:dark\:nx-bg-gray-600\/20):nth-child(2n) {
+    background-color: transparent!important;
+}
+
+.nx-decoration-from-font,.nx-subpixel-antialiased {
+    color: #78e7c5!important;
+}

@@ -1,0 +1,28 @@
+{
+  "docs": {
+    "title": "Arke Framework",
+    "type": "page"
+  },
+  "frontend": {
+    "title": "Frontend",
+    "type": "menu",
+    "items": {
+      "about": {
+        "title": "About",
+        "href": "/about"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "href": "mailto:hi@example.com"
+      }
+    }
+  },
+  "backend": {
+    "title": "Backend",
+    "type": "page"
+  },
+  "console": {
+    "title": "Console",
+    "type": "page"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "getting_started": {
+    "title": "Getting Started",
+    "type": "separator"
+  },
+  "index": {
+    "title": "Introduction"
+  },
+  "installation": {
+    "title": "Installation"
+  },
+  "building_your_application": {
+    "title": "Building your application",
+    "type": "separator"
+  },
+  "multi-tenant": {
+    "title": "Multi Tenant",
+    "children": [{ "name": "Installation" }]
+  },
+  "authentication": {
+    "title": "Autentication",
+    "children": [{ "name": "Installation" }]
+  }
+}
+
