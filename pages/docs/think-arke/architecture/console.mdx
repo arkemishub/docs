@@ -1,0 +1,68 @@
+import { Callout, Tabs } from 'nextra/components'
+
+# Local Postgres Database
+This chapter show how to install and connect a the World's most advanced open source relational Database
+PostgreSQL on your machine.
+
+<Tabs items={['MacOS']}>
+  <Tabs.Tab>
+    Download PostgreSQL from the [official download page](https://www.postgresql.org/download/macosx/). We suggest to
+    install Postgres.app, is a native macOS app that runs in the menubar without the need of an installer.
+
+    ### Open Postgres.app
+    Open postgres app and press + to create a new server
+    <br/>
+    <img src="/installation/postgres/postgres_app_1.png" alt="PostgresAppCreateDb" width="60%"/>
+    Your server is ready to contains your database
+    <br/>
+    <img src="/installation/postgres/postgres_app_2.png" alt="PostgresAppInterface" width="60%"/>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Download PostgreSQL from the [official download page](https://www.postgresql.org/download/windows/).
+  </Tabs.Tab>
+</Tabs>
+
+### Add a Database client to manage your server
+To view and manage your Server database you'll need a PostgreSQL client.
+
+There are different options, below you can find a licensed and open solutions:
+- [Datagrip](https://www.jetbrains.com/datagrip/download/#section=mac): JetBrains DataGrip is a cross-platform IDE
+for working with SQL and databases. DataGrip includes an evaluation license key for a free 30-day trial.
+- [PGAdmin](https://www.pgadmin.org/): pgAdmin is the most popular and feature rich Open Source administration and
+development platform for PostgreSQL
+
+### Server connection
+<Tabs items={['Datagrip','PGAdmin']}>
+  <Tabs.Tab>
+    #### Create a new server connection
+    Click on Server and click Register > Server...
+    <br/>
+    <img src="/installation/postgres/datagrip/datagrip_1.png" alt="DatagripConnection1" width="60%"/>
+    #### Connection info
+    Define the server name and connection info of your Server
+        - host: 127.0.0.1 (localhost)
+        - port: postgres default 5432
+        - username: postgres
+        - password: postgres
+    <br/>
+    <img src="/installation/postgres/datagrip/datagrip_2.png" alt="DatagripConnection2" width="60%"/>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    #### Create a new server connection
+    Click on Server and click Register > Server...
+    <br/>
+    <img src="/installation/postgres/pgadmin/pgadmin_1.png" alt="PgadminConnection1" width="60%"/>
+    #### Provide a server name
+    Add name for you Server
+    <br/>
+    <img src="/installation/postgres/pgadmin/pgadmin_2.png" alt="PgadminConnection2" width="60%"/>
+    #### Connection info
+    Define the connection info of your Server
+        - host: 127.0.0.1 (localhost)
+        - port: postgres default 5432
+        - username: postgres
+        - password: postgres
+    <br/>
+    <img src="/installation/postgres/pgadmin/pgadmin_3.png" alt="PgadminConnection3" width="60%"/>
+  </Tabs.Tab>
+</Tabs>

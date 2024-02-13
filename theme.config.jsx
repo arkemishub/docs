@@ -9,6 +9,12 @@ export default {
             </a>
         )
     },*/
+    sidebar: {
+        defaultMenuCollapseLevel: 1,
+        autoCollapse: true
+    },
+    primaryHue: 165,
+    primarySaturation: 75,
     project: {
         link: 'https://github.com/arkemishub'
     },

@@ -1,0 +1,102 @@
+import { Callout } from 'nextra/components'
+
+# asdf version manager and Elixir
+We provide our standard installation, if you need other configuration follow the [official documentation](https://asdf-vm.com/).
+
+### Install asdf
+Clone the official github repo on your root:
+```bash
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+```
+
+Add the following to `~/.zshrc`:
+```bash
+. "$HOME/.asdf/asdf.sh"
+```
+
+Open a new terminal tab or confirm `~/.zshrc` edit with:
+```bash
+source ~/.zshrc
+```
+
+Check the correct installation:
+```bash
+asdf --version
+v0.14.0
+```
+
+### Install Erlang and Elixir
+Currently the Arke packages are tested with the below Erlang and Elixir versions, so we suggest to install them:
+```bash
+erlang
+ *25.3.2.3
+elixir
+ *1.14.5-otp-25
+```
+
+#### Install Erlang
+
+To start, we need to install the asdf plugin that installs Erlang and manages the versions for us.
+
+<Callout type="warning">
+ Before installing Erlang, make sure you follow the directions on the plugin page for your platform. To get the best
+ experience, there are additional OS dependencies that should be installed. Once the dependencies are installed,
+ you are ready to install Erlang.
+</Callout>
+
+The following command adds the Erlang plugin.
+```bash
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+```
+
+To install Erlang, you first need to decide which version you need. If you don’t have any specific project needs,
+you can select the suggested 25.3.2.3 version or the latest. To list the available versions, use the asdf list-all erlang command.
+
+```bash
+(suggested)
+asdf install erlang 25.3.2.3
+(latest)
+asdf install erlang 26.2.2
+...
+```
+
+When Erlang version has been installed. Activate globally and locally with:
+```bash
+asdf global erlang 26.2.2
+asdf local erlang 26.2.2
+```
+
+#### Install Elixir
+We need to install the asdf plugin that installs Elixir and manages the versions for us.
+
+The following command adds the Elixir plugin.
+```bash
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+```
+
+Now you need to decide which version of Elixir to install. Again, unless you have specific project needs, go with the
+suggested 1.14.5-otp-25 or latest version. To get a list of available versions, use the asdf list-all elixir command.
+
+```bash
+(suggested)
+asdf install elixir 1.14.5-otp-25
+(latest)
+asdf install elixir 1.16.1
+...
+```
+
+When Elixir version has been installed. Activate globally and locally with:
+```bash
+asdf global erlang 26.2.2
+asdf local erlang 26.2.2
+```
+
+Check that all installation goes well with:
+```
+elixir -v
+Erlang/OTP 25 [erts-13.2.2.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1]
+
+Elixir 1.14.5 (compiled with Erlang/OTP 25)
+```
+
+For other details about asdf elixir/erlang installation [check here](https://thinkingelixir.com/install-elixir-using-asdf/)

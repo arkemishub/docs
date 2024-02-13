@@ -1,0 +1,93 @@
+# Commands
+
+```bash
+Usage:
+  arkectl [command]
+```
+
+| Stack        | Description |
+| :------------ | :---------: |
+| [create-app](/docs/arkectl/commands#create-app) | Creates a new Arke application |
+| [install](/docs/arkectl/commands#install) | Setup local enviroment for working with arkectl |
+
+## Install
+Setup local enviroment for working with arkectl
+
+```bash
+Usage:
+  arkectl install [flags]
+```
+
+| Flags         | Description
+| :------------ | :---------:
+| -h, --help |  help for create-app
+
+## Update
+Updates docker-compose.yml and arke.new mix archive.
+
+```bash
+Usage:
+  arkectl update [flags]
+```
+
+| Flags         | Description
+| :------------ | :---------:
+| -h, --help |  help for create-app
+
+## Start
+Runs Arke backend and console
+
+```bash
+Usage:
+  arkectl start [flags]
+```
+
+| Flags         | Description
+| :------------ | :---------:
+| -h, --help |  help for create-app
+
+## Create app
+Creates a new Arke application
+
+```bash
+Usage:
+  arkectl create-app [project name] [flags]
+```
+
+| Flags         | Description | Notes | Default
+| :------------ | :---------: | :---------: | :---------:
+| -i, --interactive |  Use interactive version of create-app command | - | -
+| -b, --backend | Clones only the backend repository. | Only with --local flag | -
+| -c, --console | Creates only the console app. | Only with --local flag | -
+| -f, --frontend | Creates only the frontend app. | Only with --local flag | -
+| -l, --local | Clones arke repositories locally instead of using Docker | -
+| -t, --template | Template to use for frontend app. | Only with --local flag |  nextjs-base
+| -h, --help |  help for create-app | - | -
+
+## Completion
+Generate the autocompletion script for the specified shell
+
+```bash
+Usage:
+  arkectl completion [command]
+```
+
+| Command         | Description
+| :------------ | :---------: |
+| zsh | Generate the autocompletion script for zsh |
+| bash | Generate the autocompletion script for bash |
+| fish | Generate the autocompletion script for fish |
+| powershell | Generate the autocompletion script for powershell |
+
+| Flags         | Description
+| :------------ | :---------:
+| -h, --help | help for completion
+
+## Version
+Generate the autocompletion script for the specified shell
+
+```bash
+Usage:
+  arkectl --version
+  arkectl version 0.0.9
+```

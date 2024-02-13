@@ -1,1 +1,177 @@
-# Installation
+import { Callout, Tabs, Steps, FileTree } from 'nextra/components'
+
+# Automatic Installation
+We recommend starting a new Arke app using **create-app** trough the arkectl, which sets up everything automatically for you.
+if you haven't installed it yet follow the [arkectl guide](/docs/arkectl).
+
+To create a project, run:
+```bash
+> arkectl create-app -i
+```
+
+Interactive mode starts and asks about your initialization:
+
+<Steps>
+### Project name
+```ansi
+How do you want to call your project?
+new-arke-project
+```
+
+### App Locally
+```ansi
+Do you want to create the app locally? (y/N)
+```
+<Tabs items={['Locally', 'Not locally']}>
+  <Tabs.Tab>
+    Locally is the suggested configuration cause permits a complete customization of backend, frontend and console for
+    your scenario.
+
+    Projects will be initialized in the current terminal directory, according to the next init configuration.
+    Local installation clone the latest arke starters from Github repos, an example of complete initialization will be:
+    <FileTree>
+      <FileTree.Folder name="new-arke-project" defaultOpen>
+        <FileTree.Folder name="frontend"/>
+        <FileTree.Folder name="backend"/>
+        <FileTree.Folder name="arke-console"/>
+      </FileTree.Folder>
+    </FileTree>
+
+    - [Frontend](/docs/think-arke/architecture/frontend#starters): NextJS Template starters app
+    - [Backend](/docs/think-arke/architecture/backend#phoenix-starter): Phoenix Starter application
+    - [Arke Console](/docs/think-arke/architecture/console): Arke Console application
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+    <Callout type="warning">
+       [Docker](https://docs.docker.com/get-docker/) is required for installation
+    </Callout>
+    Projects will be initialized through Docker. Backend and Console Application are pulled from
+    Dockerhub and run into dedicated containers.
+    ![DockerInitialization](/installation/docker_initialization_1.png)
+
+    The frontend application can initialize with git clone or with a brand new React/NextJS application.
+  </Tabs.Tab>
+</Tabs>
+
+### Choose application that you need
+```ansi
+Which repo do you want to initialize?  [Use arrows to move, space to select, ...]
+> [x]  Frontend
+  [x]  Backend
+  [x]  Console
+```
+
+### Choose template for Frontend
+```ansi
+Which template do you want to use for the frontend?
+(nextjs-base)
+(nextjs-pages-base)
+(nextjs-pages-crud)
+```
+
+After this choose the interactive process is finished and your are ready to open and looks projects.
+
+### Start your development
+<Tabs items={['Locally', 'Not locally']}>
+  <Tabs.Tab>
+    On local development you have to open all projects on your IDE to define the environment variables, then you can
+    start it, follow each tabs to init projects:
+     <Tabs items={['Backend', 'Console', 'Frontend']}>
+       <Tabs.Tab>
+            #### Open project
+            ```bash
+            cd backend
+            ```
+            #### Install deps
+            ```ansi
+            mix deps.get
+            ```
+            ### Database connection
+            You can choose to create a local Database to store data or connect to remote one
+            <Callout type="info">
+               To create a new local database [Here](/backend/installation/postgres) you can find
+               a quick guide to install it.
+            </Callout>
+
+            #### Define env variables
+            Add a `.env` file in the root of the project to set the Database env variables:
+            ```dotenv
+            export DB_NAME=
+            export DB_HOSTNAME=
+            export DB_USER=
+            export DB_PASSWORD=
+            ```
+            Run the following command to apply your environment variables:
+            ```bash
+            source .env
+            ```
+
+            #### Start server
+            ```ansi
+            iex -S mix phx.server
+
+            Erlang/OTP 25 [erts-13.2.2.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1]
+            [info] Running PhoenixStarterWeb.Endpoint with cowboy 2.10.0 at 127.0.0.1:4000 (http)
+            [info] Access PhoenixStarterWeb.Endpoint at http://localhost:4000
+            Interactive Elixir (1.14.5) - press Ctrl+C to exit (type h() ENTER for help)
+            ```
+            The Arke Backend is ready and running on http://localhost:4000
+       </Tabs.Tab>
+       <Tabs.Tab>
+           #### Open project
+           ```bash
+           cd arke-console
+           ```
+           #### Install dependencies
+           ```ansi
+           pnpm install
+           ```
+
+           #### Define env variables
+           Create a NEXTAUTH_SECRET with:
+           ```bash
+           openssl rand -base64 32 | pbcopy
+           ```
+
+           Create a `.env.local` file with the following variables:
+           ```bash
+           NEXT_PUBLIC_ARKE_SERVER_URL=http://localhost:4000
+           NEXTAUTH_URL=http://localhost:3100
+           NEXTAUTH_SECRET=<generated_next_auth_secret>
+           ```
+
+           #### Start server
+           ```ansi
+           pnpm dev
+           ```
+           The Arke Console is ready and running on http://localhost:3100
+       </Tabs.Tab>
+       <Tabs.Tab>
+          #### Open project
+          ```bash
+          cd frontend
+          ```
+          #### Install dependencies
+          ```ansi
+          pnpm install
+          ```
+          #### Start server
+          ```ansi
+          pnpm dev
+          ```
+          The Arke Console is ready and running on http://localhost:3000
+      </Tabs.Tab>
+     </Tabs>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    On docker environment you can start backend and console with:
+    ```ansi
+    arkectl start
+    ```
+    The Arke workspace is ready for customization! Open Frontend project on your IDE to start customization
+  </Tabs.Tab>
+</Tabs>
+</Steps>
+
+![ArkeLocal](/installation/workspace_initialization_1.png)

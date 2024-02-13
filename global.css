@@ -2,7 +2,6 @@ body {}
 
 :is(html[class~=dark] .dark\:nx-text-primary-600) {
     background-color: transparent!important;
-    color: #78e7c5!important;
     font-weight: normal!important;
 }
 :is(html[class~=dark] .dark\:hover\:nx-bg-primary-100\/5:hover){
@@ -29,6 +28,6 @@ th, tr, td {
     background-color: transparent!important;
 }
 
-.nx-decoration-from-font,.nx-subpixel-antialiased {
-    color: #78e7c5!important;
+.nextra-callout a {
+    color: #fff!important;
 }

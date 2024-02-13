@@ -2,3 +2,32 @@
 
 Multi-Tenant system empowers to build scalable and efficient applications capable of serving multiple clients or tenants from a single codebase.
 This robust feature enables seamless management and customization for diverse user bases, ensuring secure isolation and optimal performance for each tenant.
+
+Below we describe two of the most common situations where Multi-tenant feature can help with your architecture.
+On development we can have different scenarios, customize the multi-tenant ecosystem according to your needs.
+
+### Multi project application.
+Assume that we need to develop an application that have multiple organizations, where each one can access on their workspace
+and each member is isolated on them. This type of architecture would require a lot of analysis and development activity.
+
+With Arke we provide a plug and play [project system](/docs/multi-tenant/projects) which allows flexiblity for this scenarios.
+
+![MultitenantProject1](/multi-tenant/multitenant_project_1.png)
+
+### Multiple deployment environment
+Another common use is to manage the Development, staging, and production environments that are essential on the software development lifecycle.
+Each environment must serving distinct purposes in the process of building, testing, and deploying software applications.
+
+ - `Development`: a controlled environment for developers to experiment with new features, fix bugs, and collaborate on code changes
+ - `Staging`: is a pre-production environment used for testing and validating software changes before deployment to production
+ - `Production`: is the live, operational environment where the software application is accessible to end-users.
+
+On first approach we can create two Database hosted in different server (1st isolation layer) to separate Development
+and Production environment and create isolated environment through projects (2nd isolation layer)
+
+![MultitenantDeployment1](/multi-tenant/multitenant_deployment_1.png)
+
+In the same way we can choose to separate with another layer the Staging environment.
+
+![MultitenantDeployment2](/multi-tenant/multitenant_deployment_2.png)
+

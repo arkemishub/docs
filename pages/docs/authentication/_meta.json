@@ -1,0 +1,12 @@
+{
+  "index": {
+    "title": "Credentials"
+  },
+  "social_login": {
+    "title": "Social login"
+  },
+  "2FA": {
+    "title": "Two factor authentication"
+  }
+}
+

@@ -1,0 +1,42 @@
+import { Tabs, Steps, Callout } from 'nextra/components'
+
+# Installation
+**arkectl** is the official CLI for Arke. It is a command-line tool that allows you to interact with Arke from a terminal
+window. It allows you to create new frontend/backend projects, start the console or call utilities.
+
+Contribute on [Github](https://github.com/arkemishub/arkectl)
+
+<Tabs items={['Go', 'Homebrew']}>
+  <Tabs.Tab>
+    <Steps>
+    ### Download
+    ```go
+    go install github.com/arkemishub/arkectl@latest
+    ```
+
+    ### Define ARKEPATH
+    Expose a new variable called ARKEPATH within your ~/.zshrc
+
+    ```bash
+    export ARKEPATH=$HOME/arke
+    ```
+    ### Install
+    Install arkectl install to download required files to run Arke locally
+    ```
+    arkectl install
+    ```
+    </Steps>
+  </Tabs.Tab>
+  <Tabs.Tab>
+      <Steps>
+      ### Install
+      ```go
+      brew install arkectl
+      ```
+      <Callout type="error">
+       The install through homebrew has some problems. Work in progress
+      </Callout>
+
+      </Steps>
+    </Tabs.Tab>
+</Tabs>

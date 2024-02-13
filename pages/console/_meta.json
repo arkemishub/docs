@@ -1,0 +1,13 @@
+{
+  "index": {
+    "title": "Introduction"
+  },
+  "getting_started": {
+    "title": "Getting Started",
+    "type": "separator"
+  },
+  "installation": {
+    "title": "Installation"
+  }
+}
+
