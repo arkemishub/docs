@@ -8,6 +8,9 @@
   },
   "installation": {
     "title": "Installation"
+  },
+  "phoenix-app": {
+    "title": "Phoenix App"
   }
 }
 

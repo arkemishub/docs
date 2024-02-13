@@ -1,0 +1,46 @@
+import { Callout, Tabs } from 'nextra/components'
+
+# Installation
+<Callout type="info">
+  if you have not installed Erlang or Elixir yet follow the [guide](/backend/installation/asdf) to install them with [asdf](https://asdf-vm.com/)
+</Callout>
+
+To provides arke.new installer as an archive you have to install it from Hex.
+Before that to build and install it locally, ensure any previous archive versions are removed:
+```bash
+mix archive.install hex arke_new
+```
+
+To install from Hex, run:
+```bash
+mix archive.install hex arke_new
+```
+
+To init the project run on desired folder
+```bash
+MIX_ENV=prod mix do archive.build, archive.install
+```
+
+## Commands
+
+```bash
+Usage:
+  mix arke.new my_arke_project
+Equivalent to:
+  mix arke.new my_arke_project --app MyArkeProject
+```
+| Flags         | Description  | Options | Default
+| :------------ | :---------: | :---------: | :---------:
+| --app [project-name] | The name of the arke application | -
+| --db [adapter] | Specify the database adapter for Ecto. | postgres | postgres
+| --dev | Contribute to the Arke development and use local version of the packages | - | -
+| --dashboard | Enable PhoenixLiveView | - | -
+| --mailer [mailer] | Specify the mailer to use with [Swoosh](https://hexdocs.pm/swoosh/Swoosh.html) | mailgun  | -
+| --terraform | Create a folder containing a terraform template for arke | - | -
+| --verbose | Use verbose output | - | -
+|  -v, --version | Prints the Arke starter version | - | -
+
+To show the help on terminal run:
+```
+mix help arke.new
+```

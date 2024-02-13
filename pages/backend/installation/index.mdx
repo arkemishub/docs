@@ -1,8 +1,8 @@
-import { Callout } from 'nextra/components'
+import { Callout, Tabs } from 'nextra/components'
 
 # Installation
-To start the backend development there are System Requirements:
-- Erlang 25.3.2.3
+To start the backend development there are system requirements:
+- Erlang 25.3.2.3 or later
 - Elixir 1.14.5-otp-25 or later
 
 <Callout type="info">
@@ -10,11 +10,33 @@ To start the backend development there are System Requirements:
   a quick guide to install it.
 </Callout>
 
-To start with backend development we need to initialize the [Phoenix Starter](/docs/think-arke/architecture/backend#phoenix-starter).
+To start with backend development we need to initialize the [Phoenix App](/docs/think-arke/architecture/backend#phoenix-app).
 
-## CLI Installation
-We recommend starting a new Arke Backend app using `arkectl create-app`, which sets up everything automatically for you.
+## Init project
 
-<Callout type="info">
-  if you have not installed our command line tool yet follow the [guide](/docs/arkectl)
-</Callout>
+<Tabs items={['arkectl', 'mix arke.new']}>
+  <Tabs.Tab>
+      We recommend starting a new Arke Backend phoenix app using `arkectl create-app`, which sets up everything automatically for you.
+      <Callout type="info">
+        if you have not installed our command line tool yet follow the [guide](/docs/arkectl)
+      </Callout>
+
+      You can use the interactive create-app command for a guided init, or add flags:
+      ```bash
+        arkectl create-app -i
+        arkectl create-app [project name] --backend --local
+      ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    We recommend starting a new Arke Backend app using `arkectl create-app`, which sets up everything automatically for you.
+    <Callout type="info">
+      if you have not installed arke.new installer as an archive follow the [guide](/docs/arke-new)
+    </Callout>
+
+    You can use the interactive create-app command for a guided init, or add flags:
+    ```bash
+      arkectl create-app -i
+      arkectl create-app [project name] --backend --local
+    ```
+  </Tabs.Tab>
+</Tabs>

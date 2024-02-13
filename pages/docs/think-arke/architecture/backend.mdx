@@ -6,8 +6,9 @@ systems that power modern web applications, APIs, and microservices.
 - Phoenix App: the backend core, is the server-side logic written on Elixir language and based on Phoenix web framework.
 - Database: the persistance store, currently is a Postgres DB but in future other Database types are pluggable.
 
-## Phoenix Starter
-Phoenix Starter is a boilerplate to initialize an Arke backend application. It is available on [Github](https://github.com/arkemishub/phoenix_starter).
+## Phoenix App
+Phoenix App is a boilerplate initialized through Arke New template. With Arke new you can get a Phoenix application up
+and running as quickly as possible.
 
 Follow the [backend installation](/backend/installation) section to init it. Inside it we found a plug-and-play environment
 equipped with arke hex packages.
@@ -16,26 +17,26 @@ This is our starter backend application customizable for our needs.
 
 ![ArkeBackend](/architecture/architecture_backend_1.png)
 
-### Arke packages on phoenix starter
+### Arke packages on phoenix app
 Hex is the official package manager for Elixir, serving as a centralized repository for publishing, discovering, and
-sharing Elixir and Erlang packages. Installed on your phoenix starter useful deps to extend your backend.
+sharing Elixir and Erlang packages. Installed on your phoenix app useful deps to extend your backend.
 
-[Arke Hex packages](https://hex.pm/packages?search=arke) are ready to use packages released on Hex Hub, on `mix.exs` file
-Phoenix starter has already connected the latest stable release.
+[Arke Hex packages](https://hex.pm/packages?search=arke) are ready-to-use packages released on Hex Hub, when you init an
+application with arkectl or arke.new, on `mix.exs` file Phoenix app has already connected the latest stable release.
 
 ```js
 defp arke_deps(_) do
     [
-      {:arke, "~> 0.1.4"},
-      {:arke_postgres, "~> 0.1.4"},
-      {:arke_auth, "~> 0.1.3"},
-      {:arke_server, "~> 0.1.3"}
+       {:arke, "~> 0.1.27"},
+       {:arke_postgres, "~> 0.2.11"},
+       {:arke_auth, "~> 0.1.14"},
+       {:arke_server, "~> 0.1.32" },
     ]
 end
 ```
 
-If you want to know more details about installation, configuration and development through the Phoenix Starter goes into
-the detail [backend section](/backend/phoenix_starter/installation).
+If you want to know more details about installation, configuration and development through the Phoenix App goes into
+the detail [backend section](/backend/phoenix-app).
 
 ## Arke packages
 Arke packages are open sources available on Hex Hub and provides a set of plug-and-play features for your application.
