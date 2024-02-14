@@ -12,8 +12,8 @@
   "installation": {
     "title": "Installation"
   },
-  "building-your-application": {
-    "title": "Features",
+  "build-your-application": {
+    "title": "Build your application",
     "type": "separator"
   },
   "multi-tenant": {
@@ -33,6 +33,9 @@
   },
   "topology": {
     "title": "Topology"
+  },
+  "storage": {
+    "title": "Storage"
   },
   "command_line_tool": {
     "title": "Command Line Tool",
