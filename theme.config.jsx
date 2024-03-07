@@ -19,7 +19,7 @@ export default {
         link: 'https://github.com/arkemishub'
     },
     logo: <Image src="/arke.svg" alt="arke" width={110} height={60} />,
-    faviconGlyph: "/favicon/favicon.ico",
+    //faviconGlyph: "/favicon/favicon.ico",
     useNextSeoProps() {
         return {
             titleTemplate: '%s – Arke'
