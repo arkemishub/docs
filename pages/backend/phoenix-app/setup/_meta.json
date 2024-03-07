@@ -1,0 +1,15 @@
+{
+  "database": {
+    "title": "Database"
+  },
+  "mailer": {
+    "title": "Mailer"
+  },
+  "sso": {
+    "title": "Single sign-on"
+  },
+  "erlang-cluster": {
+    "title": "Erlang cluster"
+  }
+}
+

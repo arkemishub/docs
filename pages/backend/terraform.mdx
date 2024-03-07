@@ -1,0 +1,25 @@
+# Overview
+
+## Deploy your app
+There is a folder `rel` which is the output of the `mix phx.gen.releae` command.
+To know more about phoenix releases [see](https://hexdocs.pm/phoenix/releases.html).
+
+The release written above is used to create the docker image of our app. In order to do so run:
+
+```bash
+docker build -t your/tag --build-arg MIX_ENV=yourenv .
+```
+Once the docker image has been built you need these variables to make it work:
+- `DB_NAME`
+- `DB_HOSTNAME`
+- `DB_USER`
+- `DB_PASSWORD`
+- `RELEASE_NAME`
+- `SECRET_KEY_BASE` run `mix phx.gen.secret`
+- `SECRET_KEY_AUTH` run`mix guardian.gen.secret`
+- `HEADLESS_SERVICE_NAME`
+
+The docker image created is meant to be used in a kubernetes environment.
+If you want use it somewhere else please edit the `runtime.exs` file accordingly.
+Look for the `libcluster` topologies and set the right strategy.
+Remember to edit also the `env.sh.eex` file which export `RELEASE_NODE=<%= @app_name %>@${POD_IP}`, where `POD_IP` is inherited from the k8s pod.

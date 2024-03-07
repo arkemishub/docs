@@ -10,6 +10,9 @@
   },
   "unit": {
     "title": "Unit"
+  },
+  "group": {
+    "title": "Group"
   }
 }
 

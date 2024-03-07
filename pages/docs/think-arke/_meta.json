@@ -1,11 +1,14 @@
 {
-  "architecture": {
-    "title": "Architecture"
-  },
   "method": {
     "title": "Method"
   },
-  "entities": {
-    "title": "Entities"
+  "architecture": {
+    "title": "Architecture"
+  },
+  "low-level-entities": {
+    "title": "Low level Entities"
+  },
+  "special-entities": {
+    "title": "Special Entities"
   }
 }

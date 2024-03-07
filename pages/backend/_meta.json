@@ -9,8 +9,25 @@
   "installation": {
     "title": "Installation"
   },
+  "build_your_application": {
+    "type": "separator",
+    "title": "Build your application"
+  },
   "phoenix-app": {
     "title": "Phoenix App"
+  },
+  "arke-packages": {
+    "title": "Arke Packages"
+  },
+  "deployment": {
+    "title": "Deployment",
+    "type": "separator"
+  },
+  "docker": {
+    "title": "Docker"
+  },
+  "terraform": {
+    "title": "Terraform"
   }
 }
 

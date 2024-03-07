@@ -1,0 +1,18 @@
+{
+  "arke": {
+    "title": "Arke"
+  },
+  "arke-server": {
+    "title": "Arke Server"
+  },
+  "arke-auth": {
+    "title": "Arke Auth"
+  },
+  "arke-postgres": {
+    "title": "Arke Postgres"
+  },
+  "contribute": {
+    "title": "Contribute"
+  }
+}
+

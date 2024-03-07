@@ -1,0 +1,15 @@
+{
+  "arke": {
+    "title": "Arke"
+  },
+  "routes": {
+    "title": "Routes"
+  },
+  "mailer": {
+    "title": "Mailer"
+  },
+  "sso": {
+    "title": "Single sign-on"
+  }
+}
+

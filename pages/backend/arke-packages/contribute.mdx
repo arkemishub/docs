@@ -1,0 +1,22 @@
+# Arke Hex Local development
+
+## Overview
+
+Clone the repo you want:
+  - [arke](https://github.com/arkemishub/arke)
+  - [arke_postgres](https://github.com/arkemishub/arke-postgres)
+  - [arke_auth](https://github.com/arkemishub/arke-auth)
+  - [arke_server](https://github.com/arkemishub/arke-server)
+
+Add to your `.env` file the path of the cloned package:
+
+```bash
+export EX_DEP_${REPO_NAME}_PATH="PATH_TO_CLONED_REPO"
+
+example EX_DEP_ARKE_POSTGRES_PATH="/path/to/arke_postgres/folder"
+```
+
+Run the [commands](#start-the-server) in the linked section. If you have previously installed the dependencies use the `clean` commands before install the deps again. (Use the `clean` also if you do not see your changes locally)
+
+By adding the `EX_DEP_{REPO_NAME}_PATH` variable you are able to use the arke's packages cloned locally.
+

@@ -1,0 +1,25 @@
+# Setup Single Sign On
+
+To enable SSO for arke look for the SSO section in the `config.exs`.
+You will find the below configuration:
+- `ArkeAuth.SSOGuardian`  is responsible for the creation of the jwt token used for the signup process.
+- `ArkeServer.Plugs.OAuth` is where you will define all the provider you want enable.
+-
+
+### Enable a provider
+The configuration is composed as follows:
+```
+google: {ArkeServer.OAuth.Provider.Google, []}
+<provider name>: { <Strategy Module>, [ <strategy options> ] }
+```
+
+`ArkeServer` provide differents provider like:
+```
+google: ArkeServer.OAuth.Provider.Google
+facebook: ArkeServer.OAuth.Provider.Facebook
+apple: ArkeServer.OAuth.Provider.Apple
+github: ArkeServer.OAuth.Provider.Github
+```
+### Create your own Strategy Module
+If you want to create our own strategy edit the `<%= @app_module %>.Provider.MyProvider` as you like
+and then use it in the configuration.

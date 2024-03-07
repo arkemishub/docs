@@ -1,0 +1,19 @@
+{
+  "project": {
+    "title": "Project"
+  },
+  "user": {
+    "title": "User"
+  },
+  "member": {
+    "title": "Member"
+  },
+  "permission": {
+    "title": "Permission"
+  },
+  "file": {
+    "title": "File"
+  }
+}
+
+

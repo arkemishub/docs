@@ -2,8 +2,14 @@
   "index": {
     "title": "Overview"
   },
-  "project-structure": {
-    "title": "Project Structure"
+  "setup": {
+    "title": "Setup config"
+  },
+  "start-server": {
+    "title": "Start server"
+  },
+  "development": {
+    "title": "Development"
   }
 }
 

@@ -1,0 +1,21 @@
+# Setup Mailer
+
+To use the mailer you must set the following environment variables:
+
+```makefile
+export MAIL_APIKEY=
+export MAIL_DOMAIN=
+export MAIL_DEFAULT_SENDER=
+```
+
+- Then run `source .env` to update the system environment variable
+- Edit the file `mailer.ex` to use your templates
+
+To create your own email template override the `send_email` function and create your email struct using the [options available](https://hexdocs.pm/swoosh/Swoosh.Email.html).
+Then run the `deliver(email)`
+
+### MailTrap
+[Description for MailTrap]
+
+### OneSignal
+[Description for OneSignal]
