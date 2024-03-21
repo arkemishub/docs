@@ -1,3 +1,7 @@
+import { Cards, Card } from 'nextra/components'
+import { GithubIcon, HexIcon } from '@/icons'
+import {NpmIcon} from "../../../../icons";
+
 # Frontend
 The Frontend starter is a powerful and versatile frontend solution built on top of the Arke framework, designed
 to create dynamic, responsive, and interactive user interfaces for web applications. With a focus on flexibility,
@@ -7,4 +11,67 @@ applications with ease.
 - Next App: Based on NextJS Application provide all best next features as routing, ...
 - Arke npm packages: Provide a suite of useful packages for the frontend eco-system
 
+## Arke NextJS starter
+Arke frontend starters are a set of boilerplates initialized through the Arke starter template.
+
+Follow the [frontend installation](/frontend/installation) section to init it. Inside it we found a plug-and-play environment
+equipped with arkejs packages.
+
+This is our starter frontend application customizable for our needs.
+
 ![ArkeFrontend](/architecture/architecture_frontend_1.png)
+
+## Arkejs packages
+ArkeJs packages are open sources available on NPM registry and provides a set of plug-and-play features for your application.
+You can install them packages through the standards package manager as npm, yarn or pnpm.
+
+On our starter the packages are already defined on package.json with latest version
+
+```json
+{
+  "dependencies": {
+    "@arkejs/client": "^2.9.4",
+    "@arkejs/form": "1.6.1",
+    "@arkejs/table": "0.9.0",
+    "@arkejs/ui": "^0.29.5",
+    ...
+  }
+}
+```
+
+#### @arkejs/client
+Client JS is an isomorphic JavaScript client for Arke. Through the client SDK you can use simplified methods to
+interact with the arke backend.
+
+<Cards>
+    <Card icon={<GithubIcon />} title="Github repo" href="https://github.com/arkemishub/clientjs" target="_blank" />
+    <Card icon={<NpmIcon />} title="Npm package" href="https://www.npmjs.com/package/@arkejs/client" target="_blank" />
+    <Card title="Api reference" href="https://arkemishub.github.io/clientjs" target="_blank" />
+</Cards>
+
+#### @arkejs/ui
+Arke UI provides a complete list of common components for your frontend application.
+
+<Cards>
+    <Card icon={<GithubIcon />} title="Github repo" href="https://github.com/arkemishub/ui" target="_blank" />
+    <Card icon={<NpmIcon />} title="Npm package" href="https://www.npmjs.com/package/@arkejs/ui" target="_blank" />
+    <Card title="Api reference" href="https://arkemishub.github.io/ui" target="_blank" />
+</Cards>
+
+#### @arkejs/form
+Arke form is a form component to automate form generation process
+
+<Cards>
+    <Card icon={<GithubIcon />} title="Github repo" href="https://github.com/arkemishub/form" target="_blank" />
+    <Card icon={<NpmIcon />} title="Npm package" href="https://www.npmjs.com/package/@arkejs/form" target="_blank" />
+    <Card title="Api reference" href="https://arkemishub.github.io/form" target="_blank" />
+</Cards>
+
+#### @arkejs/table
+Arke table is a table component to automate table generation process
+
+<Cards>
+    <Card icon={<GithubIcon />} title="Github repo" href="https://github.com/arkemishub/table" target="_blank" />
+    <Card icon={<NpmIcon />} title="Npm package" href="https://www.npmjs.com/package/@arkejs/table" target="_blank" />
+    <Card title="Api reference" href="https://arkemishub.github.io/table" target="_blank" />
+</Cards>

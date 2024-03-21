@@ -2,4 +2,49 @@ import { Callout, Tabs } from 'nextra/components'
 
 # Console
 
+The Arke console is the web application that simplify your arke environment management through a user-friendly interface.
+With console, you have a simplified view to manage your database and your development.
+
 ![ArkeConsole](/architecture/architecture_console_1.png)
+
+## Features
+
+#### Create project
+
+You can create and manage multiple projects
+
+![CreateProject](/console/console_create_project.png)
+
+#### Create arke
+
+You can create, edit, delete and manage arke with filtering and sorting
+
+![CreateArke](/console/console_create_arke.png)
+
+#### Create parameters
+
+You can manage global parameters with different types, if your global parameter needs has some specifics,
+you can override them (e.g. you need that parameter is required)
+<br/>
+<video width="100%" height="240" controls>
+    <source src="/console/console_create_parameter.mp4" type="video/mp4"/>
+</video>
+
+#### Associate parameter
+
+Associate parameters to yor arke to define your structure, when you associate a parameter a link is created
+
+![AssociateParameter](/console/console_associate_parameter.png)
+
+#### Manage members
+
+Create the members of your application and manage their authentication
+
+![Members](/console/console_member.png)
+
+#### Manage permission
+
+Manage each type of permission relative to different Arke, define get, edit, create and delete methods on arke and
+apply filters to extend permission.
+
+![Members](/console/console_permission.png)

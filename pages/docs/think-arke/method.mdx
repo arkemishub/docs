@@ -1,4 +1,4 @@
-# Approach and method
+# Terminology and method
 Arke was studied to avoid code and logic repetition. What you will find here is a standardized approach, this permits
 to unify logics with naming and methods.
 
@@ -82,7 +82,16 @@ Below you can find a complete representation that can help you to understand all
 
 ![MethodCompelteSchema](/method/method_complete_schema.png)
 
+Below you can find a quick recap table that will help you to understand the differences between Arke and Relational Databases.
+
+| Relational Database | Arke framework |
+|:-------------------:|:---------------|
+|        Table        | Arke           |
+|       Column        | Parameter      |
+|       Record        | Unit           |
+|      Relation       | Link           |
+
 <Callout type="info">
-  Arke is the primitive that unlock the functionalities (such CRUD APIs, struct, sorting). Each
-  upper layer shared that functionalities and extend them
+  Remember that Arke is the primitive that unlock the functionalities (such CRUD APIs, struct, sorting). Each
+  upper layer such unit, parameter, link, shared that functionalities and extend them
 </Callout>

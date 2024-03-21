@@ -1,1 +1,32 @@
 # Deployment
+
+With arke we defined a standard approach to release our application.
+
+### Gitflow & conventional commit
+
+We suggest to use a standard git flow approach with the following branch naming:
+
+- `main`: production branch
+- `staging`: pre-production branch
+- `develop`: development branch
+- `feat/<name>`: feature branch
+- `fix/<name>`: bug fixing branch
+
+For the development of a feature and/or bug fixing, fix/feature branches are opened with the pattern `feat/<feature-name>` or `fix/<fix-name>`
+and merged into the develop branch through a [Pull Request system](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to indicate the commit message
+
+### CI & Tagging
+
+For deployment automation, we suggest the use of Workflows on Github Actions on Pull request to validate and check the
+build and testing of your application.
+
+When build is validated main branch must be released by tagging the commit with the pattern `vx.x.x`. A Docker image of
+the application is created and push on [Github Container Registry (GHCR)](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry).
+
+After this, you can provide your Docker containerized application to your cloud provider.
+
+Below the standard deployment approach that we suggest for your arke applications:
+
+![ArchitectureDeployment](/architecture/architecture_deployment_2.png)

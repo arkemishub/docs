@@ -2,14 +2,14 @@
   "arke": {
     "title": "Arke"
   },
-  "link": {
-    "title": "Link"
-  },
   "parameter": {
     "title": "Parameter"
   },
   "unit": {
     "title": "Unit"
+  },
+  "link": {
+    "title": "Link"
   },
   "group": {
     "title": "Group"
