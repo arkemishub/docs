@@ -18,7 +18,15 @@ export default {
     project: {
         link: 'https://github.com/arkemishub'
     },
-    logo: <Image src="/arke.svg" alt="arke" width={110} height={60} />,
+    logo:
+        <div style={{display:'flex', alignItems:'center', gap: 4}}>
+            <div>
+                <Image src="/arke.svg" alt="arke" width={24} height={24} />
+            </div>
+            <div style={{ fontSize: 16, marginLeft: 8, fontWeight: 700 }}>
+                Arke framework
+            </div>
+        </div>,
     //faviconGlyph: "/favicon/favicon.ico",
     useNextSeoProps() {
         return {
