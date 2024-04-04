@@ -15,29 +15,28 @@ additional params are ready-to-use like sorting, filtering and more
 
 ### Endpoints
 
-| Name | Method       | Path | Description |
-| :---: | :------------ | :---: | :---------: |
-| Base Struct | GET | `{{base_path}}`/arke/struct | Get the list of parameters with their type (base structure) |
-| Get All | GET | `{{base_path}}`/arke/unit | Get all arke |
-| Get | GET | `{{base_path}}`/arke/unit/`{{arke_id}}` | Get specific arke ID |
-| ... |
+|     Methods      |                                                                                                       |
+|:----------------:|:-----------------------------------------------------------------------------------------------------:|
+| :get_arke_struct | <b>GET /lib/`{arke_id}`/struct  </b><br/>Get the list of parameters with their types (base structure) |
+|  :get_all_unit   |                        <b>GET /lib/`{arke_id}`/unit    </b><br/> Get all units                        |
+|    :get_unit     |                 <b>GET /lib/`{arke_id}`/unit/`{unit_id}` </b><br/> Get specific unit                  |
 
 ##### Headers
 
 To authenticate your request use the authorization and the reference project
 
-| Name | Value | Description |
-| :---: | :------------ | :---: |
-| Authorization | `{{token}}` | Authorization token to authenticate the api |
-| arke-project-key | `{{project}}` | The identifier project |
+|       Name       | Value         |                 Description                 |
+|:----------------:|:--------------|:-------------------------------------------:|
+|  Authorization   | `{{token}}`   | Authorization token to authenticate the api |
+| arke-project-key | `{{project}}` |           The identifier project            |
 
 ##### Params
 
 Use the query params to filter, sort and manage your response
 
-| Name | Type | Description | Detail |
-| :---: | :------------ | :---: |  :---: |
-| offset | number | Start offset for pagination |
-| limit | number | Count limit for pagination |
-| order | string | Sorting definition ex. `asc;updated_at` | [Discover more](/arke/sorting)
-| filter | string | Filter the response with condition ex. `eq(name,test)` | [Discover more](/arke/filters)
+|  Name  | Type   |                      Description                       |             Detail             |
+|:------:|:-------|:------------------------------------------------------:|:------------------------------:|
+| offset | number |              Start offset for pagination               |                                |
+| limit  | number |               Count limit for pagination               |                                |
+| order  | string |        Sorting definition ex. `asc;updated_at`         | [Discover more](/arke/sorting) |
+| filter | string | Filter the response with condition ex. `eq(name,test)` | [Discover more](/arke/filters) |

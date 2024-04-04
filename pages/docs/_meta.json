@@ -36,13 +36,6 @@
   },
   "storage": {
     "title": "Storage"
-  },
-  "command_line_tool": {
-    "title": "Command Line Tool",
-    "type": "separator"
-  },
-  "arkectl": {
-    "title": "Arkectl"
   }
 }
 

@@ -1,0 +1,18 @@
+{
+  "index": {
+    "title": "About the REST Api"
+  },
+  "authentication": {
+    "title": "Authentication",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "arke": {
+    "title": "Arke",
+    "theme": {
+      "layout": "full"
+    }
+  }
+}
+
