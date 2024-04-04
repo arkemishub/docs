@@ -11,11 +11,11 @@ import {
     HTTP_RESPONSE_ROWS, HTTP_RESPONSE_ROWS_DELETE
 } from "../../constants/restful-api";
 
-## Get Arke Struct
+## Get Group Struct
 
 <RestfulApiContainer>
     <div>
-        The "Get Arke Struct" endpoint return the structure of parameters of specified Arke
+        The "Get Group Struct" endpoint return the structure of parameters of specified Group
 
         #### Headers
         <RestfulApiTable
@@ -32,14 +32,14 @@ import {
     </div>
     <div>
         <RestfulApiRequest
-            title={`Code samples for "Get Arke Struct"`}
+            title={`Code samples for "Get Group Struct"`}
             method="get"
-            path="/api/lib/arke/struct"
+            path="/api/lib/group/{group_id}/struct"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/struct' \
+                    curl --location 'https://arkehub.com/api/lib/group/{group_id}/struct' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
                     -H 'Content-Type: application/json' \
@@ -47,7 +47,7 @@ import {
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.getAll(config)
+                    client.group.struct(groupId,config)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -65,7 +65,7 @@ import {
                         redirect: "follow"
                     };
 
-                    fetch("https://arkehub.com/api/lib/arke/struct", requestOptions)
+                    fetch("https://arkehub.com/api/lib/group/{group_id}/struct", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));
@@ -75,33 +75,25 @@ import {
         </RestfulApiRequest>
 
         <RestfulApiResponse
-            title="Response with Arke struct"
+            title="Response with Group struct"
         >
             ```json
-            {
-                "content": {
-                "label": "Arke",
+            "content": {
+                "label": "Arke auth member",
                 "parameters": [
-                    {
-                        "default": "arke",
-                        "helper_text": "Type",
-                        "id": "type",
-                        "label": "Type",
-                        "max_length": null,
-                        "min_length": 2,
-                        "multiple": false,
-                        "required": true,
-                        "strip": true,
-                        "type": "string",
-                        "values": null
-                    },{
-                        "default": false,
-                        "helper_text": "Remote",
-                        "id": "remote",
-                        "label": "Remote",
-                        "required": true,
-                        "type": "boolean"
-                    },
+                {
+                    "default": null,
+                    "helper_text": null,
+                    "id": "email",
+                    "label": "Email",
+                    "max_length": 50,
+                    "min_length": 0,
+                    "multiple": false,
+                    "required": false,
+                    "strip": false,
+                    "type": "string",
+                    "values": null
+                },
                 ...
                 ]
             },
@@ -112,11 +104,11 @@ import {
     </div>
 </RestfulApiContainer>
 
-## Get All Arke
+## Get All Arke of Group
 
 <RestfulApiContainer>
     <div>
-        The "Get All Arke" endpoint return the list of all available arke inside the project
+        The "Get All Arke of Group" endpoint return the list of all available arke inside the group
 
         #### Headers
         <RestfulApiTable
@@ -133,14 +125,14 @@ import {
     </div>
     <div>
         <RestfulApiRequest
-            title={`Code samples for "Get all Arke"`}
+            title={`Code samples for "Get All Arke of Group"`}
             method="get"
-            path="/api/lib/arke/unit"
+            path="/api/lib/group/{group_id}/arke"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit' \
+                    curl --location 'https://arkehub.com/api/lib/group/{group_id}/arke' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
                     -H 'Content-Type: application/json' \
@@ -148,7 +140,7 @@ import {
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.getAll(config)
+                    client.group.getAllArke(config)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -166,7 +158,7 @@ import {
                     redirect: "follow"
                 };
 
-                    fetch("https://arkehub.com/api/lib/arke/unit", requestOptions)
+                    fetch("https://arkehub.com/api/lib/group/{group_id}/arke", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));
@@ -176,12 +168,12 @@ import {
         </RestfulApiRequest>
 
         <RestfulApiResponse
-            title="Response with Arke list"
+            title="Response with Arke list in the group"
         >
             ```json
             {
                 "content": {
-                    "count": 25,
+                    "count": 5,
                     "items": [
                         {
                             "active": true,
@@ -205,12 +197,11 @@ import {
     </div>
 </RestfulApiContainer>
 
-
-## Get Arke
+## Get All Units of Group
 
 <RestfulApiContainer>
     <div>
-        The "Get Arke" endpoint return details of the specified arke
+        The "Get All Units of Group" endpoint return the list of all available units inside the group
 
         #### Headers
         <RestfulApiTable
@@ -227,14 +218,106 @@ import {
     </div>
     <div>
         <RestfulApiRequest
-            title={`Code samples for "Get Arke"`}
+            title={`Code samples for "Get All Arke of Group"`}
             method="get"
-            path="/api/lib/arke/unit/{arke_id}"
+            path="/api/lib/group/{group_id}/unit"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit/{arke_id}' \
+                    curl --location 'https://arkehub.com/api/lib/group/{group_id}/unit' \
+                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
+                    -H "Authorization: <ACCESS_TOKEN>" \
+                        -H 'Content-Type: application/json' \
+                        ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    client.group.getAllUnits(config)
+                    .then((response) => console.log(response.data)
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    const myHeaders = new Headers();
+                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
+                    myHeaders.append("Authorization", "<ACCESS_TOKEN>");
+                        myHeaders.append("Content-Type", "application/json");
+
+                        const requestOptions = {
+                            method: "GET",
+                            headers: myHeaders,
+                            redirect: "follow"
+                        };
+
+                        fetch("https://arkehub.com/api/lib/group/{group_id}/unit", requestOptions)
+                        .then((response) => response.text())
+                        .then((result) => console.log(result.data))
+                        .catch((error) => console.error(error));
+                        ```
+                </Tabs.Tab>
+            </Tabs>
+        </RestfulApiRequest>
+
+        <RestfulApiResponse
+            title="Response with Unit list in the group"
+        >
+            ```json
+            {
+                "content": {
+                    {
+                        "arke_id": "super_admin",
+                        "arke_system_user": "c2e3b048-1a6a-11ee-908c-1a84faf9f6ef",
+                        "business_name": "Arke",
+                        "email": "user@arkehub.com",
+                        "id": "824135a6-52e6-11ee-9387-96e316d04b51",
+                        "last_access_time": "2024-04-04T15:39:48.501632Z",
+                        "last_name": "Super",
+                        "metadata": {},
+                        "phone": "123123123",
+                        "postal_code": null,
+                        "updated_at": "2024-04-04T15:39:49.000000Z",
+                        "vat": "123123123"
+                    },
+                },
+                    "messages": []
+                }
+            }
+            ```
+        </RestfulApiResponse>
+    </div>
+</RestfulApiContainer>
+
+## Get Unit in a Group
+
+<RestfulApiContainer>
+    <div>
+        The "Get Unit in a Group" endpoint return details of the specified unit in the group
+
+        #### Headers
+        <RestfulApiTable
+            columns={HEADERS_COLUMNS}
+            rows={HEADERS_ROWS}
+        />
+
+        #### HTTP Response status
+        <RestfulApiTable
+            columns={HTTP_RESPONSE_COLUMNS}
+            rows={HTTP_RESPONSE_ROWS}
+        />
+
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Code samples for "Get Unit in a Group"`}
+            method="get"
+            path="/api/lib//group/{group_id}/unit/{unit_id}"
+        >
+            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
+                <Tabs.Tab>
+                    ```bash
+                    curl --location 'https://arkehub.com/api/lib/group/{group_id}/unit/{unit_id}' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
                     -H 'Content-Type: application/json' \
@@ -242,7 +325,7 @@ import {
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.get(arkeId, config)
+                    client.group.getUnit(groupId, config)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -260,7 +343,7 @@ import {
                         redirect: "follow"
                     };
 
-                    fetch("https://arkehub.com/api/lib/arke/unit/{arke_id}", requestOptions)
+                    fetch("https://arkehub.com/api/lib/group/{group_id}/unit/{unit_id}", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));
@@ -270,7 +353,7 @@ import {
         </RestfulApiRequest>
 
         <RestfulApiResponse
-            title="Response with Arke details"
+            title="Response with Unit details of group"
         >
             ```json
             {
@@ -295,12 +378,11 @@ import {
     </div>
 </RestfulApiContainer>
 
-
-## Create Arke
+# Create Group
 
 <RestfulApiContainer>
     <div>
-        The "Create Arke" endpoint create an Arke with the specified information
+        The "Create Group" endpoint create a Group with the specified information
 
         #### Headers
         <RestfulApiTable
@@ -327,22 +409,22 @@ import {
     </div>
     <div>
         <RestfulApiRequest
-            title={`Code samples for "Create Arke"`}
+            title={`Code samples for "Create Group"`}
             method="post"
-            path="/api/lib/arke/unit"
+            path="/api/lib/group/unit"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit/{arke_id}' \
+                    curl --location 'https://arkehub.com/api/lib/group/unit' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
-                    -H 'Content-Type: application/json' \
-                    ```
+                        -H 'Content-Type: application/json' \
+                        ```
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.create(arkeId, data, config)
+                    client.group.create(groupId, data, config)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -363,7 +445,7 @@ import {
                         redirect: "follow"
                     };
 
-                    fetch("https://arkehub.com/api/lib/arke/unit/{arke_id}", requestOptions)
+                    fetch("https://arkehub.com/api/lib/group/unit", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));
@@ -373,7 +455,270 @@ import {
         </RestfulApiRequest>
 
         <RestfulApiResponse
-            title="Response with Arke details created"
+            title="Response with Group details created"
+        >
+            ```json
+            {
+                "content": {
+                    "arke_id": "group",
+                    "arke_list": ["arke_1","arke_2"],
+                    "description": "Group",
+                    "id": "docs_group",
+                    "inserted_at": "2024-04-04T17:11:41Z",
+                    "label": "Group docs",
+                    "metadata": {},
+                    "updated_at": "2024-04-04T17:11:41Z"
+                },
+                "messages": []
+            }
+            ```
+        </RestfulApiResponse>
+    </div>
+</RestfulApiContainer>
+
+
+## Edit Group
+
+<RestfulApiContainer>
+    <div>
+        The "Edit Group" endpoint update the specified Group information
+
+        #### Headers
+        <RestfulApiTable
+            columns={HEADERS_COLUMNS}
+            rows={HEADERS_ROWS}
+        />
+
+        #### Body
+        <RestfulApiTable
+            columns={BODY_COLUMNS}
+            rows={[
+                {key: '<PARAMETER_ID>', value: '<NEW_VALUE>'}
+            ]}
+        />
+
+        #### HTTP Response status
+        <RestfulApiTable
+            columns={HTTP_RESPONSE_COLUMNS}
+            rows={HTTP_RESPONSE_ROWS}
+        />
+
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Code samples for "Edit Group"`}
+            method="put"
+            path="/api/lib/group/unit/{group_id}"
+        >
+            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
+                <Tabs.Tab>
+                    ```bash
+                    curl --location 'https://arkehub.com/api/lib/group/unit/{group_id}' \
+                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
+                    -H "Authorization: <ACCESS_TOKEN>" \
+                        -H 'Content-Type: application/json' \
+                        ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    client.group.edit(groupId, data, config)
+                    .then((response) => console.log(response.data)
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    const myHeaders = new Headers();
+                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
+                    myHeaders.append("Authorization", "<ACCESS_TOKEN>");
+                    myHeaders.append("Content-Type", "application/json");
+
+                    const raw = JSON.stringify(data);
+
+                    const requestOptions = {
+                        method: "PUT",
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: "follow"
+                    };
+
+                    fetch("https://arkehub.com/api/lib/group/unit/{group_id}", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result.data))
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+            </Tabs>
+        </RestfulApiRequest>
+
+        <RestfulApiResponse
+            title="Response with Group details updated"
+        >
+            ```json
+            {
+                "content": {
+                "arke_id": "group",
+                "arke_list": ["arke_1","arke_2"],
+                "description": "Edited Group",
+                "id": "docs_group",
+                "inserted_at": "2024-04-04T17:11:41Z",
+                "label": "Edited Group docs",
+                "metadata": {},
+                "updated_at": "2024-04-04T17:11:41Z"
+            },
+                "messages": []
+            }
+            ```
+        </RestfulApiResponse>
+    </div>
+</RestfulApiContainer>
+
+## Delete Group
+
+<RestfulApiContainer>
+    <div>
+        The "Delete Group" endpoint delete the specified group
+
+        #### Headers
+        <RestfulApiTable
+            columns={HEADERS_COLUMNS}
+            rows={HEADERS_ROWS}
+        />
+
+        #### Body
+        <RestfulApiTable
+            columns={BODY_COLUMNS}
+            rows={[
+                {key: '<PARAMETER_ID>', value: '<NEW_VALUE>'}
+            ]}
+        />
+
+        #### HTTP Response status
+        <RestfulApiTable
+            columns={HTTP_RESPONSE_COLUMNS}
+            rows={HTTP_RESPONSE_ROWS_DELETE}
+        />
+
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Code samples for "Delete Group"`}
+            method="delete"
+            path="/api/lib/group/unit/{group_id}"
+        >
+            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
+                <Tabs.Tab>
+                    ```bash
+                    curl --location 'https://arkehub.com/api/lib/group/unit/{group_id}' \
+                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
+                    -H "Authorization: <ACCESS_TOKEN>" \
+                    -H 'Content-Type: application/json' \
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    client.group.delete(groupId, config)
+                    .then((response) => console.log(response.data)
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    const myHeaders = new Headers();
+                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
+                    myHeaders.append("Authorization", "<ACCESS_TOKEN>");
+                    myHeaders.append("Content-Type", "application/json");
+
+                    const requestOptions = {
+                        method: "DELETE",
+                        headers: myHeaders,
+                        redirect: "follow"
+                    };
+
+                    fetch("https://arkehub.com/api/lib/group/unit/{group_id}", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result.data))
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+            </Tabs>
+        </RestfulApiRequest>
+
+        <RestfulApiResponse
+            title="Response with no content"
+        >
+            ```json
+            {
+                "content": null,
+                "messages": []
+            }
+            ```
+        </RestfulApiResponse>
+    </div>
+</RestfulApiContainer>
+
+## Add Arke in a Group
+
+<RestfulApiContainer>
+    <div>
+        The "Add Arke in a Group" endpoint create an association link between specified Arke and Group
+
+        #### HTTP Response status
+        <RestfulApiTable
+            columns={HTTP_RESPONSE_COLUMNS}
+            rows={HTTP_RESPONSE_ROWS}
+        />
+
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Code samples for "Add Arke in a Group"`}
+            method="post"
+            path="/group/unit/{group_id}/link/group/arke/unit/{arke_id}"
+        >
+            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
+                <Tabs.Tab>
+                    ```bash
+                    curl --location 'https://arkehub.com/api/lib/group/unit/{group_id}/link/group/arke/unit/{arke_id}' \
+                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
+                    -H "Authorization: <ACCESS_TOKEN>" \
+                    -H 'Content-Type: application/json' \
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    client.group.addArke(groupId, arkeId)
+                    .then((response) => console.log(response.data)
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    const myHeaders = new Headers();
+                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
+                    myHeaders.append("Authorization", "<ACCESS_TOKEN>");
+                    myHeaders.append("Content-Type", "application/json");
+
+                    const raw = JSON.stringify(data);
+
+                    const requestOptions = {
+                        method: "POST",
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: "follow"
+                    };
+
+                    fetch("https://arkehub.com/api/lib/group/unit/{group_id}/link/group/arke/unit/{arke_id}", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result.data))
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+            </Tabs>
+        </RestfulApiRequest>
+
+        <RestfulApiResponse
+            title="Response with Arke associated on group"
         >
             ```json
             {
@@ -399,24 +744,16 @@ import {
 </RestfulApiContainer>
 
 
-## Edit Arke
+## Remove Arke in a Group
 
 <RestfulApiContainer>
     <div>
-        The "Edit Arke" endpoint update the specified arke information
+        The "Remove Arke in a Group" endpoint remove the specified arke in a group
 
         #### Headers
         <RestfulApiTable
             columns={HEADERS_COLUMNS}
             rows={HEADERS_ROWS}
-        />
-
-        #### Body
-        <RestfulApiTable
-            columns={BODY_COLUMNS}
-            rows={[
-                {key: '<PARAMETER_ID>', value: '<NEW_VALUE>'}
-            ]}
         />
 
         #### HTTP Response status
@@ -428,14 +765,14 @@ import {
     </div>
     <div>
         <RestfulApiRequest
-            title={`Code samples for "Edit Arke"`}
-            method="put"
-            path="/api/lib/arke/unit/{arke_id}"
+            title={`Code samples for "Remove Arke in a Group"`}
+            method="delete"
+            path="/group/unit/{group_id}/link/group/arke/unit/{arke_id}"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit/{arke_id}' \
+                    curl --location 'https://arkehub.com/api/lib/group/unit/{group_id}/link/group/arke/unit/{arke_id}' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
                     -H 'Content-Type: application/json' \
@@ -443,7 +780,7 @@ import {
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.edit(arkeId, data, config)
+                    client.group.removeArke(groupId, arkeId)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -458,110 +795,13 @@ import {
                     const raw = JSON.stringify(data);
 
                     const requestOptions = {
-                        method: "PUT",
+                        method: "DELETE",
                         headers: myHeaders,
                         body: raw,
                         redirect: "follow"
                     };
 
-                    fetch("https://arkehub.com/api/lib/arke/unit/{arke_id}", requestOptions)
-                    .then((response) => response.text())
-                    .then((result) => console.log(result.data))
-                    .catch((error) => console.error(error));
-                    ```
-                </Tabs.Tab>
-            </Tabs>
-        </RestfulApiRequest>
-
-        <RestfulApiResponse
-            title="Response with Arke details updated"
-        >
-            ```json
-            {
-                "content": {
-            {
-                "active": true,
-                "arke_id": "arke",
-                "id": "super_admin",
-                "inserted_at": "2023-09-14T10:03:48.000000Z",
-                "label": "Edited Super Admin Arke label",
-                "metadata": {},
-                "parameters": [],
-                "remote": false,
-                "type": "arke",
-                "updated_at": "2023-09-14T10:03:48.000000Z"
-            },
-            },
-                "messages": []
-            }
-            ```
-        </RestfulApiResponse>
-    </div>
-</RestfulApiContainer>
-
-## Delete Arke
-
-<RestfulApiContainer>
-    <div>
-        The "Delete Arke" endpoint delete the specified arke
-
-        #### Headers
-        <RestfulApiTable
-            columns={HEADERS_COLUMNS}
-            rows={HEADERS_ROWS}
-        />
-
-        #### Body
-        <RestfulApiTable
-            columns={BODY_COLUMNS}
-            rows={[
-                {key: '<PARAMETER_ID>', value: '<NEW_VALUE>'}
-            ]}
-        />
-
-        #### HTTP Response status
-        <RestfulApiTable
-            columns={HTTP_RESPONSE_COLUMNS}
-            rows={HTTP_RESPONSE_ROWS_DELETE}
-        />
-
-    </div>
-    <div>
-        <RestfulApiRequest
-            title={`Code samples for "Delete Arke"`}
-            method="delete"
-            path="/api/lib/arke/unit/{arke_id}"
-        >
-            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
-                <Tabs.Tab>
-                    ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit/{arke_id}' \
-                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
-                    -H "Authorization: <ACCESS_TOKEN>" \
-                    -H 'Content-Type: application/json' \
-                    ```
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    ```js
-                    client.arke.delete(arkeId, config)
-                    .then((response) => console.log(response.data)
-                    .catch((error) => console.error(error));
-                    ```
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    ```js
-                    const myHeaders = new Headers();
-                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
-                    myHeaders.append("Authorization", "<ACCESS_TOKEN>");
-                    myHeaders.append("Content-Type", "application/json");
-
-                    const requestOptions = {
-                        method: "DELETE",
-                        headers: myHeaders,
-                        redirect: "follow"
-                    };
-
-                    fetch("https://arkehub.com/api/lib/arke/unit/{arke_id}", requestOptions)
+                    fetch("https://arkehub.com/api/lib/group/unit/{group_id}/link/group/arke/unit/{arke_id}", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));

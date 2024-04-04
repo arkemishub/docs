@@ -13,6 +13,18 @@
     "theme": {
       "layout": "full"
     }
+  },
+  "unit": {
+    "title": "Unit",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "group": {
+    "title": "Group",
+    "theme": {
+      "layout": "full"
+    }
   }
 }
 
