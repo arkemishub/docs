@@ -8,6 +8,21 @@ export const HEADERS_ROWS = [
     {key: 'content-type', value: 'application/json' },
 ]
 
+export const PARAMS_COLUMNS = [
+    {value: 'key', label: 'Key'},
+    {value: 'value', label:'Value'},
+    {value: 'url', label: 'Detail'}
+]
+export const PARAMS_ROWS = [
+    {key: 'offset', value: 'Start offset for pagination', url: '/restful-api/offset-limit' },
+    {key: 'limit', value: 'Count limit for pagination', url: '/restful-api/offset-limit' },
+    {key: 'order', value: 'Sorting definition ex. asc;updated_at', url: '/restful-api/order' },
+    {key: 'filter', value: 'Filter response with condition ex. eq(name,test)', url: '/restful-api/filter' },
+    {key: 'load_links', value: 'Load links data', url: '/restful-api/load_links' },
+    {key: 'depth', value: 'Define depth of load_links', url: '/restful-api/depth' },
+    // {key: 'load_values', value: 'Load values if a link exist', url: '/restful-api/load_values' },
+]
+
 export const BODY_COLUMNS = [
     {value: 'key', label: 'Key'},
     {value: 'value', label:'Value'}

@@ -14,11 +14,13 @@ import {
     PARAMS_ROWS
 } from "../../constants/restful-api";
 
-## Get Arke Struct
+## Get All parameter types
 
 <RestfulApiContainer>
     <div>
-        The "Get Arke Struct" endpoint return the structure of parameters of specified Arke
+        The "Get All parameter types" endpoint return the list of all available types. By default these types are
+        grouped under the `parameter` group, so we can retrieve them through a standard
+        [Get All arke of Group](/restful-api/group#get-all-arke-of-group)
 
         #### Headers
         <RestfulApiTable
@@ -41,14 +43,14 @@ import {
     </div>
     <div>
         <RestfulApiRequest
-            title={`Code samples for "Get Arke Struct"`}
+            title={`Code samples for "Get All parameter types"`}
             method="get"
-            path="/api/lib/arke/struct"
+            path="/api/lib/group/parameter/arke"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/struct' \
+                    curl --location 'https://arkehub.com/api/lib/group/parameter/arke' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
                     -H 'Content-Type: application/json' \
@@ -56,7 +58,7 @@ import {
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.getAll(config)
+                    client.group.getAllArke('parameter',config)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -74,7 +76,7 @@ import {
                         redirect: "follow"
                     };
 
-                    fetch("https://arkehub.com/api/lib/arke/struct", requestOptions)
+                    fetch("https://arkehub.com/api/lib/group/parameter/arke", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));
@@ -84,125 +86,39 @@ import {
         </RestfulApiRequest>
 
         <RestfulApiResponse
-            title="Response with Arke struct"
+            title="Response with types list"
         >
             ```json
             {
                 "content": {
-                "label": "Arke",
-                "parameters": [
-                    {
-                        "default": "arke",
-                        "helper_text": "Type",
-                        "id": "type",
-                        "label": "Type",
-                        "max_length": null,
-                        "min_length": 2,
-                        "multiple": false,
-                        "required": true,
-                        "strip": true,
-                        "type": "string",
-                        "values": null
-                    },{
-                        "default": false,
-                        "helper_text": "Remote",
-                        "id": "remote",
-                        "label": "Remote",
-                        "required": true,
-                        "type": "boolean"
-                    },
-                ...
-                ]
-            },
-                "messages": []
-            }
-            ```
-        </RestfulApiResponse>
-    </div>
-</RestfulApiContainer>
-
-## Get All Arke
-
-<RestfulApiContainer>
-    <div>
-        The "Get All Arke" endpoint return the list of all available Arke inside the project
-
-        #### Headers
-        <RestfulApiTable
-            columns={HEADERS_COLUMNS}
-            rows={HEADERS_ROWS}
-        />
-
-        #### HTTP Response status
-        <RestfulApiTable
-            columns={HTTP_RESPONSE_COLUMNS}
-            rows={HTTP_RESPONSE_ROWS}
-        />
-
-    </div>
-    <div>
-        <RestfulApiRequest
-            title={`Code samples for "Get all Arke"`}
-            method="get"
-            path="/api/lib/arke/unit"
-        >
-            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
-                <Tabs.Tab>
-                    ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit' \
-                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
-                    -H "Authorization: <ACCESS_TOKEN>" \
-                    -H 'Content-Type: application/json' \
-                    ```
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    ```js
-                    client.arke.getAll(config)
-                    .then((response) => console.log(response.data)
-                    .catch((error) => console.error(error));
-                    ```
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    ```js
-                    const myHeaders = new Headers();
-                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
-                    myHeaders.append("Authorization", "<ACCESS_TOKEN>");
-                    myHeaders.append("Content-Type", "application/json");
-
-                    const requestOptions = {
-                    method: "GET",
-                    headers: myHeaders,
-                    redirect: "follow"
-                };
-
-                    fetch("https://arkehub.com/api/lib/arke/unit", requestOptions)
-                    .then((response) => response.text())
-                    .then((result) => console.log(result.data))
-                    .catch((error) => console.error(error));
-                    ```
-                </Tabs.Tab>
-            </Tabs>
-        </RestfulApiRequest>
-
-        <RestfulApiResponse
-            title="Response with Arke list"
-        >
-            ```json
-            {
-                "content": {
-                    "count": 25,
+                    "count": 12,
                     "items": [
                         {
                             "active": true,
                             "arke_id": "arke",
-                            "id": "super_admin",
-                            "inserted_at": "2023-09-14T10:03:48.000000Z",
-                            "label": "Super Admin",
-                            "metadata": {},
-                            "parameters": [],
-                            "remote": false,
+                            "id": "binary",
+                            "label": "Binary",
+                            "parameters": ["id","arke_id","default_binary","helper_text","only_run_time","required",...],
                             "type": "arke",
-                            "updated_at": "2023-09-14T10:03:48.000000Z"
+                            ...
+                        },
+                        {
+                            "active": true,
+                            "arke_id": "arke",
+                            "id": "boolean",
+                            "label": "Boolean",
+                            "parameters": ["id","arke_id","default_binary","helper_text","only_run_time","required",...],
+                            "type": "arke",
+                            ...
+                        },
+                        {
+                            "active": true,
+                            "arke_id": "arke",
+                            "id": "date",
+                            "label": "Date",
+                            "parameters": ["id","arke_id","default_binary","helper_text","only_run_time","required",...],
+                            "type": "arke",
+                            ...
                         },
                         ...
                     ]
@@ -214,102 +130,11 @@ import {
     </div>
 </RestfulApiContainer>
 
-
-## Get Arke
-
-<RestfulApiContainer>
-    <div>
-        The "Get Arke" endpoint return details of the specified Arke
-
-        #### Headers
-        <RestfulApiTable
-            columns={HEADERS_COLUMNS}
-            rows={HEADERS_ROWS}
-        />
-
-        #### HTTP Response status
-        <RestfulApiTable
-            columns={HTTP_RESPONSE_COLUMNS}
-            rows={HTTP_RESPONSE_ROWS}
-        />
-
-    </div>
-    <div>
-        <RestfulApiRequest
-            title={`Code samples for "Get Arke"`}
-            method="get"
-            path="/api/lib/arke/unit/{arke_id}"
-        >
-            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
-                <Tabs.Tab>
-                    ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit/{arke_id}' \
-                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
-                    -H "Authorization: <ACCESS_TOKEN>" \
-                    -H 'Content-Type: application/json' \
-                    ```
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    ```js
-                    client.arke.get(arkeId, config)
-                    .then((response) => console.log(response.data)
-                    .catch((error) => console.error(error));
-                    ```
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    ```js
-                    const myHeaders = new Headers();
-                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
-                    myHeaders.append("Authorization", "<ACCESS_TOKEN>");
-                    myHeaders.append("Content-Type", "application/json");
-
-                    const requestOptions = {
-                        method: "GET",
-                        headers: myHeaders,
-                        redirect: "follow"
-                    };
-
-                    fetch("https://arkehub.com/api/lib/arke/unit/{arke_id}", requestOptions)
-                    .then((response) => response.text())
-                    .then((result) => console.log(result.data))
-                    .catch((error) => console.error(error));
-                    ```
-                </Tabs.Tab>
-            </Tabs>
-        </RestfulApiRequest>
-
-        <RestfulApiResponse
-            title="Response with Arke details"
-        >
-            ```json
-            {
-                "content": {
-                    {
-                        "active": true,
-                        "arke_id": "arke",
-                        "id": "super_admin",
-                        "inserted_at": "2023-09-14T10:03:48.000000Z",
-                        "label": "Super Admin",
-                        "metadata": {},
-                        "parameters": [],
-                        "remote": false,
-                        "type": "arke",
-                        "updated_at": "2023-09-14T10:03:48.000000Z"
-                    },
-                },
-                "messages": []
-            }
-            ```
-        </RestfulApiResponse>
-    </div>
-</RestfulApiContainer>
-
-
-## Create Arke
+## Create Parameter
 
 <RestfulApiContainer>
     <div>
-        The "Create Arke" endpoint create an Arke with the specified information
+        The "Create Parameter" endpoint create a Parameter with the specified information.
 
         #### Headers
         <RestfulApiTable
@@ -338,12 +163,12 @@ import {
         <RestfulApiRequest
             title={`Code samples for "Create Arke"`}
             method="post"
-            path="/api/lib/arke/unit"
+            path="/api/lib/{parameter_type_id}/unit"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit/{arke_id}' \
+                    curl --location 'https://arkehub.com/api/lib/{parameter_type_id}/unit' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
                     -H 'Content-Type: application/json' \
@@ -351,7 +176,7 @@ import {
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.create(arkeId, data, config)
+                    client.arke.create(parameterTypeId, data, config)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -372,7 +197,7 @@ import {
                         redirect: "follow"
                     };
 
-                    fetch("https://arkehub.com/api/lib/arke/unit/{arke_id}", requestOptions)
+                    fetch("https://arkehub.com/api/lib/{parameter_type_id}/unit", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));
@@ -382,23 +207,31 @@ import {
         </RestfulApiRequest>
 
         <RestfulApiResponse
-            title="Response with Arke details created"
+            title="Response with Parameter details created"
         >
             ```json
             {
                 "content": {
-                    {
-                        "active": true,
-                        "arke_id": "arke",
-                        "id": "my_arke",
-                        "inserted_at": "2023-09-14T10:03:48.000000Z",
-                        "label": "My Arke",
-                        "metadata": {},
-                        "parameters": [],
-                        "remote": false,
-                        "type": "arke",
-                        "updated_at": "2023-09-14T10:03:48.000000Z"
-                    },
+                    "arke_id": "string",
+                    "default_string": null,
+                    "format": "attribute",
+                    "helper_text": null,
+                    "id": "docs_parameter",
+                    "inserted_at": "2024-04-04T18:59:26Z",
+                    "is_primary": false,
+                    "label": "Docs parameter",
+                    "max_length": null,
+                    "metadata": {},
+                    "min_length": null,
+                    "multiple": false,
+                    "nullable": true,
+                    "only_run_time": false,
+                    "persistence": "arke_parameter",
+                    "required": false,
+                    "strip": false,
+                    "unique": false,
+                    "updated_at": "2024-04-04T18:59:26Z",
+                    "values": null,
                 },
                 "messages": []
             }
@@ -408,11 +241,11 @@ import {
 </RestfulApiContainer>
 
 
-## Edit Arke
+## Edit Parameter
 
 <RestfulApiContainer>
     <div>
-        The "Edit Arke" endpoint update the specified Arke information
+        The "Edit Parameter" endpoint update the specified Parameter information
 
         #### Headers
         <RestfulApiTable
@@ -437,14 +270,14 @@ import {
     </div>
     <div>
         <RestfulApiRequest
-            title={`Code samples for "Edit Arke"`}
+            title={`Code samples for "Edit Parameter"`}
             method="put"
-            path="/api/lib/arke/unit/{arke_id}"
+            path="/api/lib/{parameter_type_id}/unit/{parameter_id}"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit/{arke_id}' \
+                    curl --location 'https://arkehub.com/api/lib/{parameter_type_id}/unit/{parameter_id}' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
                     -H 'Content-Type: application/json' \
@@ -452,7 +285,7 @@ import {
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.edit(arkeId, data, config)
+                    client.arke.edit(parameterId, data, config)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -473,7 +306,7 @@ import {
                         redirect: "follow"
                     };
 
-                    fetch("https://arkehub.com/api/lib/arke/unit/{arke_id}", requestOptions)
+                    fetch("https://arkehub.com/api/lib/{parameter_type_id}/unit/{parameter_id}", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));
@@ -483,24 +316,22 @@ import {
         </RestfulApiRequest>
 
         <RestfulApiResponse
-            title="Response with Arke details updated"
+            title="Response with Parameter details updated"
         >
             ```json
             {
                 "content": {
-            {
-                "active": true,
-                "arke_id": "arke",
-                "id": "super_admin",
-                "inserted_at": "2023-09-14T10:03:48.000000Z",
-                "label": "Edited Super Admin Arke label",
-                "metadata": {},
-                "parameters": [],
-                "remote": false,
-                "type": "arke",
-                "updated_at": "2023-09-14T10:03:48.000000Z"
-            },
-            },
+                    {
+                        "arke_id": "string",
+                        "default_string": null,
+                        "format": "attribute",
+                        "helper_text": null,
+                        "label": "Edited Docs parameter",
+                        "id": "docs_parameter",
+                        "inserted_at": "2024-04-04T18:59:26Z",
+                        "updated_at": "2024-04-04T19:59:26Z",
+                    },
+                },
                 "messages": []
             }
             ```
@@ -508,11 +339,11 @@ import {
     </div>
 </RestfulApiContainer>
 
-## Delete Arke
+## Delete Parameter
 
 <RestfulApiContainer>
     <div>
-        The "Delete Arke" endpoint delete the specified Arke
+        The "Delete Parameter" endpoint delete the specified Parameter
 
         #### Headers
         <RestfulApiTable
@@ -529,14 +360,14 @@ import {
     </div>
     <div>
         <RestfulApiRequest
-            title={`Code samples for "Delete Arke"`}
+            title={`Code samples for "Delete Parameter"`}
             method="delete"
-            path="/api/lib/arke/unit/{arke_id}"
+            path="/api/lib/{parameter_type_id}/unit/{parameter_id}"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/arke/unit/{arke_id}' \
+                    curl --location 'https://arkehub.com/api/lib/{parameter_type_id}/unit/{parameter_id}' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: <ACCESS_TOKEN>" \
                     -H 'Content-Type: application/json' \
@@ -544,7 +375,7 @@ import {
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
-                    client.arke.delete(arkeId, config)
+                    client.arke.delete(parameterId, config)
                     .then((response) => console.log(response.data)
                     .catch((error) => console.error(error));
                     ```
@@ -562,7 +393,7 @@ import {
                         redirect: "follow"
                     };
 
-                    fetch("https://arkehub.com/api/lib/arke/unit/{arke_id}", requestOptions)
+                    fetch("https://arkehub.com/api/lib/{parameter_type_id}/unit/{parameter_id}", requestOptions)
                     .then((response) => response.text())
                     .then((result) => console.log(result.data))
                     .catch((error) => console.error(error));

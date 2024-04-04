@@ -1,0 +1,94 @@
+import {RestfulApiRequest} from "../../components/restful-api/restful-api-request";
+import {RestfulApiTable} from "../../components/restful-api/restful-api-table";
+import {RestfulApiContainer} from "../../components/restful-api/restful-api-container";
+import {BODY_COLUMNS} from '../../constants/restful-api'
+
+## Order
+
+
+<div>
+    The "Order" params is the simplest way to sort items in your GET all responses. The
+    most common use is when you want Sorting in ascending or descending order the response.
+
+    #### Params
+    <RestfulApiTable
+        columns={BODY_COLUMNS}
+        rows={[
+            {key: 'order', value: 'asc;<PARAMETER_ID>' },
+        ]}
+    />
+
+    Use the `asc/desc` key and the parameter ID to define the order.
+</div>
+<RestfulApiContainer>
+    <div>
+        <RestfulApiRequest
+            title={`Response samples for ASC "order"`}
+            method="get"
+            params={['order=asc;label']}
+            path="/api/lib/{arke_id}/struct"
+        >
+            ```json
+            {
+                "content": {
+                "count": 10,
+                "items": [
+                // Ascending sort by label
+            {
+                "id": "active",
+                "label": "Active",
+                ...
+            },
+            {
+                "id": "code",
+                "label": "Code",
+                ...
+            }
+            {
+                "id": "id",
+                "label": "ID",
+                ...
+            },
+                ],
+            }
+                "messages": []
+            }
+            ```
+        </RestfulApiRequest>
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Response samples for ASC "order"`}
+            method="get"
+            params={['order=desc;label']}
+            path="/api/lib/{arke_id}/struct"
+        >
+            ```json
+            {
+                "content": {
+                "count": 10,
+                "items": [
+                    // Descending sort by label
+                    {
+                        "id": "id",
+                        "label": "ID",
+                        ...
+                    },
+                    {
+                        "id": "code",
+                        "label": "Code",
+                        ...
+                    }
+                    {
+                        "id": "active",
+                        "label": "Active",
+                        ...
+                    },
+                ],
+            }
+                "messages": []
+            }
+            ```
+        </RestfulApiRequest>
+    </div>
+</RestfulApiContainer>

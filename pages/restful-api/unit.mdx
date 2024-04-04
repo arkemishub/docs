@@ -8,7 +8,7 @@ import {
     HEADERS_COLUMNS,
     HEADERS_ROWS,
     HTTP_RESPONSE_COLUMNS,
-    HTTP_RESPONSE_ROWS, HTTP_RESPONSE_ROWS_DELETE
+    HTTP_RESPONSE_ROWS, HTTP_RESPONSE_ROWS_DELETE, PARAMS_COLUMNS, PARAMS_ROWS
 } from "../../constants/restful-api";
 
 ## Get Unit Struct
@@ -21,6 +21,12 @@ import {
         <RestfulApiTable
             columns={HEADERS_COLUMNS}
             rows={HEADERS_ROWS}
+        />
+
+        #### Params
+        <RestfulApiTable
+            columns={PARAMS_COLUMNS}
+            rows={PARAMS_ROWS}
         />
 
         #### HTTP Response status

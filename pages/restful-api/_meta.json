@@ -2,6 +2,10 @@
   "index": {
     "title": "About the REST Api"
   },
+  "endpoints": {
+    "title": "Endpoints",
+    "type": "separator"
+  },
   "authentication": {
     "title": "Authentication",
     "theme": {
@@ -14,14 +18,66 @@
       "layout": "full"
     }
   },
+  "parameter": {
+    "title": "Parameter",
+    "theme": {
+      "layout": "full"
+    }
+  },
   "unit": {
     "title": "Unit",
     "theme": {
       "layout": "full"
     }
   },
+  "link": {
+    "title": "Link",
+    "theme": {
+      "layout": "full"
+    }
+  },
   "group": {
     "title": "Group",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "Params": {
+    "title": "Params",
+    "type": "separator"
+  },
+  "offset-limit": {
+    "title": "Offset & limit",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "exclude-include": {
+    "title": "Exclude & Include",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "order": {
+    "title": "Order",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "filter": {
+    "title": "Filter",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "load-links": {
+    "title": "Load Links",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "load-values": {
+    "title": "Load Values",
     "theme": {
       "layout": "full"
     }

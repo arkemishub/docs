@@ -1,0 +1,134 @@
+import {RestfulApiRequest} from "../../components/restful-api/restful-api-request";
+import {RestfulApiTable} from "../../components/restful-api/restful-api-table";
+import {RestfulApiContainer} from "../../components/restful-api/restful-api-container";
+import {BODY_COLUMNS} from '../../constants/restful-api'
+
+## Filter
+
+<RestfulApiContainer>
+    <div>
+        The "Filter" params is the simplest way and powerful way to filter items in your GET all responses. This are a
+        lot of use: table column filters, ecommerce filters, general search.
+
+        #### Params
+        <RestfulApiTable
+            columns={BODY_COLUMNS}
+            rows={[{key: 'filter', value: 'string' }]}
+        />
+
+        Combine filters with a pseudocode syntax to retrieve the best filtered response.
+
+        To understand filters, we can start with the simplest use, filter item by ID. The code syntax to apply this filter
+        it will be:
+        ```
+        eq(id,12345)
+        ```
+
+        We note that we have a Conditional operator eq (equal) as function that has the key of parameter ID as first param,
+        and the value as second params.
+
+        We have a lot of available conditional operators:
+
+        | **Method**  | **String Key** | **Description**                                                   |
+        |-------------|------------------|-----------------------------------------------------------------|
+        | EQ          | "eq"             | Elements that are equal a specified value                       |
+        | CONTAINS    | "contains"       | Elements that contains  a specified value (sensitive search)    |
+        | ICONTAINS   | "icontains"      | Elements that contains  a specified value (insensitive search)  |
+        | STARTSWITH  | "startswith"     | Elements that start with a specified value (sensitive search)   |
+        | ISTARTSWITH | "istartswith"    | Elements that start with a specified value (insensitive search) |
+        | ENDSWITH    | "endswith"       | Elements that end with a specified value (sensitive search)     |
+        | IENDSWITH   | "iendswith"      | Elements that end with a specified value (insensitive search)   |
+        | LT          | "lt"             | Elements that are Lower than a specified value                  |
+        | LTE         | "lte"            | Elements that are Lower than equal a specified value            |
+        | GT          | "ge"             | Elements that are greater than a specified value                |
+        | GTE         | "get"            | Elements that are greater than equal a specified value          |
+        | IN          | "in"             | Elements that are included in a specified value                 |
+        | ISNULL      | "isnull"         | Element that is null                                            |
+        | NOT         | "not"            | Denied elements filters                                         |
+
+        You can create more complex filters composing the Relational operator AND/OR. The code syntax to apply this filter
+        is will be:
+        ```
+        and(eq(id,12345),contains(label,test))
+        ```
+
+        ### Conditional Filters
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Response samples for initial data`}
+            method="get"
+            path="/api/lib/{arke_id}/unit"
+        >
+            ```json
+            {
+                "content": {
+                    "count": 100,
+                    "items": [{...},{...},{...}],
+                }
+                "messages": []
+            }
+            ```
+        </RestfulApiRequest>
+
+        <br/>
+        <RestfulApiRequest
+            title={`Response samples when apply "Simple Filter"`}
+            method="get"
+            params={[`filter=eq(id=12345)`]}
+            path="/api/lib/{arke_id}/unit"
+        >
+            ```json
+            {
+                "content": {
+                    // Total items that respect filter
+                    "count": 1,
+                    // Filtered items
+                    "items": [
+                        {
+                            "id": "12345"
+                            ...
+                        }
+                    ],
+                }
+                "messages": []
+            }
+            ```
+        </RestfulApiRequest>
+
+        <br/>
+        <RestfulApiRequest
+            title={`Response samples when apply "Complex Filter"`}
+            method="get"
+            params={[`filter=and(gte(date,01-01-2024),contains(label,test))`]}
+            path="/api/lib/{arke_id}/unit"
+        >
+            ```json
+            {
+                "content": {
+                // Total items that respect filter
+                "count": 3,
+                "items": [
+                    {
+                        "date": "2024-01-02T20:13:00.645Z",
+                        "label": "test"
+                        ...
+                    },
+                    {
+                        "date": "2024-01-12T20:13:00.645Z",
+                        "label": "Test item"
+                        ...
+                    },
+                    {
+                        "date": "2024-05-12T20:13:00.645Z",
+                        "label": "123 Test item"
+                        ...
+                    }
+                ],
+            }
+                "messages": []
+            }
+            ```
+        </RestfulApiRequest>
+    </div>
+</RestfulApiContainer>

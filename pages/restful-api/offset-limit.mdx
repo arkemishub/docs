@@ -1,0 +1,80 @@
+import {RestfulApiRequest} from "../../components/restful-api/restful-api-request";
+import {RestfulApiTable} from "../../components/restful-api/restful-api-table";
+import {RestfulApiContainer} from "../../components/restful-api/restful-api-container";
+import {BODY_COLUMNS} from '../../constants/restful-api'
+
+## Offset & Limit
+
+<RestfulApiContainer>
+    <div>
+        The "Offset & Limits" params are the simplest way to get portions of data in your GET all responses. The most common
+        use is to create a "pagination" for tables or limit data in a "infinite scroll" system.
+        When we have many data in the response it is necessary reduce the list to improve performances.
+
+        The `limits` parameters is represent the number of items that we want in our response, the `offset` it is used as
+        index to "move on" in our array response.
+
+        #### Params
+        <RestfulApiTable
+            columns={BODY_COLUMNS}
+            rows={[
+                {key: 'offset', value: 'number' },
+                {key: 'limit', value: 'number' },
+            ]}
+        />
+
+        To give an example in a real use case we can think a pagination in a table.
+        The starting page has index 0, suppose that numbers of rows is set as 25. We know that we have the first 25 items,
+        so our offset it will be set to 0 and our limits will be 25.
+        When page number changed to 1, we have to change our offset, so the next request will be as params offset=1 and
+        limit still 25 (cause we want the new 25 items).
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Response samples for initial data`}
+            method="get"
+            params={['offset=0','limit=5']}
+            path="/api/lib/arke/unit/{unit_id}"
+        >
+            ```json
+            {
+                "content": {
+                    // Total items
+                    "count": 100,
+                    "items": [
+                        {...}, // index: 0
+                        {...},
+                        {...},
+                        {...},
+                        {...}, // index: 4
+                    ],
+                }
+                "messages": []
+            }
+            ```
+        </RestfulApiRequest>
+        <br/>
+        <RestfulApiRequest
+            title={`Response samples when change "Offset & Limit"`}
+            method="get"
+            params={['offset=5','limit=5']}
+            path="/api/lib/arke/unit/{unit_id}"
+        >
+            ```json
+            {
+                "content": {
+                    "count": 100,
+                    "items": [
+                        {...}, // index: 5
+                        {...},
+                        {...},
+                        {...},
+                        {...}, // index: 9
+                    ],
+                }
+                "messages": []
+            }
+            ```
+        </RestfulApiRequest>
+    </div>
+</RestfulApiContainer>
