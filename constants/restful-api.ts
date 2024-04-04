@@ -23,3 +23,9 @@ export const HTTP_RESPONSE_ROWS = [
     {status: 401, description: 'Unauthorized' },
     {status: 500, description: 'Internal server error' }
 ]
+
+export const HTTP_RESPONSE_ROWS_DELETE = [
+    {status: 204, description: 'OK' },
+    {status: 401, description: 'Unauthorized' },
+    {status: 500, description: 'Internal server error' }
+]

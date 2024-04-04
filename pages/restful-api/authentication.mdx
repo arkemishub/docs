@@ -395,8 +395,8 @@ import {
                     curl --location 'https://arkehub.com/api/lib/auth/refresh' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H "Authorization: "Bearer <ACCESS_TOKEN>" \
-                        -H 'Content-Type: application/json' \
-                        ```
+                    -H 'Content-Type: application/json' \
+                    ```
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
@@ -410,20 +410,20 @@ import {
                     const myHeaders = new Headers();
                     myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
                     myHeaders.append("Authorization", "Bearer <ACCESS_TOKEN>");
-                        myHeaders.append("Content-Type", "application/json");
+                    myHeaders.append("Content-Type", "application/json");
 
-                        const requestOptions = {
-                            method: "POST",
-                            headers: myHeaders,
-                            body: raw,
-                            redirect: "follow"
-                        };
+                    const requestOptions = {
+                        method: "POST",
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: "follow"
+                    };
 
-                        fetch("https://arkehub.com/api/lib/auth/refresh", requestOptions)
-                        .then((response) => response.text())
-                        .then((result) => console.log(result.data))
-                        .catch((error) => console.error(error));
-                        ```
+                    fetch("https://arkehub.com/api/lib/auth/refresh", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result.data))
+                    .catch((error) => console.error(error));
+                    ```
                 </Tabs.Tab>
             </Tabs>
         </RestfulApiRequest>
