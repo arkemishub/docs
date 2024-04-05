@@ -1,1 +1,20 @@
 # Topology
+
+In a distributed computing environment, a topology with parent/child relations defines a hierarchical structure among
+interconnected nodes. This topology is characterized by nodes being organized in a hierarchical manner, where each node
+(except the root) has multiple parent node and may have multiple child nodes. This hierarchical arrangement allows for
+efficient management, communication, and delegation of tasks across the distributed system.
+
+### Key Components
+
+###### Root Node
+The top-level node in the hierarchy, having no parent.
+Serves as the entry point or central coordinator for the distributed system.
+
+###### Parent Node
+A node in the hierarchy that has one or more child nodes.
+Responsible for coordinating and managing the activities of its child nodes.
+
+###### Child Node
+A node in the hierarchy that has a single parent node.
+Executes tasks assigned by its parent node and may further delegate tasks to its own child nodes.
