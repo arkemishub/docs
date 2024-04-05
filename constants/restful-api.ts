@@ -36,6 +36,7 @@ export const HTTP_RESPONSE_COLUMNS = [
 export const HTTP_RESPONSE_ROWS = [
     {status: 200, description: 'OK' },
     {status: 401, description: 'Unauthorized' },
+    {status: 403, description: 'Forbidden' },
     {status: 500, description: 'Internal server error' }
 ]
 
