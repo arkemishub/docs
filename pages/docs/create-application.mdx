@@ -87,7 +87,7 @@ After this choose the interactive process is finished and your are ready to open
             ```ansi
             mix deps.get
             ```
-            ### Database connection
+            ### Database server connection
             You can choose to create a local Database to store data or connect to remote one
             <Callout type="info">
                To create a new local database [Here](/backend/installation/postgres) you can find
@@ -106,6 +106,18 @@ After this choose the interactive process is finished and your are ready to open
             ```bash
             source .env
             ```
+
+           #### Init arke_system project
+           Init `arke_system` database schema to store system's and common data.
+           ```ansi
+           mix arke_postgres.init_db
+           ```
+
+           #### Create your project
+           Init your `arke_project` database schema with an identifier that will be used from your client application
+           ```ansi
+           mix arke_postgres.create_project --id <PROJECT_ID>
+           ```
 
             #### Start server
             ```ansi
