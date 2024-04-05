@@ -1,9 +1,29 @@
-import { Callout } from 'nextra/components'
-
 # Project
 
 Project is a special arke with dedicated functionalities. With them, you can isolate your application environment.
 
-<Callout type="warning">
-    This page is under construction
-</Callout>
+## Persistence
+When you create a Project their information are stored inside our Database, in the `arke_system` schema, inside
+the `arke_unit` table.
+
+We have the `id` column that store the Universally Unique Identifier (UUID) that represent the database schema, the `arke_id`
+column that store the arke identifier (for project primitive will be always arke_project), the `data` column that store parameters
+definition and their values, the `metadata` column for additional info, the `inserted_at` column to indicate when record
+is created and the `updated_at` column to indicate when record is updated.
+
+![ArkeDBView](/entities/project/db_view_1.png)
+
+Project has a dedicated `type` parameter that store the schema type
+
+```
+"type": {
+   "value": "postgres_schema",
+   "datetime": "2024-03-11T16:53:25Z"
+},
+```
+
+## RESTful Endpoints
+
+Projects are unit of the pre-defined arke `arke_project`, a set of default API are generated to manage it, the API are
+authenticated and have restricted permissions, additional params are ready-to-use like sorting, filtering and more.
+Discover them remember that your arke_id is `arke_project` in the dedicated [RESTful API](/restful-api/unit) section.

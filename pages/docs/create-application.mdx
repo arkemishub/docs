@@ -134,7 +134,7 @@ After this choose the interactive process is finished and your are ready to open
            <Tabs items={['Mix','Arkectl']}>
                <Tabs.Tab>
                    ```bash
-                   mix arke_postgres.create_project --id <PROJECT_ID>
+                   mix arke_postgres.create_project --id {PROJECT_ID}
                    ```
                </Tabs.Tab>
                <Tabs.Tab>
@@ -144,12 +144,11 @@ After this choose the interactive process is finished and your are ready to open
                </Tabs.Tab>
            </Tabs>
 
-           #### Create your super admin member
-           To create and manage your arke you need an authenticated user, to create the first super admin member on your
-           project you can use:
+           #### Init pre-defined arke,units,etc.
+           To initialize the database with all the necessary arke,units and data run the following command:
 
            ```bash
-           mix arke_postgres.create_member --username admin --password admin --project <PROJECT_ID>
+           mix ...
            ```
 
            #### Start server
