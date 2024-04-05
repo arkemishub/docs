@@ -42,7 +42,7 @@
       "layout": "full"
     }
   },
-  "Params": {
+  "params": {
     "title": "Params",
     "type": "separator"
   },

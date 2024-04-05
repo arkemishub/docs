@@ -1,15 +1,27 @@
 {
   "arke": {
-    "title": "Arke"
+    "title": "Arke",
+    "theme": {
+      "layout": "full"
+    }
   },
   "arke-server": {
-    "title": "Arke Server"
+    "title": "Arke Server",
+    "theme": {
+      "layout": "full"
+    }
   },
   "arke-auth": {
-    "title": "Arke Auth"
+    "title": "Arke Auth",
+    "theme": {
+      "layout": "full"
+    }
   },
   "arke-postgres": {
-    "title": "Arke Postgres"
+    "title": "Arke Postgres",
+    "theme": {
+      "layout": "full"
+    }
   },
   "contribute": {
     "title": "Contribute"

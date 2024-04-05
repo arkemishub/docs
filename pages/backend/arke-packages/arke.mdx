@@ -1,1 +1,14 @@
+import { Cards, Card } from 'nextra/components'
+import { GithubIcon, HexIcon } from '@/icons'
+import HexDocsIframe from "../../../components/hex/hex-docs-iframe";
+
 # Arke
+Arke package contains the backend core logic
+
+<Cards>
+    <Card icon={<GithubIcon />} title="Github repo" href="https://github.com/arkemishub/arke" target="_blank" />
+    <Card icon={<HexIcon />} title="Hex package" href="https://hex.pm/packages/arke" target="_blank" />
+    <Card icon={<HexIcon />} title="Api reference" href="https://hexdocs.pm/arke/api-reference.html" target="_blank" />
+</Cards>
+
+<HexDocsIframe className="mt-8" src="https://hexdocs.pm/arke/api-reference.html" />

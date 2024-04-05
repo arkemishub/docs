@@ -109,26 +109,59 @@ After this choose the interactive process is finished and your are ready to open
 
            #### Init arke_system project
            Init `arke_system` database schema to store system's and common data.
-           ```ansi
-           mix arke_postgres.init_db
-           ```
+           <Tabs items={['Mix','Arkectl']}>
+               <Tabs.Tab>
+                   ```bash
+                   mix arke_postgres.init_db
+                   ```
+               </Tabs.Tab>
+               <Tabs.Tab>
+                   <Callout type="warning">
+                       Work in progress
+                   </Callout>
+               </Tabs.Tab>
+           </Tabs>
+
 
            #### Create your project
            Init your `arke_project` database schema with an identifier that will be used from your client application
-           ```ansi
-           mix arke_postgres.create_project --id <PROJECT_ID>
+
+           <Callout type="error">
+               Avoid special characters and use `_` for spaces, this ID will be used as database schema name. Also `-`
+               is not recommended
+           </Callout>
+
+           <Tabs items={['Mix','Arkectl']}>
+               <Tabs.Tab>
+                   ```bash
+                   mix arke_postgres.create_project --id <PROJECT_ID>
+                   ```
+               </Tabs.Tab>
+               <Tabs.Tab>
+                   <Callout type="warning">
+                       Work in progress
+                   </Callout>
+               </Tabs.Tab>
+           </Tabs>
+
+           #### Create your super admin member
+           To create and manage your arke you need an authenticated user, to create the first super admin member on your
+           project you can use:
+
+           ```bash
+           mix arke_postgres.create_member --username admin --password admin --project <PROJECT_ID>
            ```
 
-            #### Start server
-            ```ansi
-            iex -S mix phx.server
+           #### Start server
+           ```bash
+           iex -S mix phx.server
 
-            Erlang/OTP 25 [erts-13.2.2.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1]
-            [info] Running PhoenixStarterWeb.Endpoint with cowboy 2.10.0 at 127.0.0.1:4000 (http)
-            [info] Access PhoenixStarterWeb.Endpoint at http://localhost:4000
-            Interactive Elixir (1.14.5) - press Ctrl+C to exit (type h() ENTER for help)
-            ```
-            The Arke Backend is ready and running on http://localhost:4000
+           Erlang/OTP 25 [erts-13.2.2.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1]
+           [info] Running PhoenixStarterWeb.Endpoint with cowboy 2.10.0 at 127.0.0.1:4000 (http)
+           [info] Access PhoenixStarterWeb.Endpoint at http://localhost:4000
+           Interactive Elixir (1.14.5) - press Ctrl+C to exit (type h() ENTER for help)
+           ```
+           The Arke Backend is ready and running on http://localhost:4000
        </Tabs.Tab>
        <Tabs.Tab>
            #### Open project
@@ -136,7 +169,7 @@ After this choose the interactive process is finished and your are ready to open
            cd arke-console
            ```
            #### Install dependencies
-           ```ansi
+           ```bash
            pnpm install
            ```
 
@@ -154,7 +187,7 @@ After this choose the interactive process is finished and your are ready to open
            ```
 
            #### Start server
-           ```ansi
+           ```bash
            pnpm dev
            ```
            The Arke Console is ready and running on http://localhost:3100
@@ -165,11 +198,11 @@ After this choose the interactive process is finished and your are ready to open
           cd frontend
           ```
           #### Install dependencies
-          ```ansi
+          ```bash
           pnpm install
           ```
           #### Start server
-          ```ansi
+          ```bash
           pnpm dev
           ```
           The Arke Console is ready and running on http://localhost:3000
@@ -178,7 +211,7 @@ After this choose the interactive process is finished and your are ready to open
   </Tabs.Tab>
   <Tabs.Tab>
     On docker environment you can start backend and console with:
-    ```ansi
+    ```bash
     arkectl start
     ```
     The Arke workspace is ready for customization! Open Frontend project on your IDE to start customization
