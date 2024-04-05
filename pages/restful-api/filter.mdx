@@ -18,6 +18,8 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
 
         Combine filters with a pseudocode syntax to retrieve the best filtered response.
 
+        ### Conditional Filters
+
         To understand filters, we can start with the simplest use, filter item by ID. The code syntax to apply this filter
         it will be:
         ```
@@ -46,13 +48,19 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
         | ISNULL      | "isnull"         | Element that is null                                            |
         | NOT         | "not"            | Denied elements filters                                         |
 
-        You can create more complex filters composing the Relational operator AND/OR. The code syntax to apply this filter
-        is will be:
+        ### Relational operator
+
+        You can create more complex filters composing the Relational operator AND/OR.
+
+        | **Method**  | **String Key**   | **Description**                                                 |
+        |-------------|------------------|-----------------------------------------------------------------|
+        | AND         | "and"            | Concatenate filters by logical operator AND                     |
+        | OR          | "or"             | Concatenate filters by logical operator OR                      |
+
+        The code syntax to apply this filter is will be:
         ```
         and(eq(id,12345),contains(label,test))
         ```
-
-        ### Conditional Filters
     </div>
     <div>
         <RestfulApiRequest
@@ -65,7 +73,7 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
                 "content": {
                     "count": 100,
                     "items": [{...},{...},{...}],
-                }
+                },
                 "messages": []
             }
             ```
@@ -90,7 +98,7 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
                             ...
                         }
                     ],
-                }
+                },
                 "messages": []
             }
             ```
@@ -106,26 +114,26 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
             ```json
             {
                 "content": {
-                // Total items that respect filter
-                "count": 3,
-                "items": [
-                    {
-                        "date": "2024-01-02T20:13:00.645Z",
-                        "label": "test"
-                        ...
-                    },
-                    {
-                        "date": "2024-01-12T20:13:00.645Z",
-                        "label": "Test item"
-                        ...
-                    },
-                    {
-                        "date": "2024-05-12T20:13:00.645Z",
-                        "label": "123 Test item"
-                        ...
-                    }
-                ],
-            }
+                    // Total items that respect filter
+                    "count": 3,
+                    "items": [
+                        {
+                            "date": "2024-01-02T20:13:00.645Z",
+                            "label": "test"
+                            ...
+                        },
+                        {
+                            "date": "2024-01-12T20:13:00.645Z",
+                            "label": "Test item"
+                            ...
+                        },
+                        {
+                            "date": "2024-05-12T20:13:00.645Z",
+                            "label": "123 Test item"
+                            ...
+                        }
+                    ],
+                },
                 "messages": []
             }
             ```

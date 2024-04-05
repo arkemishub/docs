@@ -53,7 +53,7 @@
     }
   },
   "exclude-include": {
-    "title": "Exclude & Include",
+    "title": "Include & Exclude",
     "theme": {
       "layout": "full"
     }
