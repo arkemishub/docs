@@ -2,41 +2,18 @@
 
 The primitive arke, it's a type of abstract model that can represent a person, a place or a thing.
 
-## Persistance
-When you create an Arke their information are stored inside our Database, according with the defined project, inside
-the `arke_unit` table.
+## Persistence
+When you create an Arke their information are stored inside our Database, according to the defined project, inside
+the `arke_unit` table. A list of parameters are linked to the arke and define its structure.
+
+We have the `id` column that store the Universally Unique Identifier (UUID), the `arke_id` column that store the arke identifier
+(for arke primitive will be always arke), the `data` column that store parameters definition and their values, the `metadata`
+column for additional info, the `inserted_at` column to indicate when record is created and the `updated_at` column to indicate when record is updated.
 
 ![ArkeDBView](/entities/arke/db_view.png)
 
 ## RESTful Endpoints
 
-When you create an Arke a set of default API are generated for your project, their could be authenticated and
-additional params are ready-to-use like sorting, filtering and more
-
-### Endpoints
-
-|     Methods      |                                                                                                       |
-|:----------------:|:-----------------------------------------------------------------------------------------------------:|
-| :get_arke_struct | <b>GET /lib/`{arke_id}`/struct  </b><br/>Get the list of parameters with their types (base structure) |
-|  :get_all_unit   |                        <b>GET /lib/`{arke_id}`/unit    </b><br/> Get all units                        |
-|    :get_unit     |                 <b>GET /lib/`{arke_id}`/unit/`{unit_id}` </b><br/> Get specific unit                  |
-
-##### Headers
-
-To authenticate your request use the authorization and the reference project
-
-|       Name       | Value         |                 Description                 |
-|:----------------:|:--------------|:-------------------------------------------:|
-|  Authorization   | `{{token}}`   | Authorization token to authenticate the api |
-| arke-project-key | `{{project}}` |           The identifier project            |
-
-##### Params
-
-Use the query params to filter, sort and manage your response
-
-|  Name  | Type   |                      Description                       |             Detail             |
-|:------:|:-------|:------------------------------------------------------:|:------------------------------:|
-| offset | number |              Start offset for pagination               |                                |
-| limit  | number |               Count limit for pagination               |                                |
-| order  | string |        Sorting definition ex. `asc;updated_at`         | [Discover more](/arke/sorting) |
-| filter | string | Filter the response with condition ex. `eq(name,test)` | [Discover more](/arke/filters) |
+When you create an Arke a set of default API are generated to manage it, the API could be authenticated and could have
+restricted permissions, additional params are ready-to-use like sorting, filtering and more.
+Discover them in the dedicated [RESTful API](/restful-api/arke) section.

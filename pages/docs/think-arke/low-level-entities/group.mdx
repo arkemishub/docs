@@ -1,9 +1,31 @@
-import { Callout } from 'nextra/components'
-
 # Group
+With Group, you can create aggregation of arke and relative units.
 
-With Group you can create aggregation of arke and relative units.
+## Persistence
+When you create a Group their information are stored inside our Database, according to the defined project, inside
+the `arke_unit` table.
 
-<Callout type="warning">
-    This page is under construction
-</Callout>
+We have the `id` column that store the Universally Unique Identifier (UUID), the `arke_id` column that store the arke identifier
+(for group primitive will be always group), the `data` column that store parameters definition and their values,
+the `metadata` column for additional info, the `inserted_at` column to indicate when record is created and the `updated_at`
+column to indicate when record is updated.
+
+![ArkeDBView](/entities/group/db_view_1.png)
+
+Group has a dedicated `arke_list` parameter that store the list of arke IDs grouped
+
+```
+"arke_list": {
+    "value": [
+      "super_admin",
+      "member"
+    ],
+    "datetime": "2023-12-22T10:27:30Z"
+  },
+```
+
+## RESTful Endpoints
+
+When you create a Group a set of default API are generated to manage it, the API could be authenticated and could have
+restricted permissions, additional params are ready-to-use like sorting, filtering and more.
+Discover them in the dedicated [RESTful API](/restful-api/group) section.

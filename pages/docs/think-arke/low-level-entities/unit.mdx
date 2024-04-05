@@ -1,9 +1,19 @@
-import { Callout } from 'nextra/components'
-
 # Unit
 
 The unit is the specific instance of the arke.
 
-<Callout type="warning">
-    This page is under construction
-</Callout>
+## Persistence
+When you create a Unit their information are stored inside our Database, according to the defined project, inside
+the `arke_unit` table.
+
+We have the `id` column that store the Universally Unique Identifier (UUID), the `arke_id` column that store the arke identifier,
+the `data` column that store parameters definition and their values, the `metadata` column for additional info, the `inserted_at`
+column to indicate when record is created and the `updated_at` column to indicate when record is updated.
+
+![ArkeDBView](/entities/unit/db_view_1.png)
+
+## RESTful Endpoints
+
+When you create an Unit a set of default API are generated to manage it, the API could be authenticated and could have
+restricted permissions, additional params are ready-to-use like sorting, filtering and more.
+Discover them in the dedicated [RESTful API](/restful-api/unit) section.

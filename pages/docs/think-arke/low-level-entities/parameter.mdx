@@ -1,9 +1,42 @@
-import { Callout } from 'nextra/components'
-
 # Parameter
 
-The parameters extends the attributes of our entity to describe it.
+The parameters extend the attributes of our entity to describe it.
 
-<Callout type="warning">
-    This page is under construction
-</Callout>
+When you create a parameter you are always creating a unit using as arke_id the pre-defined "type" parameters.
+
+Initializing a project we created for you a list of arke which are usable as type of your parameter. So we have available
+the arke boolean, string, integer, float etc.
+This parameter types are grouped under the system group `parameter`.
+
+In this way if you want to create a new parameter you are just to do, the same things that you have to do to create a unit,
+namely define the arke (in this case the type).
+
+## Persistence
+The parameters information are stored inside our Database.
+
+We have the `id` column that store the Universally Unique Identifier (UUID), the `arke_id` column that store the arke identifier,
+the `data` column that store parameters definition and their values, the `metadata` column for additional info, the `inserted_at`
+column to indicate when record is created and the `updated_at` column to indicate when record is updated.
+
+In the `arke_system` database on `arke_unit` table we find the pre-defined parameters.
+![SystemParametersDBView](/entities/parameter/db_view_1.png)
+
+In the `arke_system` database on `arke_unit` table we find the system group `parameter`.
+![SystemParametersDBView2](/entities/parameter/db_view_2.png)
+
+Inside our project we'll find always in the `arke_unit` table our custom parameters.
+
+##### Link between parameters and Arke
+The relation between Arke and its parameters is stored in the `arke_link` table. If are pre-defined parameters these are
+stored on `arke_system`, otherwise there are in our project.
+
+We have the `type` column that store the link_id, the `parent_id`/`child_id` that store the unit that we want to link to
+and `metadata` that define additional link information.
+
+![SystemParametersDBView3](/entities/parameter/db_view_3.png)
+
+## RESTful Endpoints
+
+When you create a Parameter a set of default API are generated to manage it, the API could be authenticated and could have
+restricted permissions, additional params are ready-to-use like sorting, filtering and more.
+Discover them in the dedicated [RESTful API](/restful-api/parameter) section.
