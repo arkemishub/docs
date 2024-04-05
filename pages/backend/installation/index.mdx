@@ -28,15 +28,14 @@ To start with backend development we need to initialize the [Phoenix App](/docs/
       ```
   </Tabs.Tab>
   <Tabs.Tab>
-    We recommend starting a new Arke Backend app using `arkectl create-app`, which sets up everything automatically for you.
+    arke.new is the native elixir way to create your project
     <Callout type="info">
       if you have not installed arke.new installer as an archive follow the [guide](/docs/arke-new)
     </Callout>
 
     You can use the interactive create-app command for a guided init, or add flags:
     ```bash
-      arkectl create-app -i
-      arkectl create-app [project name] --backend --local
+      mix arke.new my_arke_project
     ```
   </Tabs.Tab>
 </Tabs>
