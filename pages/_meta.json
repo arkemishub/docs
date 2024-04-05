@@ -3,10 +3,6 @@
     "title": "Framework",
     "type": "page"
   },
-  "command-line-tool": {
-    "title": "CLI",
-    "type": "page"
-  },
   "frontend": {
     "title": "Frontend",
     "type": "page"

@@ -9,11 +9,8 @@
   "think-arke": {
     "title": "Think Arke"
   },
-  "installation": {
-    "title": "Installation"
-  },
-  "build-your-application": {
-    "title": "Build your application",
+  "discover-features": {
+    "title": "Discover features",
     "type": "separator"
   },
   "multi-tenant": {
@@ -36,6 +33,16 @@
   },
   "storage": {
     "title": "Storage"
+  },
+  "build-your-application": {
+    "title": "Build your application",
+    "type": "separator"
+  },
+  "command-line-tools": {
+    "title": "Arkectl CLI"
+  },
+  "create-application": {
+    "title": "Create application"
   }
 }
 
