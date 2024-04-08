@@ -575,3 +575,171 @@ import {
         </RestfulApiResponse>
     </div>
 </RestfulApiContainer>
+
+## Recover & Reset password
+
+<RestfulApiContainer>
+    <div>
+        The "Recover & Reset password" endpoint facilitates the recover password process for users, allowing them to reset their
+        password. The recovery process occurs in two steps.
+
+        On first step we have to call the recover password endpoint, this needs the user authentication's email to send an
+        email containing a Token.
+
+        On second step we have to call the reset password endpoint, this needs the new user password and token received by
+        email.
+
+
+        #### Headers
+        <RestfulApiTable
+            columns={HEADERS_COLUMNS}
+            rows={[{key: 'arke-project-key', value: '<YOUR_PROJECT_ID>' }]}
+        />
+
+        #### Recover password request Body
+        <RestfulApiTable
+            columns={BODY_COLUMNS}
+            rows={[
+                {key: 'email', value: '<YOUR_EMAIL>' },
+            ]}
+        />
+
+        #### Reset password request Body
+        <RestfulApiTable
+            columns={BODY_COLUMNS}
+            rows={[
+                {key: 'new_password', value: '<YOUR_SECRET_PASSWORD>' },
+            ]}
+        />
+
+        #### HTTP Response status
+        <RestfulApiTable
+            columns={HTTP_RESPONSE_COLUMNS}
+            rows={HTTP_RESPONSE_ROWS}
+        />
+
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Code samples for "Recover password"`}
+            method="post"
+            path="/api/lib/auth/recover_password"
+        >
+            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
+                <Tabs.Tab>
+                    ```bash
+                    curl --location 'https://arkehub.com/api/lib/auth/recover_password' \
+                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
+                    -H 'Content-Type: application/json' \
+                    --data-raw '{
+                        "email":"user@arkehub.com"
+                    }
+                    }'
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    client.auth.recoverPassword("user@arkehub.com", config)
+                    .then((response) => console.log(response.data)
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    const myHeaders = new Headers();
+                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
+                    myHeaders.append("Content-Type", "application/json");
+
+                    const raw = JSON.stringify({
+                        "email": "user@arkehub.com"
+                    });
+
+                    const requestOptions = {
+                        method: "POST",
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: "follow"
+                    };
+
+                    fetch("https://arkehub.com/api/lib/auth/recover_password", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result.data))
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+            </Tabs>
+        </RestfulApiRequest>
+
+        {/*<RestfulApiResponse
+            title="Response with confirm that email was sent"
+        >
+            ```json
+            {
+                "content": {},
+                "messages": []
+            }
+            ```
+        </RestfulApiResponse>*/}
+        <br/>
+        <RestfulApiRequest
+            title={`Code samples for "Reset password"`}
+            method="post"
+            path="/api/lib/auth/reset_password/{token}"
+        >
+            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
+                <Tabs.Tab>
+                    ```bash
+                    curl --location 'https://arkehub.com/api/lib/auth/reset_password/{token}' \
+                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
+                    -H 'Content-Type: application/json' \
+                    --data-raw '{
+                        "new_password": "YOUR_SECRET_PASSWORD"
+                    }
+                    }'
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    client.auth.resetPassword("YOUR_SECRET_PASSWORD", token, config)
+                    .then((response) => console.log(response.data)
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    const myHeaders = new Headers();
+                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
+                    myHeaders.append("Content-Type", "application/json");
+
+                    const raw = JSON.stringify({
+                        "new_password": "YOUR_SECRET_PASSWORD"
+                    });
+
+                    const requestOptions = {
+                        method: "POST",
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: "follow"
+                    };
+
+                    fetch("https://arkehub.com/api/lib/auth/reset_password/{token}", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result.data))
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+            </Tabs>
+        </RestfulApiRequest>
+
+        {/*<RestfulApiResponse
+            title="Response with confirm that email is resetted"
+        >
+            ```json
+            {
+                "content": {},
+                "messages": []
+            }
+            ```
+        </RestfulApiResponse>*/}
+    </div>
+</RestfulApiContainer>
