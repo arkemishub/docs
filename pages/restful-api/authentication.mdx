@@ -191,13 +191,13 @@ import {
                     ```bash
                     curl --location 'https://arkehub.com/api/lib/auth/signin' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
-                        --header 'Content-Type: application/json' \
-                        --data-raw '{
-                            "username": "user@arkehub.com",
-                            "password": "my_secret_password_123!",
-                            "otp": '12345',
-                        }'
-                        ```
+                    --header 'Content-Type: application/json' \
+                    --data-raw '{
+                        "username": "user@arkehub.com",
+                        "password": "my_secret_password_123!",
+                        "otp": '12345',
+                    }'
+                    ```
                 </Tabs.Tab>
                 <Tabs.Tab>
                     ```js
@@ -633,7 +633,6 @@ import {
                     -H 'Content-Type: application/json' \
                     --data-raw '{
                         "email":"user@arkehub.com"
-                    }
                     }'
                     ```
                 </Tabs.Tab>
@@ -694,7 +693,6 @@ import {
                     -H 'Content-Type: application/json' \
                     --data-raw '{
                         "new_password": "YOUR_SECRET_PASSWORD"
-                    }
                     }'
                     ```
                 </Tabs.Tab>
