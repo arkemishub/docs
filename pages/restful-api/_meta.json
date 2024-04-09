@@ -81,6 +81,12 @@
     "theme": {
       "layout": "full"
     }
+  },
+  "load-images": {
+    "title": "Load Images",
+    "theme": {
+      "layout": "full"
+    }
   }
 }
 

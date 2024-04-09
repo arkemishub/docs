@@ -114,17 +114,35 @@ After this choose the interactive process is finished and your are ready to open
            </Callout>
 
            #### Define env variables
-           Add a `.env` file in the root of the project to set the Database env variables:
-           ```dotenv
-           export DB_NAME=
-           export DB_HOSTNAME=
-           export DB_USER=
-           export DB_PASSWORD=
-           ```
-           Run the following command to apply your environment variables:
-           ```bash
-           source .env
-           ```
+           <Tabs items={['MacOS', 'Windows']}>
+               <Tabs.Tab>
+                   Add a `.env` file in the root of the project to set the Database env variables:
+                   ```dotenv
+                   export DB_NAME="arke_db"
+                   export DB_HOSTNAME="127.0.0.1"
+                   export DB_USER="postgres"
+                   export DB_PASSWORD="postgres"
+                   ```
+                   Run the following command to apply your environment variables:
+                   ```bash
+                   source .env
+                   ```
+               </Tabs.Tab>
+               <Tabs.Tab>
+                   Add a `env.bat` file in the root of the project to set the Database env variables:
+
+                   <Callout type="warning">
+                       Not use quotes on env variable definition
+                   </Callout>
+
+                   ```dotenv
+                   set DB_NAME=arke_db
+                   set DB_HOSTNAME=127.0.0.1
+                   set DB_USER=postgres
+                   set DB_PASSWORD=postgres
+                   ```
+               </Tabs.Tab>
+           </Tabs>
 
            #### Init arke system schema
            Create Database and define `arke_system` schema using ArkePostgres defaults:
