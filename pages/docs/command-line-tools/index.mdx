@@ -15,11 +15,30 @@ Contribute on [Github](https://github.com/arkemishub/arkectl)
     ```
 
     ### Define ARKEPATH
-    Expose a new variable called ARKEPATH within your ~/.zshrc
+    <Tabs items={['MacOS', 'Windows']}>
+        <Tabs.Tab>
+            Expose a new variable called ARKEPATH within your ~/.zshrc
 
-    ```bash
-    export ARKEPATH=$HOME/arke
-    ```
+            ```bash
+            export ARKEPATH=$HOME/arke
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            <Callout type="warning">
+                We suggest to use the Windows command prompt instead of Powersheel cause we encountered some troubles.
+            </Callout>
+
+            Open the command line and run `sysdm.cpl`
+            ![RunCommand](/command-line-tools/run_command.png)
+
+            Open the Environment variables from Advanced tab
+            ![SystemProperties](/command-line-tools/system_properties.png)
+
+            Add a new variable with name `ARKEPATH` and value `C:\Users\<YOUR_USER>\arke`:
+            ![EnvironmentVariables](/command-line-tools/environment_variables.png)
+        </Tabs.Tab>
+    </Tabs>
+
     ### Install
     Install arkectl install to download required files to run Arke locally
     ```
