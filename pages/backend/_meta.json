@@ -28,6 +28,13 @@
   },
   "terraform": {
     "title": "Terraform"
+  },
+  "others_separator": {
+    "title": "Others",
+    "type": "separator"
+  },
+  "troubleshooting": {
+    "title": "Troubleshooting"
   }
 }
 

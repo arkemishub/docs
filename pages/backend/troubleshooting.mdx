@@ -1,0 +1,32 @@
+# Troubleshooting
+
+## Visual C++ Build Tools for C++ dependencies
+
+Use [Chocolatey](https://chocolatey.org/)  which has a package for Visual C++ Build Tools.
+
+```bash
+choco install visualcpp-build-tools
+```
+will install the latest 2017 version, but you can select one of the older versions, which include the 2015 release.
+
+After the installation Visual Studio 2017 folder is added to the Programs menu.
+It includes shortcuts to various developer command prompts with cl.exe and other tools in the path.
+
+Run the following command on a terminal with administrator permissions:
+
+```
+cmd /K "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64
+
+**********************************************************************
+** Visual Studio 2017 Developer Command Prompt v15.0
+** Copyright (c) 2017 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+```
+
+In the same session reinstall deps with:
+```bash
+mix deps.clean
+mix deps.get
+mix deps.compile
+```
