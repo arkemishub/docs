@@ -6,14 +6,14 @@ Project is a special arke with dedicated functionalities. With them, you can iso
 When you create a Project their information are stored inside our Database, in the `arke_system` schema, inside
 the `arke_unit` table.
 
-We have the `id` column that store the Universally Unique Identifier (UUID) that represent the database schema, the `arke_id`
-column that store the arke identifier (for project primitive will be always arke_project), the `data` column that store parameters
+We have the `id` column that stores the Universally Unique Identifier (UUID) that represent the database schema, the `arke_id`
+column that stores the arke identifier (for project primitive will be always arke_project), the `data` column that stores parameters
 definition and their values, the `metadata` column for additional info, the `inserted_at` column to indicate when record
 is created and the `updated_at` column to indicate when record is updated.
 
 ![ArkeDBView](/entities/project/db_view_1.png)
 
-Project has a dedicated `type` parameter that store the schema type
+Project has a dedicated `type` parameter that stores the schema type
 
 ```
 "type": {

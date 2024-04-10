@@ -5,14 +5,14 @@ With Group, you can create aggregation of arke and relative units.
 When you create a Group their information are stored inside our Database, according to the defined project, inside
 the `arke_unit` table.
 
-We have the `id` column that store the Universally Unique Identifier (UUID), the `arke_id` column that store the arke identifier
-(for group primitive will be always group), the `data` column that store parameters definition and their values,
+We have the `id` column that stores the Universally Unique Identifier (UUID), the `arke_id` column that stores the arke identifier
+(for group primitive will be always group), the `data` column that stores parameters definition and their values,
 the `metadata` column for additional info, the `inserted_at` column to indicate when record is created and the `updated_at`
 column to indicate when record is updated.
 
 ![ArkeDBView](/entities/group/db_view_1.png)
 
-Group has a dedicated `arke_list` parameter that store the list of arke IDs grouped
+Group has a dedicated `arke_list` parameter that stores the list of arke IDs grouped
 
 ```
 "arke_list": {
