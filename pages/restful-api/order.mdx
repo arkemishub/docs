@@ -2,9 +2,9 @@ import {RestfulApiRequest} from "../../components/restful-api/restful-api-reques
 import {RestfulApiTable} from "../../components/restful-api/restful-api-table";
 import {RestfulApiContainer} from "../../components/restful-api/restful-api-container";
 import {BODY_COLUMNS} from '../../constants/restful-api'
+import {Callout} from "nextra/components";
 
 ## Order
-
 
 <div>
     The "Order" params is the simplest way to sort items in your GET all responses. The
@@ -14,7 +14,7 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
     <RestfulApiTable
         columns={BODY_COLUMNS}
         rows={[
-            {key: 'order', value: 'asc;<PARAMETER_ID>' },
+            {key: 'order', value: '<PARAMETER_ID>;asc' },
         ]}
     />
 
@@ -26,7 +26,7 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
             title={`Response samples for ASC "order"`}
             method="get"
             params={['order=asc;label']}
-            path="/api/lib/{arke_id}/struct"
+            path="/api/lib/{arke_id}/unit"
         >
             ```json
             {
@@ -58,10 +58,10 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
     </div>
     <div>
         <RestfulApiRequest
-            title={`Response samples for ASC "order"`}
+            title={`Response samples for DESC "order"`}
             method="get"
             params={['order=desc;label']}
-            path="/api/lib/{arke_id}/struct"
+            path="/api/lib/{arke_id}/unit"
         >
             ```json
             {
@@ -92,3 +92,18 @@ import {BODY_COLUMNS} from '../../constants/restful-api'
         </RestfulApiRequest>
     </div>
 </RestfulApiContainer>
+
+### Multiple order
+If you need multiple sorting you can use an array of order params:
+
+```js
+[{order: 'name;desc'},{order: 'date;asc'}]
+```
+<Callout type="info">
+    Use a `paramsSerializer` to stringify the array in the request
+</Callout>
+
+On params we'll have a definition as:
+```
+order[]=name%3Bdesc&order[]=date%3Basc
+```
