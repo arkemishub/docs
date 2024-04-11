@@ -25,7 +25,7 @@ import {Callout} from "nextra/components";
         <RestfulApiRequest
             title={`Response samples for ASC "order"`}
             method="get"
-            params={['order=asc;label']}
+            params={['order=label;asc']}
             path="/api/lib/{arke_id}/unit"
         >
             ```json
@@ -60,7 +60,7 @@ import {Callout} from "nextra/components";
         <RestfulApiRequest
             title={`Response samples for DESC "order"`}
             method="get"
-            params={['order=desc;label']}
+            params={['order=label;desc']}
             path="/api/lib/{arke_id}/unit"
         >
             ```json
