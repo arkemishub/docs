@@ -1,0 +1,22 @@
+import {Tabs} from "nextra/components"
+import SheetPreview from "@/components/docs-ui/sheet/sheet-preview";
+import SheetCode from "@/components/docs-ui/sheet/sheet-code.mdx";
+
+# Sheet
+Extends the Dialog component to display content that complements the main content of the screen.
+
+### Installation
+```bash
+npx arke-ui@latest add sheet
+```
+
+<Tabs items={['Preview', 'Code']}>
+    <Tabs.Tab>
+        <SheetPreview />
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <SheetCode />
+    </Tabs.Tab>
+</Tabs>
+
+

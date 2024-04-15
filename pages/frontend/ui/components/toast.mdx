@@ -1,0 +1,39 @@
+import {Tabs} from "nextra/components"
+import ToastPreview from "@/components/docs-ui/toast/toast-preview";
+import ToastCode from "@/components/docs-ui/toast/toast-code.mdx";
+
+# Toast
+A succinct message that is displayed temporarily.
+
+### Installation
+```bash
+npx arke-ui@latest add toast
+```
+Add the `<Toaster/>` component on your `app/layout.tsx`:
+
+```js
+import { Toaster } from "@/components/ui/toaster"
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head />
+      <body>
+        <main>{children}</main>
+        <Toaster />
+      </body>
+    </html>
+  )
+}
+```
+
+<Tabs items={['Preview', 'Code']}>
+    <Tabs.Tab>
+        <ToastPreview />
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <ToastCode />
+    </Tabs.Tab>
+</Tabs>
+
+

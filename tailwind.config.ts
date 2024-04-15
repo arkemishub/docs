@@ -1,23 +1,37 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+const config = {
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,md,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,md,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,md,mdx}",
+    "./pages/**/*.{ts,tsx,mdx}",
+    "./components/**/*.tsx",
+    "./app/**/*.tsx",
+    "./src/**/*.tsx",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        background: {
+          DEFAULT: "hsl(var(--background))",
+          100: "hsl(var(--background-100))",
+        },
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        neutral: {
+          DEFAULT: "hsl(var(--neutral))",
+          foreground: "hsl(var(--neutral-foreground))",
+        },
       },
-      borderColor: {
-        DEFAULT: '#4b5563'
-      }
     },
   },
-  plugins: [],
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
 export default config;

@@ -1,0 +1,22 @@
+import {Tabs} from "nextra/components"
+import TabsPreview from "@/components/docs-ui/tabs/tabs-preview";
+import TabsCode from "@/components/docs-ui/tabs/tabs-code.mdx";
+
+# Tabs
+A set of layered sections of content—known as tab panels—that are displayed one at a time.
+
+### Installation
+```bash
+npx arke-ui@latest add tabs
+```
+
+<Tabs items={['Preview', 'Code']}>
+    <Tabs.Tab>
+        <TabsPreview />
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <TabsCode />
+    </Tabs.Tab>
+</Tabs>
+
+

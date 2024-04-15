@@ -1,0 +1,22 @@
+import {Tabs} from "nextra/components"
+import SkeletonPreview from "@/components/docs-ui/skeleton/skeleton-preview";
+import SkeletonCode from "@/components/docs-ui/skeleton/skeleton-code.mdx";
+
+# Skeleton
+Use to show a placeholder while content is loading.
+
+### Installation
+```bash
+npx arke-ui@latest add skeleton
+```
+
+<Tabs items={['Preview', 'Code']}>
+    <Tabs.Tab>
+        <SkeletonPreview />
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <SkeletonCode />
+    </Tabs.Tab>
+</Tabs>
+
+

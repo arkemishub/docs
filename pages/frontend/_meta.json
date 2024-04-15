@@ -8,6 +8,28 @@
   },
   "installation": {
     "title": "Installation"
+  },
+  "arkejs": {
+    "title": "@arkejs packages",
+    "type": "separator"
+  },
+  "ui": {
+    "title": "UI"
+  },
+  "client": {
+    "title": "Client JS",
+    "href": "https://client.arkehub.com/docs/install",
+    "newWindow": true
+  },
+  "form": {
+    "title": "Form",
+    "href": "https://form.arkehub.com/docs/install",
+    "newWindow": true
+  },
+  "table": {
+    "title": "Table",
+    "href": "https://table.arkehub.com/docs/install",
+    "newWindow": true
   }
 }
 

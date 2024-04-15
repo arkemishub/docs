@@ -1,0 +1,32 @@
+import {
+    Carousel,
+    CarouselContent,
+    CarouselPrevious,
+    CarouselNext,
+    CarouselItem
+} from "@/components/ui/carousel";
+import Preview from "@/components/ui/preview";
+
+export default function CarouselPreview(){
+    return(
+        <Preview>
+            <Carousel className="w-full max-w-xs">
+                <CarouselContent>
+                    {Array.from({ length: 5 }).map((_, index) => (
+                        <CarouselItem key={index}>
+                            <div className="p-1">
+                                <div className="border">
+                                    <div className="flex aspect-square items-center justify-center p-6">
+                                        <span className="text-4xl font-semibold">{index + 1}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious/>
+                <CarouselNext />
+            </Carousel>
+        </Preview>
+    )
+}

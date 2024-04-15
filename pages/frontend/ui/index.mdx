@@ -1,0 +1,26 @@
+# Installation
+Arke UI provides a complete list of common components for your frontend application.
+
+Run following command to set up your project:
+```bash
+npx arke-ui@latest init
+```
+
+Run the following command to add components to your project:
+```bash
+npx arke-ui@latest add <component>
+```
+This will create a `ui` folder where store the components, install the `cn` utility for classes merge and install the
+required deps.
+
+### cn utility
+The cn utility permits a classes combination using the common [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
+and [clsx](https://www.npmjs.com/package/clsx) libraries
+
+```js
+<p className={cn("text-sm", isError && "text-red", props.className)}>
+    My title
+</p>
+```
+
+Continue with documentation to discover all available components
