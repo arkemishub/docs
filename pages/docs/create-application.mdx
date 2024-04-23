@@ -86,26 +86,10 @@ After this choose the interactive process is finished and your are ready to open
            ```bash
            mix archive.install hex arke_new
            mix arke.new backend
-           ```
-
-           #### Install deps
-           At the moment we are using a beta version of registry backend file, replace the arke deps on `arke_package`
-           in the `mix.exs` file:
-           ```ansi
-           defp arke_package() do
-               [
-                  {:arke, github: "arkemishub/arke", branch: "feat/registry-file", override: true},
-                  {:arke_postgres, github: "arkemishub/arke-postgres", branch: "feat/registry-file", override: true},
-                  {:arke_auth, github: "arkemishub/arke-auth", branch: "feat/registry-file", override: true},
-                  {:arke_server, github: "arkemishub/arke-server", branch: "feat/registry-file", override: true},
-               ]
-           end
-           ```
-
-           ```ansi
            cd backend
            mix deps.get
            ```
+
            ### Database server connection
            You can choose to create a local Database to store data or connect to remote one
            <Callout type="info">
