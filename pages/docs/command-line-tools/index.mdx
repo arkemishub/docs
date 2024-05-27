@@ -9,7 +9,19 @@ Contribute on [Github](https://github.com/arkemishub/arkectl)
 <Tabs items={['Go', 'Homebrew']}>
   <Tabs.Tab>
     <Steps>
-    ### Download
+    ### Install GO
+    Install go with homebrew
+    ```
+    brew install golang
+    ```
+
+    Some third party tools still depend on $GOPATH variable being set. You can set your $GOPATH by adding it to your `.zshrc`
+    ```
+    export GOPATH=$HOME/go
+    export PATH=$PATH: GOPATH/bin
+    ```
+
+    ### Download Arkectl
     ```go
     go install github.com/arkemishub/arkectl@latest
     ```
@@ -17,7 +29,7 @@ Contribute on [Github](https://github.com/arkemishub/arkectl)
     ### Define ARKEPATH
     <Tabs items={['MacOS', 'Windows']}>
         <Tabs.Tab>
-            Expose a new variable called ARKEPATH within your ~/.zshrc
+            Expose a new variable called ARKEPATH within your `~/.zshrc`
 
             ```bash
             export ARKEPATH=$HOME/arke
