@@ -4,12 +4,150 @@ import {RestfulApiTable} from "../../components/restful-api/restful-api-table";
 import {RestfulApiContainer} from "../../components/restful-api/restful-api-container";
 import {RestfulApiResponse} from "../../components/restful-api/restful-api-response";
 import {
+    HEADERS_AUTH_ROWS,
     HEADERS_COLUMNS,
     HEADERS_ROWS,
     BODY_COLUMNS,
     HTTP_RESPONSE_COLUMNS,
     HTTP_RESPONSE_ROWS
 } from '../../constants/restful-api'
+
+
+## Create a member - Sign-up
+
+<RestfulApiContainer>
+    <div>
+        The "Sign Up" endpoint facilitates the registration process for new users, allowing them to create an account
+        within the system. This endpoint collects user-provided information such as username, email, and password,
+        then validates and stores this data to enable access to the platform's features and services.
+
+        The member are special entities under the group `arke_auth_member`, to create a member you have to provide all
+        parameters required and additional special `arke_system_user` object.
+
+        #### Headers
+        <RestfulApiTable
+            columns={HEADERS_COLUMNS}
+            rows={HEADERS_AUTH_ROWS}
+        />
+
+        #### Body
+        <RestfulApiTable
+            columns={BODY_COLUMNS}
+            rows={[
+                {key: 'username', value: '<YOUR_USERNAME>' },
+                {key: 'password', value: '<YOUR_PASSWORD>' },
+                {key:  'arke_system_user', value: `{ password, username, email }` },
+                {key: 'other_parameters', value: 'Other member parameters' },
+            ]}
+        />
+
+
+        #### HTTP Response status
+        <RestfulApiTable
+            columns={HTTP_RESPONSE_COLUMNS}
+            rows={HTTP_RESPONSE_ROWS}
+        />
+
+    </div>
+    <div>
+        <RestfulApiRequest
+            title={`Code samples for "Create a member"`}
+            method="post"
+            path="/api/lib/{member_arke_id}/signup"
+        >
+            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
+                <Tabs.Tab>
+                    ```bash
+                    curl --location 'https://arkehub.com/api/lib/{member_arke_id}/signup' \
+                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
+                    -H 'Content-Type: application/json' \
+                    --data-raw '{
+                        "username": "user@arkehub.com",
+                        "password": "my_secret_password_123!",
+                        "arke_system_user":{
+                            "username":"user_username",
+                            "password":"my_secret_password_123!",
+                            "email":"user@arkehub.com"
+                        }
+                    }'
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    client.auth.signUp(arkeId, {
+                    username: "user@arkehub.com",
+                    password: "my_secret_password_123!",
+                    arke_system_user:{
+                    username: "user_username",
+                    password: "my_secret_password_123!",
+                    email: "user@arkehub.com"
+                }
+                }, config)
+                    .then((response) => console.log(response.data)
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+                <Tabs.Tab>
+                    ```js
+                    const myHeaders = new Headers();
+                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
+                    myHeaders.append("Content-Type", "application/json");
+
+                    const raw = JSON.stringify({
+                        "username": "user@arkehub.com",
+                        "password": "my_secret_password_123!",
+                        arke_system_user:{
+                        username: "user_username",
+                        password: "my_secret_password_123!",
+                        email: "user@arkehub.com"
+                    }
+                    });
+
+                    const requestOptions = {
+                        method: "POST",
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: "follow"
+                    };
+
+                    fetch("https://arkehub.com/api/lib/{member_arke_id}/signup", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result.data))
+                    .catch((error) => console.error(error));
+                    ```
+                </Tabs.Tab>
+            </Tabs>
+        </RestfulApiRequest>
+
+        <RestfulApiResponse
+            title="Response with created and autenticated member information"
+        >
+            ```json
+            {
+                "content": {
+                "access_token": "eyJhbGciOiJIUzUxMiIsInR6IkpXVCJ9...",
+                "arke_id": "super_admin",
+                // ID of user stored on Arke System
+                "arke_system_user": "c2e3b048-1a6a-11ee-908c-1a84faf9f6ef",
+                "auth_token": null,
+                "email": "user@arkehub.com",
+                "first_access_time": "2024-04-02T20:05:30.919280Z",
+                "first_name": "Admin",
+                "id": "824135a6-52e6-11ee-9387-96e316d04b51",
+                "inserted_at": "2023-09-14T10:07:27.000000Z",
+                "last_access_time": "2024-04-03T16:20:12.452059Z",
+                "last_name": "Super",
+                "metadata": {},
+                "refresh_token": "eyJhbGciOiJIUzUxMiIsInR5IkpXVCJ9...",
+                ...additional member parameters
+            },
+                "messages": []
+            }
+            ```
+        </RestfulApiResponse>
+    </div>
+</RestfulApiContainer>
+
 
 ## Authenticate a member - Sign-in Credentials
 
@@ -22,7 +160,7 @@ import {
         #### Headers
         <RestfulApiTable
             columns={HEADERS_COLUMNS}
-            rows={HEADERS_ROWS}
+            rows={HEADERS_AUTH_ROWS}
         />
 
         #### Body
@@ -149,7 +287,7 @@ import {
         #### Headers
         <RestfulApiTable
             columns={HEADERS_COLUMNS}
-            rows={HEADERS_ROWS}
+            rows={HEADERS_AUTH_ROWS}
         />
 
         #### Body
@@ -434,141 +572,6 @@ import {
             ```json
             {
                 "content": null,
-                "messages": []
-            }
-            ```
-        </RestfulApiResponse>
-    </div>
-</RestfulApiContainer>
-
-## Create a member - Sign-up
-
-<RestfulApiContainer>
-    <div>
-        The "Sign Up" endpoint facilitates the registration process for new users, allowing them to create an account
-        within the system. This endpoint collects user-provided information such as username, email, and password,
-        then validates and stores this data to enable access to the platform's features and services.
-
-        The member are special entities under the group `arke_auth_member`, to create a member you have to provide all
-        parameters required and additional special `arke_system_user` object.
-
-        #### Headers
-        <RestfulApiTable
-            columns={HEADERS_COLUMNS}
-            rows={HEADERS_ROWS}
-        />
-
-        #### Body
-        <RestfulApiTable
-            columns={BODY_COLUMNS}
-            rows={[
-                {key: 'username', value: '<YOUR_USERNAME>' },
-                {key: 'password', value: '<YOUR_PASSWORD>' },
-                {key:  'arke_system_user', value: `{ password, username, email }` },
-                {key: 'other_parameters', value: 'Other member parameters' },
-            ]}
-        />
-
-
-        #### HTTP Response status
-        <RestfulApiTable
-            columns={HTTP_RESPONSE_COLUMNS}
-            rows={HTTP_RESPONSE_ROWS}
-        />
-
-    </div>
-    <div>
-        <RestfulApiRequest
-            title={`Code samples for "Create a member"`}
-            method="post"
-            path="/api/lib/{member_arke_id}/signup"
-        >
-            <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
-                <Tabs.Tab>
-                    ```bash
-                    curl --location 'https://arkehub.com/api/lib/{member_arke_id}/signup' \
-                    -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
-                    -H 'Content-Type: application/json' \
-                    --data-raw '{
-                        "username": "user@arkehub.com",
-                        "password": "my_secret_password_123!",
-                        "arke_system_user":{
-                            "username":"user_username",
-                            "password":"my_secret_password_123!",
-                            "email":"user@arkehub.com"
-                        }
-                    }'
-                    ```
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    ```js
-                    client.auth.signUp(arkeId, {
-                        username: "user@arkehub.com",
-                        password: "my_secret_password_123!",
-                        arke_system_user:{
-                            username: "user_username",
-                            password: "my_secret_password_123!",
-                            email: "user@arkehub.com"
-                        }
-                    }, config)
-                    .then((response) => console.log(response.data)
-                    .catch((error) => console.error(error));
-                    ```
-                </Tabs.Tab>
-                <Tabs.Tab>
-                    ```js
-                    const myHeaders = new Headers();
-                    myHeaders.append("arke-project-key", "<YOUR_PROJECT_ID>");
-                    myHeaders.append("Content-Type", "application/json");
-
-                    const raw = JSON.stringify({
-                        "username": "user@arkehub.com",
-                        "password": "my_secret_password_123!",
-                        arke_system_user:{
-                            username: "user_username",
-                            password: "my_secret_password_123!",
-                            email: "user@arkehub.com"
-                        }
-                    });
-
-                    const requestOptions = {
-                        method: "POST",
-                        headers: myHeaders,
-                        body: raw,
-                        redirect: "follow"
-                    };
-
-                    fetch("https://arkehub.com/api/lib/{member_arke_id}/signup", requestOptions)
-                    .then((response) => response.text())
-                    .then((result) => console.log(result.data))
-                    .catch((error) => console.error(error));
-                    ```
-                </Tabs.Tab>
-            </Tabs>
-        </RestfulApiRequest>
-
-        <RestfulApiResponse
-            title="Response with created and autenticated member information"
-        >
-            ```json
-            {
-                "content": {
-                    "access_token": "eyJhbGciOiJIUzUxMiIsInR6IkpXVCJ9...",
-                    "arke_id": "super_admin",
-                    // ID of user stored on Arke System
-                    "arke_system_user": "c2e3b048-1a6a-11ee-908c-1a84faf9f6ef",
-                    "auth_token": null,
-                    "email": "user@arkehub.com",
-                    "first_access_time": "2024-04-02T20:05:30.919280Z",
-                    "first_name": "Admin",
-                    "id": "824135a6-52e6-11ee-9387-96e316d04b51",
-                    "inserted_at": "2023-09-14T10:07:27.000000Z",
-                    "last_access_time": "2024-04-03T16:20:12.452059Z",
-                    "last_name": "Super",
-                    "metadata": {},
-                    "refresh_token": "eyJhbGciOiJIUzUxMiIsInR5IkpXVCJ9...",
-                ...additional member parameters
-            },
                 "messages": []
             }
             ```
