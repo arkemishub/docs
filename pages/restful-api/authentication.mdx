@@ -53,12 +53,12 @@ import {
         <RestfulApiRequest
             title={`Code samples for "Create a member"`}
             method="post"
-            path="/api/lib/{member_arke_id}/signup"
+            path="/api/lib/auth/{member_arke_id}/signup"
         >
             <Tabs items={['cURL', '@arkejs/client', 'fetch']}>
                 <Tabs.Tab>
                     ```bash
-                    curl --location 'https://arkehub.com/api/lib/{member_arke_id}/signup' \
+                    curl --location 'https://arkehub.com/api/lib/auth/{member_arke_id}/signup' \
                     -H "Arke-Project-Key: <YOUR_PROJECT_ID>" \
                     -H 'Content-Type: application/json' \
                     --data-raw '{
