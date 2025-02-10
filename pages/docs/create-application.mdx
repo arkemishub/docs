@@ -144,6 +144,12 @@ After this choose the interactive process is finished and your are ready to open
            mix arke.seed_project --project {PROJECT_ID}
            ```
 
+           <Callout type="info">
+               If you want to export data from another DB you can use
+               `mix arke.export_data --project {PROJECT_ID} --splitfile`. Move this file under the `registry` folder
+               and run the seed_project command.
+           </Callout>
+
            ### Create first super admin user
            To create your first user use the following command, define the username/password/email parameters :
 
